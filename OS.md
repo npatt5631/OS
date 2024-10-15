@@ -18,13 +18,35 @@ ________________________________________________________________________________
 
 ### 2: What Windows 10 feature supports installing Linux subsystem? - WSL
 
-### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - 
+### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - Windows Terminal
 
-### 4:
+### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? - CMD
 
-### 5:
+### 5: What data type do all cmd.exe commands return? - String
 
-### 6:
+### 6: What framework is PowerShell built on? - .net
+
+### 7: "What will all of the below give you? - powershell version
+(get-host).version
+$host.version
+$psversiontable.psversion"
+
+### 8: 
+
+### 9: 
+
+### 10:
+
+### 11: 
+
+### 12: 
+
+### 13: 
+
+### 14: 
+
+### 15: 
+
 
 ___________________________________________________________________________________________________________________
 
