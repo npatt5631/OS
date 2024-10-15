@@ -27,11 +27,11 @@ ________________________________________________________________________________
 ### 6: What framework is PowerShell built on? - .net
 
 ### 7: "What will all of the below give you? - powershell version
-### (get-host).version
+#### (get-host).version
 
-### $host.version
+#### $host.version
 
-### $psversiontable.psversion"
+#### $psversiontable.psversion"
 
 ### 8: After PowerShell Core is installed what CLI command launches it? - pwsh.exe
 
