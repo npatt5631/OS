@@ -28,7 +28,9 @@ ________________________________________________________________________________
 
 ### 7: "What will all of the below give you? - powershell version
 (get-host).version
+
 $host.version
+
 $psversiontable.psversion"
 
 ### 8: 
