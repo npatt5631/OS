@@ -33,9 +33,9 @@ $host.version
 
 $psversiontable.psversion"
 
-### 8: 
+### 8: After PowerShell Core is installed what CLI command launches it? - pwsh.exe
 
-### 9: 
+### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - PowerShell.exe
 
 ### 10:
 
