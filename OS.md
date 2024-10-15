@@ -14,48 +14,48 @@ http://10.50.22.129:8000/
 
 # Stack 1: student@10.50.25.34 password
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? - ConHost.exe
+### 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? -   ConHost.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What Windows 10 feature supports installing Linux subsystem? - WSL
+### 2: What Windows 10 feature supports installing Linux subsystem? -   WSL
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - Windows Terminal
+### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? -   Windows Terminal
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? - CMD
+### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? -   CMD
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: What data type do all cmd.exe commands return? - String
+### 5: What data type do all cmd.exe commands return? -   String
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What framework is PowerShell built on? - .net
+### 6: What framework is PowerShell built on? -   .net
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: "What will all of the below give you? - powershell version
+### 7: "What will all of the below give you? -   powershell version
 #### (get-host).version
 
 #### $host.version
 
 #### $psversiontable.psversion"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: After PowerShell Core is installed what CLI command launches it? - pwsh.exe
+### 8: After PowerShell Core is installed what CLI command launches it? -   pwsh.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - PowerShell.exe
+### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" -   PowerShell.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What syntax do PowerShell cmdlets follow? - Verb-Noun
+### 10: What syntax do PowerShell cmdlets follow? -   Verb-Noun
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What PS command will list all PowerShell cmdlets? - Get-Command
+### 11: What PS command will list all PowerShell cmdlets? -   Get-Command
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: What PowerShell command will list all verbs? - Get-Verb
+### 12: What PowerShell command will list all verbs? -   Get-Verb
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: BASH commands output strings. PowerShell commands output what data type? - Objects
+### 13: BASH commands output strings. PowerShell commands output what data type? -   Objects
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: All PowerShell objects are comprised of what two things? - properties, methods
+### 14: All PowerShell objects are comprised of what two things? -   properties, methods
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: What command will list all things that make up a PowerShell object? - 
+### 15: What command will list all things that make up a PowerShell object? -   Get-Member
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: 
+### 16: What PowerShell command will list PowerShell aliases? -   Get-Alias
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: 
+### 17: What PowerShell command lists all of the contents of a directory? -   Get-Childitem
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: 
+### 18: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? -   Get-Help
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: 
+### 19: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? -   -Full
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 20: 
 ______________________________________________________________________________________________________________________________________________________________________________________
