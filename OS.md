@@ -133,7 +133,7 @@ ________________________________________________________________________________
 
 1: mkdir Extracted
 
-2: $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
+2: $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega#$($_ - 1).zip" }
 
 3: cd Extracted
 
