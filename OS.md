@@ -27,141 +27,141 @@ ________________________________________________________________________________
 
 # 01_windows_powershell
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? -   ConHost.exe
+### 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? - ``` ConHost.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What Windows 10 feature supports installing Linux subsystem? -   WSL
+### 2: What Windows 10 feature supports installing Linux subsystem? - ``` WSL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? -   Windows Terminal
+### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - ``` Windows Terminal ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? -   CMD
+### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? - ``` CMD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: What data type do all cmd.exe commands return? -   String
+### 5: What data type do all cmd.exe commands return? - ``` String ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What framework is PowerShell built on? -   .net
+### 6: What framework is PowerShell built on? - ``` .net ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: "What will all of the below give you? -   powershell version
+### 7: "What will all of the below give you? - ``` powershell version ```
 #### (get-host).version
 
 #### $host.version
 
 #### $psversiontable.psversion"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: After PowerShell Core is installed what CLI command launches it? -   pwsh.exe
+### 8: After PowerShell Core is installed what CLI command launches it? - ``` pwsh.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" -   PowerShell.exe
+### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - ``` PowerShell.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What syntax do PowerShell cmdlets follow? -   Verb-Noun
+### 10: What syntax do PowerShell cmdlets follow? - ``` Verb-Noun ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What PS command will list all PowerShell cmdlets? -   Get-Command
+### 11: What PS command will list all PowerShell cmdlets? - ``` Get-Command ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: What PowerShell command will list all verbs? -   Get-Verb
+### 12: What PowerShell command will list all verbs? - ``` Get-Verb ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: BASH commands output strings. PowerShell commands output what data type? -   Objects
+### 13: BASH commands output strings. PowerShell commands output what data type? - ``` Objects ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: All PowerShell objects are comprised of what two things? -   properties, methods
+### 14: All PowerShell objects are comprised of what two things? - ``` properties, methods ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: What command will list all things that make up a PowerShell object? -   Get-Member
+### 15: What command will list all things that make up a PowerShell object? - ``` Get-Member ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: What PowerShell command will list PowerShell aliases? -   Get-Alias
+### 16: What PowerShell command will list PowerShell aliases? - ``` Get-Alias ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What PowerShell command lists all of the contents of a directory? -   Get-Childitem
+### 17: What PowerShell command lists all of the contents of a directory? - ``` Get-Childitem ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? -   Get-Help
+### 18: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? - ``` Get-Help ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? -   -Full
+### 19: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? - ``` -Full ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: What PowerShell command will update the PowerShell "help files" to the latest version? -   Update-Help
+### 20: What PowerShell command will update the PowerShell "help files" to the latest version? - ``` Update-Help ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What help switch will show you the "help files" on Microsoft's website, in your default browser? -   -Online
+### 21: What help switch will show you the "help files" on Microsoft's website, in your default browser? - ``` -Online ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: What command will start the Chrome browser on your machine? -   Start-Process "Chrome.exe"
+### 22: What command will start the Chrome browser on your machine? - ``` Start-Process "Chrome.exe" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What command using a PS Method will stop chrome? -   (Get-Process chrome*).kill()
+### 23: What command using a PS Method will stop chrome? - ``` (Get-Process chrome*).kill() ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: What PowerShell command (without using a method) will stop the Chrome process? -   Stop-Process -Name "chrome"
+### 24: What PowerShell command (without using a method) will stop the Chrome process? - ``` Stop-Process -Name "chrome" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: PowerShell doesn't have a native cmdlet that will give you processor information (such as get-processor or get-cpu). Knowing this information might be necessary. What command would give you information about the system's processor? -   Get-CimInstance -ClassName Win32_Processor
+### 25: PowerShell doesn't have a native cmdlet that will give you processor information (such as get-processor or get-cpu). Knowing this information might be necessary. What command would give you information about the system's processor? - ``` Get-CimInstance -ClassName Win32_Processor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: What PowerShell command will read a text file? -   Get-Content
+### 26: What PowerShell command will read a text file? - ``` Get-Content ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: What PowerShell command will allow for counting lines in a file, averaging numbers, and summing numbers? -   Measure-Object
+### 27: What PowerShell command will allow for counting lines in a file, averaging numbers, and summing numbers? - ``` Measure-Object ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: What PowerShell command searches for text patterns in a string? -   Select-String
+### 28: What PowerShell command searches for text patterns in a string? - ``` Select-String ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: Users' files are stored in their corresponding home directory. What is the literal path to all home directories on a Windows 10 system? -   C:\Users
+### 29: Users' files are stored in their corresponding home directory. What is the literal path to all home directories on a Windows 10 system? - ``` C:\Users ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: How many properties are available for the get-process cmdlet? -   52
+### 30: How many properties are available for the get-process cmdlet? - ``` 52 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: How many aliases does PowerShell have for listing the contents of a directory? - 3
+### 31: How many aliases does PowerShell have for listing the contents of a directory? - ``` 3 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32: When requesting the help file for the get-process cmdlet, what full command is the 9th example given? -    Get-Process Powershell
+### 32: When requesting the help file for the get-process cmdlet, what full command is the 9th example given? - ``` Get-Process Powershell ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33: To complete this challenge, find the description of the Lego Land service. -   i_love_legos
+### 33: To complete this challenge, find the description of the Lego Land service. - ``` i_love_legos ```
 
-Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
+> Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. -   5254
+### 34: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. - ``` 5254 ```
 
-Get-Content words2.txt | Measure-Object -Word
+> Get-Content words2.txt | Measure-Object -Word
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: Count the number of files in the Videos folder in the CTF user's home directory. -   925
+### 35: Count the number of files in the Videos folder in the CTF user's home directory. - ``` 925 ```
 
-(Get-ChildItem | Measure-Object).count
+> (Get-ChildItem | Measure-Object).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: Find the only line that makes the two files in the CTF user's Downloads folder different. -   popeye
+### 36: Find the only line that makes the two files in the CTF user's Downloads folder different. - ``` popeye ```
 
-Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
+> Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. -   ZzZp
+### 37: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. - ``` ZzZp ```
 
-Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
+> Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38: Count the number of unique words in words.txt -   456976
+### 38: Count the number of unique words in words.txt - ``` 456976 ```
 
-(Get-Content words.txt | Sort-Object | Get-Unique).count
+> (Get-Content words.txt | Sort-Object | Get-Unique).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 39: How many methods are available for the get-process cmdlet? -   19
+### 39: How many methods are available for the get-process cmdlet? - ``` 19 ```
 
-(Get-Process | Get-Member -membertype method).count
+> (Get-Process | Get-Member -membertype method).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 40: Count the number of folders in the Music folder in the CTF user’s profile. -   411
+### 40: Count the number of folders in the Music folder in the CTF user’s profile. - ``` 411 ```
 
-(Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
+> (Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 41: Count the number of times, case-insensitive, gaab is listed in words.txt -   1
+### 41: Count the number of times, case-insensitive, gaab is listed in words.txt - ``` 1 ```
 
-(Get-Content words.txt | select-string -allmatches "gaab").count
+> (Get-Content words.txt | select-string -allmatches "gaab").count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 42: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file -   160352
+### 42: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file - ``` 160352 ```
 
-(Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
+> (Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 43: Count the number of lines, case-insensitive, that az appears in the words.txt file -   2754
+### 43: Count the number of lines, case-insensitive, that az appears in the words.txt file - ``` 2754 ```
 
-(Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
+> (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   kung-fu
+### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
 
-mkdir Extracted
+> mkdir Extracted
 
 ```
 $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
 ```
 
-cd Extracted
+> cd Extracted
 
-Expand-Archive Omega1.zip
+> Expand-Archive Omega1.zip
 
-cd Omega1
+> cd Omega1
 
-Expand-Archive Omega1.zip
+> Expand-Archive Omega1.zip
 
-cd Omega1
+> cd Omega1
 
-type Omega1.txt
+> type Omega1.txt
 
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 45: Count the number of words in words.txt that meet the following criteria: -     357
+### 45: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
 
 a appears at least twice consecutively
 
@@ -171,7 +171,7 @@ Note: File Location - C:\Users\CTF\Desktop\CTF
 
 Example: aac...aaa...
 
-(Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
+> (Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 
 
