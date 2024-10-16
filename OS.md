@@ -129,7 +129,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   ???
 
-
+1..1000 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory('C:\Users\CTF\Omega1000.zip', 'C:\Users\CTF\Extracted'); Get-ChildItem 'C:\Users\CTF\Extracted' -File | ForEach-Object { Write-Host "Contents of $($_.FullName):"; Get-Content $_.FullName -ErrorAction SilentlyContinue } }
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 45: Count the number of words in words.txt that meet the following criteria: -     357
 
