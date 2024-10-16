@@ -127,9 +127,23 @@ ________________________________________________________________________________
 
 (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   ???
+### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   kung-fu
 
-1..1000 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory('C:\Users\CTF\Omega1000.zip', 'C:\Users\CTF\Extracted'); Get-ChildItem 'C:\Users\CTF\Extracted' -File | ForEach-Object { Write-Host "Contents of $($_.FullName):"; Get-Content $_.FullName -ErrorAction SilentlyContinue } }
+1: mkdir Extracted
+
+2: $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
+
+3: cd Extracted
+
+4: Expand-Archive Omega1.zip
+
+5: cd Omega1
+
+6: Expand-Archive Omega1.zip
+
+7: cd Omega1
+
+8: type Omega1.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 45: Count the number of words in words.txt that meet the following criteria: -     357
 
