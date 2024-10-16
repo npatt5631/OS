@@ -117,13 +117,51 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 41: Count the number of times, case-insensitive, gaab is listed in words.txt -   1
 
-(Get-Content words.txt |  select-string -allmatches "gaab").count
+(Get-Content words.txt | select-string -allmatches "gaab").count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 42: 
+### 42: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file -   160352
+
+(Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 43: 
+### 43: Count the number of lines, case-insensitive, that az appears in the words.txt file -   2754
+
+(Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44: 
+### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   ???
+
+- Load the assembly for ZIP file handling
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+- Define the file paths
+$zipFilePath = "C:\path\to\Omega.zip"
+$extractionPath = "C:\path\to\extracted"
+
+- Create the extraction directory if it doesn't exist
+if (-not (Test-Path $extractionPath)) {
+    New-Item -ItemType Directory -Path $extractionPath
+}
+
+- Loop to unzip the file 1,000 times
+for ($i = 1; $i -le 1000; $i++) {
+    - Unzip the file
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipFilePath, $extractionPath)
+
+    - Check for the existence of the extracted file(s)
+    $extractedFiles = Get-ChildItem -Path $extractionPath
+    foreach ($file in $extractedFiles) {
+        - Read the content of the file
+        if ($file.PSIsContainer) {
+            continue  - Skip directories
+        }
+        
+        - Output the file name and content
+        Write-Host "Contents of $($file.FullName):"
+        Get-Content $file.FullName
+    }
+
+    - Update the zip file path to the newly extracted file, assuming it's a new zip
+    $zipFilePath = Join-Path -Path $extractionPath -ChildPath (Get-ChildItem -Path $extractionPath -Filter "*.zip" | Select-Object -First 1).Name
+}
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 45: 
 ______________________________________________________________________________________________________________________________________________________________________________________
