@@ -91,19 +91,33 @@ ________________________________________________________________________________
 
 Get-Content words2.txt | Measure-Object -Word
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: Count the number of files in the Videos folder in the CTF user's home directory. -   
+### 35: Count the number of files in the Videos folder in the CTF user's home directory. -   925
+
+(Get-ChildItem | Measure-Object).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: 
+### 36: Find the only line that makes the two files in the CTF user's Downloads folder different. -   popeye
+
+Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37: 
+### 37: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. -   ZzZp
+
+Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38: 
+### 38: Count the number of unique words in words.txt -   456976
+
+(Get-Content words.txt | Sort-Object | Get-Unique).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 39: 
+### 39: How many methods are available for the get-process cmdlet? -   19
+
+(Get-Process | Get-Member -membertype method).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 40: 
+### 40: Count the number of folders in the Music folder in the CTF user’s profile. -   411
+
+(Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 41: 
+### 41: Count the number of times, case-insensitive, gaab is listed in words.txt -   1
+
+(Get-Content words.txt |  select-string -allmatches "gaab").count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 42: 
 ______________________________________________________________________________________________________________________________________________________________________________________
