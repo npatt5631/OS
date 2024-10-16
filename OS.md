@@ -186,21 +186,21 @@ ________________________________________________________________________________
 
 # 02_windows_powershell_profiles 
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Which PowerShell profile has the lowest precedence? -   Current User, Current Host
+### 1: Which PowerShell profile has the lowest precedence? - ``` Current User, Current Host ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Which PowerShell profile has the highest precedence? -   All Users, All Hosts
+### 2: Which PowerShell profile has the highest precedence? - ``` All Users, All Hosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Which PowerShell variable stores the current user’s home directory? -   $Home
+### 3: Which PowerShell variable stores the current user’s home directory? - ``` $Home ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Which PowerShell variable stores the installation directory for PowerShell? -   $PsHome
+### 4: Which PowerShell variable stores the installation directory for PowerShell? - ``` $PsHome ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Which PowerShell variable stores the path to the "Current User, Current Host" profile? -   $Profile
+### 5: Which PowerShell variable stores the path to the "Current User, Current Host" profile? - ``` $Profile ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What command would you run to view the help for PowerShell Profiles? -   Get-Help about_profiles
+### 6: What command would you run to view the help for PowerShell Profiles? - ``` Get-Help about_profiles ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: What command would tell you if there was a profile loaded for All Users All Hosts? -   Test-Path -Path $PROFILE.AllUsersAllHosts
+### 7: What command would tell you if there was a profile loaded for All Users All Hosts? - ``` Test-Path -Path $PROFILE.AllUsersAllHosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Malware is running on the primary PowerShell profile on the File-Server. Based on PowerShell profile order of precedence (what is read first), find the correct flag. -   I am definitely not the malware
+### 8: Malware is running on the primary PowerShell profile on the File-Server. Based on PowerShell profile order of precedence (what is read first), find the correct flag. - ``` I am definitely not the malware ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 
 
