@@ -129,41 +129,17 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. -   ???
 
-- Load the assembly for ZIP file handling
-Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-- Define the file paths
-$zipFilePath = "C:\path\to\Omega.zip"
-$extractionPath = "C:\path\to\extracted"
-
-- Create the extraction directory if it doesn't exist
-if (-not (Test-Path $extractionPath)) {
-    New-Item -ItemType Directory -Path $extractionPath
-}
-
-- Loop to unzip the file 1,000 times
-for ($i = 1; $i -le 1000; $i++) {
-    - Unzip the file
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipFilePath, $extractionPath)
-
-    - Check for the existence of the extracted file(s)
-    $extractedFiles = Get-ChildItem -Path $extractionPath
-    foreach ($file in $extractedFiles) {
-        - Read the content of the file
-        if ($file.PSIsContainer) {
-            continue  - Skip directories
-        }
-        
-        - Output the file name and content
-        Write-Host "Contents of $($file.FullName):"
-        Get-Content $file.FullName
-    }
-
-    - Update the zip file path to the newly extracted file, assuming it's a new zip
-    $zipFilePath = Join-Path -Path $extractionPath -ChildPath (Get-ChildItem -Path $extractionPath -Filter "*.zip" | Select-Object -First 1).Name
-}
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 45: 
-______________________________________________________________________________________________________________________________________________________________________________________
-### 46: 
+### 45: Count the number of words in words.txt that meet the following criteria: -     357
+
+a appears at least twice consecutively
+
+and is followed immediately by any of the letters a through g
+
+Note: File Location - C:\Users\CTF\Desktop\CTF
+
+Example: aac...aaa...
+
+(Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
