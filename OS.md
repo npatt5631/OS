@@ -472,75 +472,79 @@ ________________________________________________________________________________
 # |
 # 07_windows_boot_process
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1:  - ```  ```
+### 1: What is the smallest addressable unit on a hard disk? - ``` Sector ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2:  - ```  ```
+### 2: What term describes a logical division of a single storage device? - ``` Partition ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3:  - ```  ```
+### 3: What term describes a formatted storage device that can span 1 or more partitions, has a single file system and is assigned a drive letter? - ``` Volume ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4:  - ```  ```
+### 4: What CLI disk partitioning tool is available in Windows to view and manipulate both partitions and volumes? - ``` Diskpart ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5:  - ```  ```
+### 5: Windows includes 4 critical Kernel-mode components. Which component is a matched pair with the kernel and obfuscates the hardware dependencies from the kernel? - ``` HAL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6:  - ```  ```
+### 6: Windows includes 4 critical Kernel-mode components. Which component directs calls from a user-mode process to the kernel services? - ``` Executive ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7:  - ```  ```
+### 7: This provides an operating system with a software interface to a hardware device. - ``` Driver ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8:  - ```  ```
+### 8: What are the two firmware interfaces supported by modern computers and read in the Pre-boot phase of the Windows boot process? - ``` UEFI and BIOS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9:  - ```  ```
+### 9: What is the name of the process that spawns SYSTEM? - ``` ntoskrnl.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10:  - ```  ```
+### 10: In Windows what does the boot sector code load into memory? - ``` bootmgr and winload.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11:  - ```  ```
+### 11: In Windows 10 what is the name of the boot manager? - ``` bootmgr ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12:  - ```  ```
+### 12: In Microsoft Vista and later the boot.ini file was replaced by what? - ``` BCD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13:  - ```  ```
+### 13: What is the tamper-resistant processor mounted on the motherboard used to improve the security of your PC. It's used by services like BitLocker drive encryption and Windows Hello to securely create and store cryptographic keys, and to confirm that the operating system and firmware on your device are what they're supposed to be, and haven't been tampered with. - ``` TPM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14:  - ```  ```
+### 14: During the Windows boot process, what starts BOOT_START device drivers and services with value of 0x0 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Winload.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15:  - ```  ```
+### 15: During the Windows boot process, what starts SYSTEM_START device drivers and services with hex value of 0x1 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Ntoskrnl.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16:  - ```  ```
+### 16: During the Windows boot process, services.exe starts device drivers and services on demand with what hex value in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` 0x2 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17:  - ```  ```
+### 17: Starting in Windows Vista, what process spawns two additional instances (with identical names), used to initiate session 0 and session 1? - ``` smss.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18:  - ```  ```
+### 18: Which Windows Vista user session is non-interactive, contains system services and processes and is isolated from the GDI (Graphical Device Interface). - ``` Session 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19:  - ```  ```
+### 19: What is the boot process security feature available in UEFI systems, that only allows verified drivers to load? - ``` Secure Boot ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20:  - ```  ```
+### 20: To make booting faster, starting with Windows 8, the OS does a partial ________ of the kernel session at shutdown? - ``` Hibernation ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21:  - ```  ```
+### 21: What registry key is responsible for starting services on your machine during the boot process? Flag is the full registry path. - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNSERVICES ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22:  - ```  ```
+### 22: When a user logs on to a Windows host, authentication will either grant the user access to the local computer only (Local Logon) or the user will also be granted access to a Windows domain (Domain Logon). Which logon will the user be authenticated to via the Security Accounts Manager (SAM) database? - ``` Local Logon ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23:  - ```  ```
+### 23: What is the parent process of explorer.exe? - ``` userinit.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24:  - ```  ```
+### 24: What is responsible for handling Windows SAS (secure attention sequence), user profile loading, assignment of security to user shell, and Windows station and desktop protection? - ``` winlogon.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25:  - ```  ```
+### 25: What critical Windows process is initialized by wininit.exe, is responsible for creating the user's security access token and verifying user logon credentials? - ``` lsass.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26:  - ```  ```
+### 26: What Microsoft recovery option overwrites the registry key HKLM\System\Select after every successful logon? - ``` Last known good configuration ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27:  - ```  ```
+### 27: What authentication protocol is the default for logging onto an Active Directory domain and features SSO (Single-Sign On), mutual authentication and primarily uses symmetric cryptography? - ``` Kerberos ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28:  - ```  ```
+### 28: In Kerberos the Active Directory controller serves as which major Kerberos component consisting of the Authentication Service (AS) and the Ticket Granting Service (TGS). - ``` Key Distribution Center ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29:  - ```  ```
+### 29: When would the following Windows registry keys, actions occur? HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify - ``` Logon ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30:  - ```  ```
+### 30: The Windows NT Operating System attempts to combine features and benefits of microkernel and monolithic kernel architectures, making it which type of kernel architecture? - ``` Hybrid ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31:  - ```  ```
+### 31: The Linux kernel is an example of what type of kernel architecture? - ``` Monolithic ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32:  - ```  ```
+### 32: Windows operating system name typically differs from its version number. Which Windows version includes Windows 7 and Windows Server 2008R2 and was the 1st version to ship with PowerShell? - ``` 6.1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33:  - ```  ```
+### 33: Which Windows version includes Windows Server 2016, 2019, 2022, Windows 10 & 11 and includes SMB 3.1.1 support? - ``` 10 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34:  - ```  ```
+### 34: The CMD.EXE tool systeminfo included in Windows is very similar to msinfo32 and displays operating system configuration version information for a local or remote machine, including service pack levels. - ``` systeminfo | findstr /C:"OS Version" /C:"BIOS Version" ```
+
+Craft a systeminfo command that only returns the below info:
+OS Version: "System OS and Build #"
+BIOS Version: "Your BIOS Ver"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35:  - ```  ```
+### 35: What is the first process to spawn on Windows systems after the kernel loads? - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 36:  - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
