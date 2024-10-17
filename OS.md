@@ -322,19 +322,19 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
 
-> reg query hklm\software\microsoft\windows\currentversion\run
+> reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
 
-> reg query hkcu\software\microsoft\windows\currentversion\run
+> reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
 
-> reg query HKLM:\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
+> reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
 
-> reg query hkcu\software\microsoft\windows\currentversion\runonce
+> reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
 
