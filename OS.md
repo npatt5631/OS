@@ -321,14 +321,24 @@ ________________________________________________________________________________
 ### 20: What registry subkey runs a single time, then deletes its value when a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
+
+> reg query hklm\software\microsoft\windows\currentversion\run
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
+
+> reg query hkcu\software\microsoft\windows\currentversion\run
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
+
+> reg query HKLM:\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
+
+> reg query hkcu\software\microsoft\windows\currentversion\runonce
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25:  - ```  ```
+### 25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
+
+> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26:  - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
