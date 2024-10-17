@@ -441,11 +441,29 @@ ________________________________________________________________________________
 
 > Get-Content .\spaces.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ```  ```
+### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
+
+> Get-ChildItem -Path "C:\Users\CTF\" -Recurse -File
+
+> cmd /c dir /R | findstr /C:":"
+
+> Get-Content .\nothing_here -Stream hidden
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30:  - ```  ```
+### 30: "Fortune cookies" have been left around the system so that you won't find the hidden password... - ``` fortune_cookie ```
+
+> Get-ChildItem -Path "C:\*fortune*" -Recurse
+
+> cmd /c dir /R | findstr /C:":"
+
+> Get-Content '.\The Fortune Cookie' -Stream none
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31:  - ```  ```
+### 31: There are plenty of phish in the C:\Users\CTF, but sometimes they're hidden in plain site. - ``` phi5hy ```
+
+Goto C:\Users\CTF look for anything phishy related to site(WWW).
+
+> Get-ChildItem -Force
+
+> Get-Content -Force .\200
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
