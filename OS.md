@@ -340,9 +340,13 @@ ________________________________________________________________________________
 
 > reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26:  - ```  ```
+### 26: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
+
+> Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*' | Select-Object -Property PSChildName, ProfileImagePath
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27:  - ```  ```
+### 27: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
+
+> reg query "HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\NETWORKLIST\PROFILES\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
