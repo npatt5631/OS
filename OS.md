@@ -406,8 +406,11 @@ ________________________________________________________________________________
 ### 25: Find the last five characters of the MD5 hash of the hosts file. - ``` 7566D ```
 
 > $hostsFilePath = "C:\Windows\System32\drivers\etc\hosts"
+
 > $md5Hash = Get-FileHash -Path $hostsFilePath -Algorithm MD5
+
 > $lastFiveChars = if ($md5Hash.Hash.Length -ge 5) { $md5Hash.Hash.Substring($md5Hash.Hash.Length - 5) } else { "Hash too short" }
+
 > $lastFiveChars
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26:  - ```  ```
