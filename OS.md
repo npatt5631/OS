@@ -582,11 +582,11 @@ ________________________________________________________________________________
 
 > shutdown -a    #run until it aborts the shutdown
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 49: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ```  ```
+### 49: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 50: Run PowerShell... if you can. Resolve PowerShell dependencies. - ```  ```
+### 50: Run PowerShell... if you can. Resolve PowerShell dependencies. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 51: Once you fix and launch PowerShell, the console is changed to a custom layout. Figure out what file is causing this, read the file, and inspect the file that it is referencing. - ```  ```
+### 51: Once you fix and launch PowerShell, the console is changed to a custom layout. Figure out what file is causing this, read the file, and inspect the file that it is referencing. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -719,21 +719,21 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 28: Find the McAfeeFireTray.exe. There is a file in that directory. The flag is inside. - ``` StrongBad ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ```  ```
+### 29: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ```  ```
+### 30: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: In what Load Order Group is the Windows Firewall service? - ```  ```
+### 31: In what Load Order Group is the Windows Firewall service? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ```  ```
+### 32: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33: While examining the Windows Defender Firewall, what is the LogAllowedConnections setting set to, for the Public profile? - ```  ```
+### 33: While examining the Windows Defender Firewall, what is the LogAllowedConnections setting set to, for the Public profile? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34: A nonstandard port has been opened by possible malware on the system. Identify the port. - ```  ```
+### 34: A nonstandard port has been opened by possible malware on the system. Identify the port. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: Determine what mechanism opened the port from hidden_processes_7. The flag is the name of the file. - ```  ```
+### 35: Determine what mechanism opened the port from hidden_processes_7. The flag is the name of the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: Identify the flag from the file in hidden_processes_8. - ```  ```
+### 36: Identify the flag from the file in hidden_processes_8. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -767,9 +767,9 @@ ________________________________________________________________________________
 # |
 # 11_windows_services
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What command-line (cmd) command will show service information? - ``` sc querylast five characters  ```
+### 1: What command-line (cmd) command will show service information? - ``` sc query ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What command-line (cmd) command will show all services, running or not running? - ``` sc queryex type=service state=all ```
+### 2: What command-line (cmd) command will show all services, running or not running? - ``` sc query type=service state=all ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 3: What PowerShell command will list all services? - ``` Get-Service ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -837,61 +837,79 @@ ________________________________________________________________________________
 # |
 # 13_windows_auditing_and_logging
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1:  - ```  ```
+### 1: Logging, Auditing and Monitoring are often confused with each other but are distinctly different. Which term refers to real-time analysis and is often accomplished with a Security Event Information Management system (SIEM)? - ``` Monitoring ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2:  - ```  ```
+### 2: What term is most appropriate when referring to the process of reviewing log files or other records for specified period? - ``` Auditing ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3:  - ```  ```
+### 3: "Complete the following path to the Windows System Log which records system events e.g. startup and shutdown: %systemroot%\System32_______________ - ``` WinEvt\Logs\System.evtx ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4:  - ```  ```
+### 4: Which Windows log contains either success or failures and can be configured to record failed logon attempts? - ``` Security ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5:  - ```  ```
+### 5: "Which Windows account is the only account to have WRITE-APPEND access to Windows event logs?" - ``` SYSTEM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6:  - ```  ```
+### 6: What is parsed in an NTFS object's security descriptor, by the Security Reference Monitor (SRM), to determine if an audit entry will be created in the Windows Security Log? - ``` SACL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7:  - ```  ```
+### 7: Which registry key holds the audit policy configuration? - ``` HKLM\SECURITY\Policy\PolAdtEv ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8:  - ```  ```
+### 8: Which sysinternals tool is used to parse logs? - ``` PsLogList ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9:  - ```  ```
+### 9: What Sysinternals tool will allow you to read the SQLite3 database containing the web history of chrome? - ``` Strings ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10:  - ```  ```
+### 10: What is the registry location of recent docs for the current user? - ``` HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11:  - ```  ```
+### 11: BAM settings are stored in different registry locations based on the version of Windows 10. What version of Windows 10 is workstation2 running? The answer is the 4 digit Windows 10 release (version) number. - ``` 1803 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12:  - ```  ```
+### 12: Figure out the last access time of the hosts file. - ``` 08/14/2024 ```
+
+> (Get-Item "C:\Windows\System32\drivers\etc\hosts").LastAccessTime
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13:  - ```  ```
+### 13: What is the literal path of the prefetch directory? - ``` C:\Windows\Prefetch ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14:  - ```  ```
+### 14: In the Recycle Bin, there is a file that contains the actual contents of the recycled file. What are the first two characters of this filename? - ``` $R ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15:  - ```  ```
+### 15: In the Recycle Bin, there is a file that contains the original filename, path, file size, and when the file was deleted. What are the first two characters of this filename? - ``` $I ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16:  - ```  ```
+### 16: What are the first 8 characters of the Globally Unique Identifier (GUID) used to list applications found in the UserAssist registry key (Windows 7 and later)? - ``` CEBFF5CD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17:  - ```  ```
+### 17: What cipher method are UserAssist files encoded in? - ``` ROT13 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18:  - ```  ```
+### 18: What main Windows log would show invalid login attempts? - ``` Security ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19:  - ```  ```
+### 19: What main Windows log will show whether Windows updates were applied recently? - ``` System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20:  - ```  ```
+### 20: When reading logs, you may notice ... at the end of the line where the message is truncated. What format-table switch/argument will display the entire output? - ``` -wrap ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21:  - ```  ```
+### 21: Find the questionable website that a user browsed to (using Chrome), that appears to be malicious. *Note: There are more than one users on the box. - ``` https://www.exploit-db.com ```
+
+> get-content 'C:\users\student\AppData\Local\Google\Chrome\User Data\Default\History'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22:  - ```  ```
+### 22: There is a file that was recently opened that may contain PII. Get the flag from the contents of the file. - ``` Flag, Found A. ```
+
+> reg query hkcu\software\microsoft\windows\currentversion\explorer\recentdocs
+
+> get-item 'Registry::\HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.*' - [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."6")
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23:  - ```  ```
+### 23: Enter the full path of the program that was run on this computer from an abnormal location. - ``` C:\Windows\Temp\bad_intentions.exe ```
+
+> Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24:  - ```  ```
+### 24: Enter the name of the questionable file in the prefetch folder. - ``` DARK_FORCES-8F2869FC.pf ```
+
+> get-childitem -Path 'C:\Windows\Prefetch' -ErrorAction Continue
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25:  - ```  ```
+### 25: What is the creation time of the questionable file in the prefetch folder? - ``` 02/23/2022 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26:  - ```  ```
+### 26: Recover the flag from the Recycle Bin. Enter the name of the recycle bin file that contained the contents of the flag, and the contents of the deleted file. Include the file extension in your answer. - ``` $RZDAQ4U.txt,DontTrashMeyo ```
+
+> Get-Childitem 'C:\$RECYCLE.BIN' -Recurse -Verbose -Force | select FullName
+
+> get-content 'C:\$RECYCLE.BIN\S-1-5-21-2881336348-3190591231-4063445930-1003\$RZDAQ4U.txt'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27:  - ```  ```
+### 27: Find the file in the jump list location that might allow privilege escalation. - ``` ??? ```
+
+> Get-ItemProperty -Path "C:\Users\<Username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*" | Select-Object Name, LastWriteTime
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28:  - ```  ```
+### 28: Check event logs for a "flag" string. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
