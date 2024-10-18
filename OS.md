@@ -197,81 +197,121 @@ ________________________________________________________________________________
 # |
 # 04_linux_basics2
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1:  - ```  ```
+### 1: This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
+
+File: /home/garviel/NMAP_all_hosts.txt
+
+Format the file into the output displayed below using native Linux binaries like awk.
+
+Service: ident Count: 1
+==============================
+192.168.33.236
+
+Service: IIS Count: 3
+==============================
+192.168.33.205
+192.168.33.227
+192.168.33.229
+
+--TRIMMED--
+
+Present the script used to the instructor for credit when complete. Be prepared to explain the code.
+
+HINT: awk is a powerful text manipulation scripting language. It is a bit challenging to learn. Use the tutorials below to get started.
+
+Awk - A Tutorial and Introduction - by Bruce Barnett
+
+The GNU Awk User’s Guide
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2:  - ```  ```
+### 2: What command lists the contents of directories in Linux/Unix systems? - ``` ls ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3:  - ```  ```
+### 3: For the ls command, what arguments, or switch options, will allow you to print human-readable file sizes in a long-list format? - ``` ls -hl ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4:  - ```  ```
+### 4: What character will pipe the standard output from echo "I’m a plumber" to another command, as standard input? - ``` | ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5:  - ```  ```
+### 5: What argument/switch option, when used with man, will search the short descriptions and man-page-names for a keyword that you provide? - ``` man -k ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6:  - ```  ```
+### 6: What is the absolute path to the root directory? - ``` / ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7:  - ```  ```
+### 7: What is the absolute path to the default location for configuration files? - ``` /etc ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8:  - ```  ```
+### 8: What is the directory that contains executable programs (binaries) which are needed in single user mode, to bring the system up or to repair it? - ``` /bin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9:  - ```  ```
+### 9: What is the absolute path to the directory which contains non-essential binaries that are accessible by standard users as well as root? - ``` /usr/bin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10:  - ```  ```
+### 10: An absolute path to a directory which contains binaries only accessible by the root user, or users in the root group. - ``` /sbin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11:  - ```  ```
+### 11: What is the absolute path for the binary cat man-page? - ``` /usr/share/man/man1/cat.1.gz ```
+
+> man --path cat
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12:  - ```  ```
+### 12: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
+
+> man -k digest
+
+> echo "OneWayBestWay" | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13:  - ```  ```
+### 13: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
+
+        $ file Encrypted
+        $ unzip Encrypted
+        $ file cipher
+        $ file symmetric
+        $ cat cipher
+        $ cat symmetric
+            gives you the key & the Hashing Algoritm
+        $ openssl AES128 -d -in cipher
+            ^use the key that was enumerated from the symmetric file
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14:  - ```  ```
+### 14: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15:  - ```  ```
+### 15: Read the file that contains the user database for the machine. Identify a strange comment. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16:  - ```  ```
+### 16: Identify all members of the lodge group. List their names in alphabetical order with a comma in between each name. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17:  - ```  ```
+### 17: Find the user with a unique login shell. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18:  - ```  ```
+### 18: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19:  - ```  ```
+### 19: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20:  - ```  ```
+### 20: Identify the number of users with valid login shells, who can list the contents of the Bibliotheca directory. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21:  - ```  ```
+### 21: The permissions that user sejanus has on /media/Bibliotheca, in octal format. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22:  - ```  ```
+### 22: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23:  - ```  ```
+### 23: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24:  - ```  ```
+### 24: Execute the file owned by the guardsmen group in /media/Bibliotheca, as the owning user. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25:  - ```  ```
+### 25: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26:  - ```  ```
+### 26: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27:  - ```  ```
+### 27: Read a concealed file within /media/Bibliotheca - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28:  - ```  ```
+### 28: Find the warp and read its secrets for the flag. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29:  - ```  ```
+### 29: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30:  - ```  ```
+### 30: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31:  - ```  ```
+### 31: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32:  - ```  ```
+### 32: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33:  - ```  ```
+### 33: Use awk to print lines: >= 420 AND <=1337 - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34:  - ```  ```
+### 34: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35:  - ```  ```
+### 35: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36:  - ```  ```
+### 36: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37:  - ```  ```
+### 37: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38:  - ```  ```
+### 38: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
