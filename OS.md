@@ -1,13 +1,9 @@
-```
-https://os.cybbh.io/public
-```
-```
-https://cctc.cybbh.io/students
-```
+        https://os.cybbh.io/public
+
+        https://cctc.cybbh.io/students
 ______________________________________________________________________________________________________________________________________________________________________________________
-```
-http://10.50.22.129:8000/
-```
+        http://10.50.22.129:8000/
+
 ## MARO-M-007
 
 ## M24007 password
@@ -137,19 +133,12 @@ ________________________________________________________________________________
 ### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
 
         mkdir Extracted
-        
         $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
-        
         cd Extracted
-        
         Expand-Archive Omega1.zip
-        
         cd Omega1
-        
         Expand-Archive Omega1.zip
-        
         cd Omega1
-        
         type Omega1.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 45: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
@@ -244,9 +233,9 @@ ________________________________________________________________________________
         $ file symmetric
         $ cat cipher
         $ cat symmetric
-            gives you the key & the Hashing Algoritm
+            #gives you the key & the Hashing Algoritm
         $ openssl AES128 -d -in cipher
-            ^use the key that was enumerated from the symmetric file
+            #use the key that was enumerated from the symmetric file
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 14: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -457,39 +446,28 @@ ________________________________________________________________________________
 ### 25: Find the last five characters of the MD5 hash of the hosts file. - ``` 7566D ```
 
         $hostsFilePath = "C:\Windows\System32\drivers\etc\hosts"
-        
         $md5Hash = Get-FileHash -Path $hostsFilePath -Algorithm MD5
-        
         $lastFiveChars = if ($md5Hash.Hash.Length -ge 5) { $md5Hash.Hash.Substring($md5Hash.Hash.Length - 5) } else { "Hash too short" }
-        
         $lastFiveChars
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26: Examine the readme file somewhere in the CTF user’s home directory. - ``` 123456 ```
 
         cd c:\Users\CTF
-        
         Get-ChildItem -path readme* -Recurse -Force
-        
         cd .\Favorites\
-        
         Get-Content .\README
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 27: There is a hidden directory in the CTF user's home directory. The directory contains a file. Read the file. - ``` ketchup ```
 
         Get-ChildItem -path c:\users\ctf -hidden -Recurse -Force -directory
-
         cd secretsauce
-
         Get-Content saucey  
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 28: Find a file in a directory on the desktop with spaces in it. FLAG is the contents of the file - ``` 987654321 ```
 
         Get-ChildItem -Path . -Recurse | Where-Object { $_.Name -like '* *' }
-        
         cd C:\Users\CTF\Desktop
-        
         cd '.\z                          -                                                                          a\'
-
         Get-Content .\spaces.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
