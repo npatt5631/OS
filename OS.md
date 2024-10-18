@@ -541,7 +541,9 @@ ________________________________________________________________________________
 ### 34: The CMD.EXE tool systeminfo included in Windows is very similar to msinfo32 and displays operating system configuration version information for a local or remote machine, including service pack levels. - ``` systeminfo | findstr /C:"OS Version" /C:"BIOS Version" ```
 
 Craft a systeminfo command that only returns the below info:
+
 OS Version: "System OS and Build #"
+
 BIOS Version: "Your BIOS Ver"
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 35: What is the first process to spawn on Windows systems after the kernel loads? - ``` System ```
