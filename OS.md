@@ -1108,7 +1108,9 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 13: Find the expired accounts that aren't disabled. List the last names in Alphabetical Order, separated with a comma, and no space between. - ``` Krause,Page ```
 
-> Get-ADUser -Filter {Enabled -eq $true} -Properties AccountExpirationDate | Where-Object {$_.AccountExpirationDate -lt (get-date) -and $_.Enabled -ne $null} | select-object GivenName
+```
+Get-ADUser -Filter {Enabled -eq $true} -Properties AccountExpirationDate | Where-Object {$_.AccountExpirationDate -lt (get-date) -and $_.Enabled -ne $null} | select-object GivenName
+```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 14: Find the unprofessional email addresses. List the email's domain. - ``` ashleymadison.com ```
 
