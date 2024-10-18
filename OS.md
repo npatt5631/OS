@@ -248,55 +248,81 @@ ________________________________________________________________________________
         $ openssl AES128 -d -in cipher
             ^use the key that was enumerated from the symmetric file
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ```  ```
+### 14: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: Read the file that contains the user database for the machine. Identify a strange comment. - ```  ```
+### 15: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
+
+        $ cat /etc/passwd | cut -d: -f5-6 | sort
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: Identify all members of the lodge group. List their names in alphabetical order with a comma in between each name. - ```  ```
+### 16: Identify all members of the lodge group. List their names in alphabetical order with a comma in between each name. - ``` aximand,erebus,ezekyle,garviel,sejanus,tarik ```
+
+        $ cat /etc/group | grep "lodge"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: Find the user with a unique login shell. - ```  ```
+### 17: Find the user with a unique login shell. - ``` nobody ```
+
+        $ cat /etc/passwd | cut -d: -f7 | sort | uniq
+        $ cat /etc/passwd | grep "/bin/sh"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ```  ```
+### 18: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ```  ```
+### 19: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
+
+        $ find / -type d -name "Bibliotheca" 2>/dev/null
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: Identify the number of users with valid login shells, who can list the contents of the Bibliotheca directory. - ```  ```
+### 20: Identify the number of users with valid login shells, who can list the contents of the Bibliotheca directory. - ``` 15 ```
+
+        $ cd /media
+        $ ls -l
+        $ cat /etc/passwd | grep "sh"
+        $ cat /etc/passwd | grep "bash"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: The permissions that user sejanus has on /media/Bibliotheca, in octal format. - ```  ```
+### 21: The permissions that user sejanus has on /media/Bibliotheca, in octal format. - ``` 5 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ```  ```
+### 22: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ``` Codex_Astartes ```
+
+        $ cat /etc/group | grep "chapter"
+        $ cat /etc/group | grep "chapter"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ```  ```
+### 23: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ``` Codex_Imperium ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: Execute the file owned by the guardsmen group in /media/Bibliotheca, as the owning user. - ```  ```
+### 24: Execute the file owned by the guardsmen group in /media/Bibliotheca, as the owning user. - ``` GHOSTS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ```  ```
+### 25: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ``` execute ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ```  ```
+### 26: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: Read a concealed file within /media/Bibliotheca - ```  ```
+### 27: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: Find the warp and read its secrets for the flag. - ```  ```
+### 28: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ```  ```
+### 29: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
+
+        $ ls -l /etc | grep '^d.*\.d$'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ```  ```
+### 30: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ``` 78 ```
+
+        $ cat /home/garviel/numbers 
+        $ grep '^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ```  ```
+### 31: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ``` 18 ```
+
+         $ cat numbers | grep -oP '\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b' | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ```  ```
+### 32: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33: Use awk to print lines: >= 420 AND <=1337 - ```  ```
+### 33: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ```  ```
+### 34: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ```  ```
+### 35: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
+
+        $ awk 'NR>=420&&NR<=1337' /home/garviel/numbers | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ```  ```
+### 36: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ```  ```
+### 37: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ```  ```
+### 38: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
