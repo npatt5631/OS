@@ -201,19 +201,7 @@ ________________________________________________________________________________
 
 File: /home/garviel/NMAP_all_hosts.txt
 
-Format the file into the output displayed below using native Linux binaries like awk.
-
-Service: ident Count: 1
-==============================
-192.168.33.236
-
-Service: IIS Count: 3
-==============================
-192.168.33.205
-192.168.33.227
-192.168.33.229
-
---TRIMMED--
+Format the file into the output displayed below using native Linux binaries like awk
 
 Present the script used to the instructor for credit when complete. Be prepared to explain the code.
 
