@@ -92,80 +92,77 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 33: To complete this challenge, find the description of the Lego Land service. - ``` i_love_legos ```
 
-> Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
+        Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 34: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. - ``` 5254 ```
 
-> Get-Content words2.txt | Measure-Object -Word
+        Get-Content words2.txt | Measure-Object -Word
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 35: Count the number of files in the Videos folder in the CTF user's home directory. - ``` 925 ```
 
-> (Get-ChildItem | Measure-Object).count
+        (Get-ChildItem | Measure-Object).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 36: Find the only line that makes the two files in the CTF user's Downloads folder different. - ``` popeye ```
 
-> Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
+        Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 37: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. - ``` ZzZp ```
 
-> Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
+        Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 38: Count the number of unique words in words.txt - ``` 456976 ```
 
-> (Get-Content words.txt | Sort-Object | Get-Unique).count
+        (Get-Content words.txt | Sort-Object | Get-Unique).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 39: How many methods are available for the get-process cmdlet? - ``` 19 ```
 
-> (Get-Process | Get-Member -membertype method).count
+        (Get-Process | Get-Member -membertype method).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 40: Count the number of folders in the Music folder in the CTF user’s profile. - ``` 411 ```
 
-> (Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
+        (Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 41: Count the number of times, case-insensitive, gaab is listed in words.txt - ``` 1 ```
 
-> (Get-Content words.txt | select-string -allmatches "gaab").count
+        (Get-Content words.txt | select-string -allmatches "gaab").count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 42: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file - ``` 160352 ```
 
-> (Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
+        (Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 43: Count the number of lines, case-insensitive, that az appears in the words.txt file - ``` 2754 ```
 
-> (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
+        (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 44: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
 
-> mkdir Extracted
-
-```
-$zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
-```
-
-> cd Extracted
-
-> Expand-Archive Omega1.zip
-
-> cd Omega1
-
-> Expand-Archive Omega1.zip
-
-> cd Omega1
-
-> type Omega1.txt
-
+        mkdir Extracted
+        
+        $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
+        
+        cd Extracted
+        
+        Expand-Archive Omega1.zip
+        
+        cd Omega1
+        
+        Expand-Archive Omega1.zip
+        
+        cd Omega1
+        
+        type Omega1.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 45: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
 
-a appears at least twice consecutively
+#### a appears at least twice consecutively
 
-and is followed immediately by any of the letters a through g
+#### and is followed immediately by any of the letters a through g
 
-Note: File Location - C:\Users\CTF\Desktop\CTF
+#### Note: File Location - C:\Users\CTF\Desktop\CTF
 
-Example: aac...aaa...
+#### Example: aac...aaa...
 
-> (Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
+        (Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -231,13 +228,13 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 11: What is the absolute path for the binary cat man-page? - ``` /usr/share/man/man1/cat.1.gz ```
 
-> man --path cat
+        man --path cat
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 12: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
 
-> man -k digest
+        man -k digest
 
-> echo "OneWayBestWay" | sha512sum
+        echo "OneWayBestWay" | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 13: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
 
@@ -350,31 +347,31 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
 
-> reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
+        reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
 
-> reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
+        reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
 
-> reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
+        reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
 
-> reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
+        reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
 
-> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
+        reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
 
-> Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*' | Select-Object -Property PSChildName, ProfileImagePath
+        Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*' | Select-Object -Property PSChildName, ProfileImagePath
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 27: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
 
-> reg query "HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\NETWORKLIST\PROFILES\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
+        reg query "HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\NETWORKLIST\PROFILES\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -433,65 +430,65 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 25: Find the last five characters of the MD5 hash of the hosts file. - ``` 7566D ```
 
-> $hostsFilePath = "C:\Windows\System32\drivers\etc\hosts"
-
-> $md5Hash = Get-FileHash -Path $hostsFilePath -Algorithm MD5
-
-> $lastFiveChars = if ($md5Hash.Hash.Length -ge 5) { $md5Hash.Hash.Substring($md5Hash.Hash.Length - 5) } else { "Hash too short" }
-
-> $lastFiveChars
+        $hostsFilePath = "C:\Windows\System32\drivers\etc\hosts"
+        
+        $md5Hash = Get-FileHash -Path $hostsFilePath -Algorithm MD5
+        
+        $lastFiveChars = if ($md5Hash.Hash.Length -ge 5) { $md5Hash.Hash.Substring($md5Hash.Hash.Length - 5) } else { "Hash too short" }
+        
+        $lastFiveChars
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26: Examine the readme file somewhere in the CTF user’s home directory. - ``` 123456 ```
 
-> cd c:\Users\CTF
-
-> Get-ChildItem -path readme* -Recurse -Force
-
-> cd .\Favorites\
-
-> Get-Content .\README
+        cd c:\Users\CTF
+        
+        Get-ChildItem -path readme* -Recurse -Force
+        
+        cd .\Favorites\
+        
+        Get-Content .\README
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 27: There is a hidden directory in the CTF user's home directory. The directory contains a file. Read the file. - ``` ketchup ```
 
-> Get-ChildItem -path c:\users\ctf -hidden -Recurse -Force -directory
+        Get-ChildItem -path c:\users\ctf -hidden -Recurse -Force -directory
 
-> cd secretsauce
+        cd secretsauce
 
-> Get-Content saucey  
+        Get-Content saucey  
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 28: Find a file in a directory on the desktop with spaces in it. FLAG is the contents of the file - ``` 987654321 ```
 
-> Get-ChildItem -Path . -Recurse | Where-Object { $_.Name -like '* *' }
+        Get-ChildItem -Path . -Recurse | Where-Object { $_.Name -like '* *' }
+        
+        cd C:\Users\CTF\Desktop
+        
+        cd '.\z                          -                                                                          a\'
 
-> cd C:\Users\CTF\Desktop
-
-> cd '.\z                          -                                                                          a\'
-
-> Get-Content .\spaces.txt
+        Get-Content .\spaces.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
 
-> Get-ChildItem -Path "C:\Users\CTF\" -Recurse -File
-
-> cmd /c dir /R | findstr /C:":"
-
-> Get-Content .\nothing_here -Stream hidden
+        Get-ChildItem -Path "C:\Users\CTF\" -Recurse -File
+        
+        cmd /c dir /R | findstr /C:":"
+        
+        Get-Content .\nothing_here -Stream hidden
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 30: "Fortune cookies" have been left around the system so that you won't find the hidden password... - ``` fortune_cookie ```
 
-> Get-ChildItem -Path "C:\*fortune*" -Recurse
-
-> cmd /c dir /R | findstr /C:":"
-
-> Get-Content '.\The Fortune Cookie' -Stream none
+        Get-ChildItem -Path "C:\*fortune*" -Recurse
+        
+        cmd /c dir /R | findstr /C:":"
+        
+        Get-Content '.\The Fortune Cookie' -Stream none
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 31: There are plenty of phish in the C:\Users\CTF, but sometimes they're hidden in plain site. - ``` phi5hy ```
 
-Goto C:\Users\CTF look for anything phishy related to site(WWW).
+#### Goto C:\Users\CTF look for anything phishy related to site(WWW).
 
-> Get-ChildItem -Force
-
-> Get-Content -Force .\200
+        Get-ChildItem -Force
+        
+        Get-Content -Force .\200
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -600,15 +597,15 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 47: The system is booting into safe mode. Identify the flag from the command-line output of the command used to diagnose boot issues. - ``` 1RF5Zgf9P ```
 
-> bcdedit
+        bcdedit
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 48: The system is booting into safe mode. Correct that, and reboot into the desktop. The flag is on the desktop. - ``` 76Drp6hB ```
 
-> bcdedit /deletevalue {default} safeboot
-
-> shutdown /r
-
-> shutdown -a    #run until it aborts the shutdown
+        bcdedit /deletevalue {default} safeboot
+        
+        shutdown /r
+        
+        shutdown -a    #run until it aborts the shutdown
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 49: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -680,20 +677,20 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 1: What is the full path to folder used when Windows redirects 32 bit applications running on a 64bit system? - ``` C:\Windows\SysWOW64 ```
 
-> reg query 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList'
+        reg query 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList'
 
-Primer_Process(1) 
+        Primer_Process(1) 
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 2: What Windows System Service starts the kernel and user mode subsystems? - ``` smss.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 3: What Windows system process: - ``` lsass.exe ```
 
-> Runs in session 0
-> is responsible for enforcing the security policy on the system
-> Performs all logon functions
-> Handles password changes
-> Creates access tokens
-> Writes to the Windows Security Log
+#### Runs in session 0
+#### is responsible for enforcing the security policy on the system
+#### Performs all logon functions
+#### Handles password changes
+#### Creates access tokens
+#### Writes to the Windows Security Log
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 4: Which is spoolsv.exe? - ``` User-mode Service ```
 ______________________________________________________________________________________________________________________________________________________________________________________
