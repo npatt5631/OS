@@ -222,7 +222,6 @@ ________________________________________________________________________________
 ### 12: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
 
         man -k digest
-
         echo "OneWayBestWay" | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 13: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
@@ -473,17 +472,13 @@ ________________________________________________________________________________
 ### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
 
         Get-ChildItem -Path "C:\Users\CTF\" -Recurse -File
-        
         cmd /c dir /R | findstr /C:":"
-        
         Get-Content .\nothing_here -Stream hidden
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 30: "Fortune cookies" have been left around the system so that you won't find the hidden password... - ``` fortune_cookie ```
 
         Get-ChildItem -Path "C:\*fortune*" -Recurse
-        
         cmd /c dir /R | findstr /C:":"
-        
         Get-Content '.\The Fortune Cookie' -Stream none
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 31: There are plenty of phish in the C:\Users\CTF, but sometimes they're hidden in plain site. - ``` phi5hy ```
@@ -491,7 +486,6 @@ ________________________________________________________________________________
 #### Goto C:\Users\CTF look for anything phishy related to site(WWW).
 
         Get-ChildItem -Force
-        
         Get-Content -Force .\200
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
@@ -606,9 +600,7 @@ ________________________________________________________________________________
 ### 48: The system is booting into safe mode. Correct that, and reboot into the desktop. The flag is on the desktop. - ``` 76Drp6hB ```
 
         bcdedit /deletevalue {default} safeboot
-        
         shutdown /r
-        
         shutdown -a    #run until it aborts the shutdown
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 49: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ``` ??? ```
@@ -682,7 +674,6 @@ ________________________________________________________________________________
 ### 1: What is the full path to folder used when Windows redirects 32 bit applications running on a 64bit system? - ``` C:\Windows\SysWOW64 ```
 
         reg query 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList'
-
         Primer_Process(1) 
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 2: What Windows System Service starts the kernel and user mode subsystems? - ``` smss.exe ```
@@ -740,7 +731,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 25: Determine what is sending out a SYN_SENT message. The flag is the name of the executable. - ``` McAfeeFireTray.exe ```
 
-> Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-1584283910-3275287195-1754958050-1005'
+        Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-1584283910-3275287195-1754958050-1005'
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -783,7 +774,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 6: Determine which UAC subkey property shows whether UAC is enabled or not. The flag is the data value in that property. - ``` 0x1337 ```
 
-> Reg Query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+        Reg Query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 7: Provide the name of the UAC [Registry subkey] property that determines what level UAC is set to for admin privileges (Example UAC levels: Default, Always, Notify). - ``` ConsentPromptBehaviorAdmin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -808,13 +799,12 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 6: Services have a name and display name, which could be different. What is the service name of the only Totally-Legit service? - ``` Legit ```
 
-> get-services
-   
-> get-service Totally-Legit | Format-list *
+        get-services
+        get-service Totally-Legit | Format-list *
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 7: Figure out the SID of the only Totally-Legit service. - ``` 1182961511 ```
 
-> sc showsid Legit
+        sc showsid Legit
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -890,7 +880,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 12: Figure out the last access time of the hosts file. - ``` 08/14/2024 ```
 
-> (Get-Item "C:\Windows\System32\drivers\etc\hosts").LastAccessTime
+        (Get-Item "C:\Windows\System32\drivers\etc\hosts").LastAccessTime
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 13: What is the literal path of the prefetch directory? - ``` C:\Windows\Prefetch ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -910,33 +900,31 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 21: Find the questionable website that a user browsed to (using Chrome), that appears to be malicious. *Note: There are more than one users on the box. - ``` https://www.exploit-db.com ```
 
-> get-content 'C:\users\student\AppData\Local\Google\Chrome\User Data\Default\History'
+        get-content 'C:\users\student\AppData\Local\Google\Chrome\User Data\Default\History'
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 22: There is a file that was recently opened that may contain PII. Get the flag from the contents of the file. - ``` Flag, Found A. ```
 
-> reg query hkcu\software\microsoft\windows\currentversion\explorer\recentdocs
-
-> get-item 'Registry::\HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.*' - [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."6")
+        reg query hkcu\software\microsoft\windows\currentversion\explorer\recentdocs
+        get-item 'Registry::\HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.*' - [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."6")
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 23: Enter the full path of the program that was run on this computer from an abnormal location. - ``` C:\Windows\Temp\bad_intentions.exe ```
 
-> Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*
+        Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 24: Enter the name of the questionable file in the prefetch folder. - ``` DARK_FORCES-8F2869FC.pf ```
 
-> get-childitem -Path 'C:\Windows\Prefetch' -ErrorAction Continue
+        get-childitem -Path 'C:\Windows\Prefetch' -ErrorAction Continue
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 25: What is the creation time of the questionable file in the prefetch folder? - ``` 02/23/2022 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 26: Recover the flag from the Recycle Bin. Enter the name of the recycle bin file that contained the contents of the flag, and the contents of the deleted file. Include the file extension in your answer. - ``` $RZDAQ4U.txt,DontTrashMeyo ```
 
-> Get-Childitem 'C:\$RECYCLE.BIN' -Recurse -Verbose -Force | select FullName
-
-> get-content 'C:\$RECYCLE.BIN\S-1-5-21-2881336348-3190591231-4063445930-1003\$RZDAQ4U.txt'
+        Get-Childitem 'C:\$RECYCLE.BIN' -Recurse -Verbose -Force | select FullName
+        get-content 'C:\$RECYCLE.BIN\S-1-5-21-2881336348-3190591231-4063445930-1003\$RZDAQ4U.txt'
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 27: Find the file in the jump list location that might allow privilege escalation. - ``` ??? ```
 
-> Get-ItemProperty -Path "C:\Users\<Username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*" | Select-Object Name, LastWriteTime
+        Get-ItemProperty -Path "C:\Users\<Username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*" | Select-Object Name, LastWriteTime
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 28: Check event logs for a "flag" string. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -1137,33 +1125,29 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 13: Find the expired accounts that aren't disabled. List the last names in Alphabetical Order, separated with a comma, and no space between. - ``` Krause,Page ```
 
-```
-Get-ADUser -Filter {Enabled -eq $true} -Properties AccountExpirationDate | Where-Object {$_.AccountExpirationDate -lt (get-date) -and $_.Enabled -ne $null} | select-object GivenName
-```
+        Get-ADUser -Filter {Enabled -eq $true} -Properties AccountExpirationDate | Where-Object {$_.AccountExpirationDate -lt (get-date) -and $_.Enabled -ne $null} | select-object GivenName
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 14: Find the unprofessional email addresses. List the email's domain. - ``` ashleymadison.com ```
 
-> get-aduser -filter * -properties EmailAddress | where-object {$_.emailaddress -notlike "*mail.mil"} | select-object EmailAddress
+        get-aduser -filter * -properties EmailAddress | where-object {$_.emailaddress -notlike "*mail.mil"} | select-object EmailAddress
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 15: The flag is the unprofessionally-named file located somewhere on the Warrior Share. - ``` lulz.pdf ```
 
-> get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
+        get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 16: The flag is the name of the file, where in the file contents, someone is requesting modified access rights. - ``` 14287.pdf ```
 
-> net use * "\\file-server\warrior share"
+        net use * "\\file-server\warrior share"
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 17: The flag is the name of the user who is requesting modified access rights. - ``` Karen.Nance ```
 
-> Get-ADUser -Filter * -Properties telephoneNumber | where-object {$_.telephoneNumber -like "*336-6754"}
+        Get-ADUser -Filter * -Properties telephoneNumber | where-object {$_.telephoneNumber -like "*336-6754"}
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 18: Find the accounts that contain unprofessional information in the description. - ``` Ibarra,Lee ```
 
-> Get-ADUser -Filter * -Properties Description | select Description
-
-> Get-ADUser -Filter * -Properties Description | where-object {$_.Description -notlike "*PLT Soldier"} | select-object Description
-
-> Get-ADUser -Filter * -Properties Description | where-object {$_.Description -like "*description"}
+        Get-ADUser -Filter * -Properties Description | select Description
+        Get-ADUser -Filter * -Properties Description | where-object {$_.Description -notlike "*PLT Soldier"} | select-object Description
+        Get-ADUser -Filter * -Properties Description | where-object {$_.Description -like "*description"}
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 19: Find the following three accounts: - ``` ??? ```
 
@@ -1175,15 +1159,15 @@ List the last names in Alphabetical Order, comma-separated, no spaces. Do not li
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 20: The flag is the name of the file containing PII on the Warrior Share. - ``` phone_matrix.xlsx ```
 
-> get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
+        get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 21: Find the short name of the domain in which this server is a part of. - ``` army ```
 
-> get-addomaincontroller -filter *
+        get-addomaincontroller -filter *
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 22: What is the RID of the krbtgt account. - ``` 502 ```
 
-> Get-ADUser -Filter * -Properties * | where-object {$_.name -like "*krbtgt"}
+        Get-ADUser -Filter * -Properties * | where-object {$_.name -like "*krbtgt"}
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 23: How many users are members of the Domain Admins group? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
