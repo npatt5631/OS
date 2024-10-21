@@ -1098,101 +1098,108 @@ ________________________________________________________________________________
 # |
 # 15_memory_analysis
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1:  - ```  ```
+### 1: What is used in Windows to implement the networking stack to enable communication with the four lowest OSI layers? - ``` NDIS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2:  - ```  ```
+### 2: What Windows cmd.exe command will display the local computer's routing table? - ``` netstat -r ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3:  - ```  ```
+### 3: IANA assigned TCP/UDP ports in the range of 0-1023 that are usually associated with server-side services are known as? - ``` Well known ports ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4:  - ```  ```
+### 4: What term describes randomly assigned TCP/UDP ports above 1023 and are used for a short period of time (for the duration of a communication session}? - ``` Ephemeral ports ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5:  - ```  ```
+### 5: The two words that decribe translating Host names to IP addresses or NetBIOS names to IP addresses is_____? - ``` Name Resolution ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6:  - ```  ```
+### 6: What is the hierarchical service/protocol that translates hostnames to IP addresses? - ``` DNS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7:  - ```  ```
+### 7: What is the term for the numeric value that the Windows OS uses to uniquely ID a user, group or computer? - ``` SID ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8:  - ```  ```
+### 8: What switch can be added to the CMD.exe command whoami, to view the SID of the current user? - ``` /user ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9:  - ```  ```
+### 9: What is the value of a Relative Identifier (RID) assigned to the 1st user account? - ``` 1000 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10:  - ```  ```
+### 10: What is the well known RID for the Windows Built-In Administrator Local account? - ``` 500 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11:  - ```  ```
+### 11: Complete the GET_CimInstance cmdlet to view all the user SIDs on a Windows host machine by Name and SID respectively: - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12:  - ```  ```
+### 12: In Windows what else does a user's security Token contain? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13:  - ```  ```
+### 13: When contained in a Windows users access token, what privilege does SeBackupPrivilege grant to the user to perform on files and folders? - ``` Backup ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14:  - ```  ```
+### 14: Windows performs mandatory integrity checks (MICs) by comparing the integrity level of the resource with the integrity level of the calling process. Windows does this integrity check before the the objects discretionary access check because it is _____________? - ``` faster ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15:  - ```  ```
+### 15: A Windows object's Security _________ contains: - ``` Descriptor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16:  - ```  ```
+### 16: What contains Access Control Entries (ACEs), that define the types of access a user or group may be granted to an object? - ``` DACL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17:  - ```  ```
+### 17: What cmdlet gets objects that represent the security descriptor of a file or resource? - ``` Get-acl ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18:  - ```  ```
+### 18: What NET cmd.exe command can be used to enumerate the local Windows group accounts? - ``` Net localgroup ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19:  - ```  ```
+### 19: What Windows cmd.exe command will display or modify Access Control Lists (ACLs) for files and folders and resolves various issues that occur when using the older CACLS & XCACLS. - ``` icacls ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20:  - ```  ```
+### 20: What Windows security feature is a system-level memory protection feature that is built into the operating system starting with Windows XP and Windows Server 2003 and enables the system to mark one or more pages of memory as non-executable? - ``` DEP ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21:  - ```  ```
+### 21: What computer security technique is used in Windows to prevent exploitation of memory corruption vulnerabilities? This feature randomly arranges the address space positions of key data areas of a process, in order to prevent an attacker from reliably jumping to, a particular exploited function in memory. - ``` ASLR ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22:  - ```  ```
+### 22: What is a small kernel-mode library that can implement API hooking? - ``` shim ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23:  - ```  ```
+### 23: Which security feature helps keep attackers from gaining access through Pass-the-Hash or Pass-the-Ticket attacks using virtualization-based security to isolate secrets, such as NTLM password hashes and Kerberos Ticket Granting Tickets? - ``` Credential Guard ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24:  - ```  ```
+### 24: Introduced in Windows 8 this is Microsoft Antivirus, anti-malware solution? - ``` Windows Defender ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25:  - ```  ```
+### 25: What security technique helps prevent overwrites of the Structured Exception Handler? - ``` SEHOP ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26:  - ```  ```
+### 26: What security protection is built into Windows 10, as described in the "Memory reservations" item in Kernel pool protections? This includes protecting address space 0x00000000 (not listed in article). - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27:  - ```  ```
+### 27: What Windows security feature prevents the replacement of essential system files, folders, and registry keys that are installed as part of the operating system? It became available starting with Windows Server 2008 and Windows Vista. - ``` Windows Resource Protection ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28:  - ```  ```
+### 28: What option should you use with the System File Checker cmd.exe tool sfc.exe to scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache ? - ``` /scannow ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29:  - ```  ```
+### 29: Where are copies of known-good critical system files located at %WinDir%___________ and used by the Windows Resource Protection feature? - ``` \WinSxS\Backup ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30:  - ```  ```
+### 30: What CLI tool is often used to troubleshoot DNS issues but can also be used in reconnaissance? - ``` nslookup ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31:  - ```  ```
+### 31: In Windows 10 what is the full path to the hosts file? Complete the path c:\Windows____________ - ``` System32\drivers\etc\hosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32:  - ```  ```
+### 32: Fill in the missing component for the usual Host Name Resolution order: - ``` dns ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33:  - ```  ```
+### 33: What cmd.exe tool will display NetBIOS transport statistics in Windows? - ``` nbtstat ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34:  - ```  ```
+### 34: What team survey is focused on security and auditing? - ``` red ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35:  - ```  ```
+### 35: What type of survey is focused on computer system settings, updates, configurations and installed software? - ``` blue ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36:  - ```  ```
+### 36: What type of survey is focused on malware detection, artifact detection and investigating processes? - ``` Incident response ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37:  - ```  ```
+### 37: What Volatility plugin will dump a process to an executable file sample? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38:  - ```  ```
+### 38: What Volatility plugin will extract command history by scanning for _COMMAND_HISTORY? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 39:  - ```  ```
+### 39: What Volatility plugin will show driver objects? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 40:  - ```  ```
+### 40: What plugin do you run to find which memory profile to use with a memory image? - ``` imageinfo ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 41:  - ```  ```
+### 41: What switch/argument will list all plugins for Volatility? - ``` -h ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 42:  - ```  ```
+### 42: In terms of Volatile Data, what locations are the MOST volatile? - ``` Registers,Cache ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 43:  - ```  ```
+### 43: What is the 12th plugin listed in the Volatility help menu? - ``` cmdscan ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44:  - ```  ```
+### 44: What profile do you use in conjunction with this memory image? - ``` WinXPSP2x86 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 45:  - ```  ```
+### 45: What command did the attacker type to check the status of the malware? - ``` sc query malware ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 46:  - ```  ```
+### 46: What are the last 7 digits of the memory offset for the driver used by the malware? - ``` 1a498b8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 47:  - ```  ```
+### 47: The process running under PID 544 seems malicious. What is the md5hash of the executable? - ``` 6CEE14703054E226E87A963372F767AA ```
+
+    > Set-MpPreference -ExclusionPath 'C:\Users\andy.dwyer\Desktop\Memory_Analysis\'
+    > cd C:\Users\andy.dwyer\Desktop\Memory_Analysis
+    > .\volatility_2.6_win64_standalone.exe -f ".\0zapftis.vmem" --profile=WinXPSP2x86 procdump -p 544 -D .
+    > Get-FileHash -Algorithm md5 .\executable.544.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 48:  - ```  ```
+### 48: What remote IP and port did the system connect to? - ``` 172.16.98.1:6666 ```
+
+    > .\volatility_2.6_win64_standalone.exe -f ".\0zapftis.vmem" --profile=WinXPSP2x86 connscan
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
