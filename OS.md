@@ -902,9 +902,9 @@ ________________________________________________________________________________
         #!/bin/bash
         (
         flock -n 9 || exit 1
-         echo "beaconing"
-         for i in $(seq 1 5); do nc -lw10 127.0.0.1 -p 1234 2>/dev/null; sleep 10; done
-         echo "done beaconing"
+                echo "beaconing"
+        for i in $(seq 1 5); do nc -lw10 127.0.0.1 -p 1234 2>/dev/null; sleep 10; done
+                echo "done beaconing"
         ) 9>/tmp/mylockfile
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 15: Scenario: Someone or something is stealing files with a .txt extension from user directories. Determine how these thefts are occurring. Task: Identify the command being ran and how it occurs. - ``` ??? ```
