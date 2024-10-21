@@ -1015,39 +1015,54 @@ ________________________________________________________________________________
 # |
 # 14_linux_auditing_and_logging
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Identify the XML element name in the output below - ``` scaninfo ```
+### 1: Identify the XML element name in the output below. - ``` scaninfo ```
 
-<scaninfo type="syn" protocol="tcp" numservices="200" services="1-200"/>
+scaninfo type="syn" protocol="tcp" numservices="200" services="1-200"/
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2:  - ```  ```
+### 2: Identify one of the XML attributes in the output below. - ``` protocol="tcp" ```
+
+scaninfo type="syn" protocol="tcp" numservices="200" services="1-200"/
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3:  - ```  ```
+### 3: What RFC is Syslog? - ``` 5424 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4:  - ```  ```
+### 4: What is the numerical code assigned to the facility dealing with authorization? - ``` 4 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5:  - ```  ```
+### 5: How many severity codes are defined in the standard that defines syslog? - ``` 8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6:  - ```  ```
+### 6: What severity is assigned to system instability messages? - ``` 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7:  - ```  ```
+### 7: Download the attached rsyslog configuration file for the Syslog # challenges. In the legacy rules section of the file, what facility is logged to 0.log? - ``` kern ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8:  - ```  ```
+### 8: In the legacy rules section of the file, how many severities are logged to 0.log? - ``` 8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9:  - ```  ```
+### 9: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed) using their severity name. - ``` Emergency,Alert,Critical,Error,Warning ```
+
+        (line 10) 4.4 -/var/log/4min.log
+        -(0,1,2,3,4)
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10:  - ```  ```
+### 10: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed), using their severity name. - ``` Notice,Informational,Debug ```
+
+        (line 11)4.!4 -/var/log/4sig.log
+        -(5,6,7) 
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11:  - ```  ```
+### 11: What is being logged in not.log? Provide the facilities from lowest facility to highest facility numerically, and the severity being logged. (List only the first word for each.) - ``` mail,clock,ntp,notice ```
+
+        (line 12)2,9,12.=5 /var/log/not.log
+        -(mail system{2},clock daemon{9},ntp subsystem{12},notice{.=15})
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12:  - ```  ```
+### 12: What facilities and what severities are being sent to a remote server over a reliable connection using port 514? Provide the facility names, number of severities, and the correct destination IP address. - ``` auth,authpriv,8,10.30.0.1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13:  - ```  ```
+### 13: Use the answer from Syslog 6 for this question. Do logs that match this filter ever get saved on the local machine? - ``` Yes ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14:  - ```  ```
+### 14: What messages are being sent to 10.84.0.1? Provide the facility number, the number (amount) of severity codes, and Layer 4 connection type as the answer. - ``` 0,7,UDP ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15:  - ```  ```
+### 15: Parse all of the IP addresses from the file using XPATH queries - ``` 0e850f14fc192c5105955ec094287bd2 ```
+
+    $ xpath -q -e '//host/address/@addr' output.xml | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16:  - ```  ```
+### 16: Select all of the IP addresses and ports using a single XPATH Union Statement Pipe the result to md5sum for the flag - ``` ff7990139b6d09aa65afb6e069db0dec ```
+
+    $ xpath -q -e '//host/address/@addr | //host/ports/port/@portid' output.xml | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 17:  - ```  ```
 ______________________________________________________________________________________________________________________________________________________________________________________
