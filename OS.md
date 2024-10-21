@@ -117,55 +117,55 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_3-7 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. - ``` 5254 ```
+3: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. - ``` 5254 ```
 
         Get-Content words2.txt | Measure-Object -Word
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Count the number of files in the Videos folder in the CTF user's home directory. - ``` 925 ```
+4: Count the number of files in the Videos folder in the CTF user's home directory. - ``` 925 ```
 
         (Get-ChildItem | Measure-Object).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Find the only line that makes the two files in the CTF user's Downloads folder different. - ``` popeye ```
+5: Find the only line that makes the two files in the CTF user's Downloads folder different. - ``` popeye ```
 
         Compare-Object -referanceobject (Get-Object old.txt) -differenceobject (get-content new.txt)
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. - ``` ZzZp ```
+6: The password is the 21st line from the top, in ASCII alphabetically-sorted, descending order of the words.txt file. - ``` ZzZp ```
 
         Get-Content words.txt | Sort-Object -descending | Selct-Object -index 21
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Count the number of unique words in words.txt - ``` 456976 ```
+7: Count the number of unique words in words.txt - ``` 456976 ```
 
         (Get-Content words.txt | Sort-Object | Get-Unique).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Basics_9 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: How many methods are available for the get-process cmdlet? - ``` 19 ```
+9: How many methods are available for the get-process cmdlet? - ``` 19 ```
 
         (Get-Process | Get-Member -membertype method).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_8 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Count the number of folders in the Music folder in the CTF user’s profile. - ``` 411 ```
+8: Count the number of folders in the Music folder in the CTF user’s profile. - ``` 411 ```
 
         (Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Regex_2-4 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Count the number of times, case-insensitive, gaab is listed in words.txt - ``` 1 ```
+2: Count the number of times, case-insensitive, gaab is listed in words.txt - ``` 1 ```
 
         (Get-Content words.txt | select-string -allmatches "gaab").count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file - ``` 160352 ```
+3: Count the number of words, case-insensitive, with either a or z in a word, in the words.txt file - ``` 160352 ```
 
         (Get-Content words.txt | Where-Object {$_ -match '(a|z)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Count the number of lines, case-insensitive, that az appears in the words.txt file - ``` 2754 ```
+4: Count the number of lines, case-insensitive, that az appears in the words.txt file - ``` 2754 ```
 
         (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_9 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
+9: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
 
         mkdir Extracted
         $zipPath = 'C:\Users\CTF\Omega1000.zip'; 1000..1 | ForEach-Object { Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, 'C:\Users\CTF\Extracted'); $zipPath = "C:\Users\CTF\Extracted\Omega$($_ - 1).zip" }
@@ -178,15 +178,15 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Regex_5 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
+5: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
 
-#### a appears at least twice consecutively
+a appears at least twice consecutively
 
-#### and is followed immediately by any of the letters a through g
+and is followed immediately by any of the letters a through g
 
-#### Note: File Location - C:\Users\CTF\Desktop\CTF
+Note: File Location - C:\Users\CTF\Desktop\CTF
 
-#### Example: aac...aaa...
+Example: aac...aaa...
 
         (Get-Content words.txt | Where-Object {$_ -match '((aa)[a-g])'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -199,21 +199,21 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Profiles_1-8 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Which PowerShell profile has the lowest precedence? - ``` Current User, Current Host ```
+1: Which PowerShell profile has the lowest precedence? - ``` Current User, Current Host ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Which PowerShell profile has the highest precedence? - ``` All Users, All Hosts ```
+2: Which PowerShell profile has the highest precedence? - ``` All Users, All Hosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Which PowerShell variable stores the current user’s home directory? - ``` $Home ```
+3: Which PowerShell variable stores the current user’s home directory? - ``` $Home ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Which PowerShell variable stores the installation directory for PowerShell? - ``` $PsHome ```
+4: Which PowerShell variable stores the installation directory for PowerShell? - ``` $PsHome ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Which PowerShell variable stores the path to the "Current User, Current Host" profile? - ``` $Profile ```
+5: Which PowerShell variable stores the path to the "Current User, Current Host" profile? - ``` $Profile ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What command would you run to view the help for PowerShell Profiles? - ``` Get-Help about_profiles ```
+6: What command would you run to view the help for PowerShell Profiles? - ``` Get-Help about_profiles ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: What command would tell you if there was a profile loaded for All Users All Hosts? - ``` Test-Path -Path $PROFILE.AllUsersAllHosts ```
+7: What command would tell you if there was a profile loaded for All Users All Hosts? - ``` Test-Path -Path $PROFILE.AllUsersAllHosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Malware is running on the primary PowerShell profile on the File-Server. Based on PowerShell profile order of precedence (what is read first), find the correct flag. - ``` I am definitely not the malware ```
+8: Malware is running on the primary PowerShell profile on the File-Server. Based on PowerShell profile order of precedence (what is read first), find the correct flag. - ``` I am definitely not the malware ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -224,7 +224,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_0 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 0: This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
+0: This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
 
 File: /home/garviel/NMAP_all_hosts.txt
 
@@ -240,38 +240,38 @@ The GNU Awk User’s Guide
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_1-4 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What command lists the contents of directories in Linux/Unix systems? - ``` ls ```
+1: What command lists the contents of directories in Linux/Unix systems? - ``` ls ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: For the ls command, what arguments, or switch options, will allow you to print human-readable file sizes in a long-list format? - ``` ls -hl ```
+2: For the ls command, what arguments, or switch options, will allow you to print human-readable file sizes in a long-list format? - ``` ls -hl ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What character will pipe the standard output from echo "I’m a plumber" to another command, as standard input? - ``` | ```
+3: What character will pipe the standard output from echo "I’m a plumber" to another command, as standard input? - ``` | ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What argument/switch option, when used with man, will search the short descriptions and man-page-names for a keyword that you provide? - ``` man -k ```
+4: What argument/switch option, when used with man, will search the short descriptions and man-page-names for a keyword that you provide? - ``` man -k ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_1-6 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the absolute path to the root directory? - ``` / ```
+1: What is the absolute path to the root directory? - ``` / ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What is the absolute path to the default location for configuration files? - ``` /etc ```
+2: What is the absolute path to the default location for configuration files? - ``` /etc ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What is the directory that contains executable programs (binaries) which are needed in single user mode, to bring the system up or to repair it? - ``` /bin ```
+3: What is the directory that contains executable programs (binaries) which are needed in single user mode, to bring the system up or to repair it? - ``` /bin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What is the absolute path to the directory which contains non-essential binaries that are accessible by standard users as well as root? - ``` /usr/bin ```
+4: What is the absolute path to the directory which contains non-essential binaries that are accessible by standard users as well as root? - ``` /usr/bin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: An absolute path to a directory which contains binaries only accessible by the root user, or users in the root group. - ``` /sbin ```
+5: An absolute path to a directory which contains binaries only accessible by the root user, or users in the root group. - ``` /sbin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What is the absolute path for the binary cat man-page? - ``` /usr/share/man/man1/cat.1.gz ```
+6: What is the absolute path for the binary cat man-page? - ``` /usr/share/man/man1/cat.1.gz ```
 
         man --path cat
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_5-6 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
+5: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
 
         man -k digest
         echo "OneWayBestWay" | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
+6: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
 
         $ file Encrypted
         $ unzip Encrypted
@@ -285,95 +285,95 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_7 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
+7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Users_And_Groups_1-4 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
+1: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
 
         $ cat /etc/passwd | cut -d: -f5-6 | sort
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Identify all members of the lodge group. List their names in alphabetical order with a comma in between each name. - ``` aximand,erebus,ezekyle,garviel,sejanus,tarik ```
+2: Identify all members of the lodge group. List their names in alphabetical order with a comma in between each name. - ``` aximand,erebus,ezekyle,garviel,sejanus,tarik ```
 
         $ cat /etc/group | grep "lodge"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Find the user with a unique login shell. - ``` nobody ```
+3: Find the user with a unique login shell. - ``` nobody ```
 
         $ cat /etc/passwd | cut -d: -f7 | sort | uniq
         $ cat /etc/passwd | grep "/bin/sh"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` ??? ```
+4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Permissions_1-10 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
+1: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
 
         $ find / -type d -name "Bibliotheca" 2>/dev/null
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Identify the number of users with valid login shells, who can list the contents of the Bibliotheca directory. - ``` 15 ```
+2: Identify the number of users with valid login shells, who can list the contents of the Bibliotheca directory. - ``` 15 ```
 
         $ cd /media
         $ ls -l
         $ cat /etc/passwd | grep "sh"
         $ cat /etc/passwd | grep "bash"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: The permissions that user sejanus has on /media/Bibliotheca, in octal format. - ``` 5 ```
+3: The permissions that user sejanus has on /media/Bibliotheca, in octal format. - ``` 5 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ``` Codex_Astartes ```
+4: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ``` Codex_Astartes ```
 
         $ cat /etc/group | grep "chapter"
         $ cat /etc/group | grep "chapter"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ``` Codex_Imperium ```
+5: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ``` Codex_Imperium ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Execute the file owned by the guardsmen group in /media/Bibliotheca, as the owning user. - ``` GHOSTS ```
+6: Execute the file owned by the guardsmen group in /media/Bibliotheca, as the owning user. - ``` GHOSTS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ``` execute ```
+7: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ``` execute ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` ??? ```
+8: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
+9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
+10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_1-4 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
+1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
 
         $ ls -l /etc | grep '^d.*\.d$'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ``` 78 ```
+2: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ``` 78 ```
 
         $ cat /home/garviel/numbers 
         $ grep '^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ``` 18 ```
+3: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ``` 18 ```
 
          $ cat numbers | grep -oP '\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b' | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` ??? ```
+4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_1-2 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
+1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
+2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
+1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
 
         $ awk 'NR>=420&&NR<=1337' /home/garviel/numbers | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
+2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_5 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` ??? ```
+5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_3 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` ??? ```
+3: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -382,71 +382,71 @@ ________________________________________________________________________________
 # |
 # 05_windows_registry
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What Windows registry path is the Volatile Hive? - ``` HKLM\HARDWARE ```
+1: What Windows registry path is the Volatile Hive? - ``` HKLM\HARDWARE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What registry key creates the Wow6432Node to represent 32-bit applications that run on a 64-bit version of Windows? - ``` HKEY_LOCAL_MACHINE\SOFTWARE ```
+2: What registry key creates the Wow6432Node to represent 32-bit applications that run on a 64-bit version of Windows? - ``` HKEY_LOCAL_MACHINE\SOFTWARE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: In what registry path are the BOOT_START drivers located? - ``` HKLM\SYSTEM\CurrentControlSet\Services ```
+3: In what registry path are the BOOT_START drivers located? - ``` HKLM\SYSTEM\CurrentControlSet\Services ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What start value do BOOT_START drivers have in the registry? - ``` 0x0 ```
+4: What start value do BOOT_START drivers have in the registry? - ``` 0x0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: During kernel initialization, what registry location is read containing all SYSTEM_START drivers? - ``` HKLM\SYSTEM\CurrentControlSet\Services ```
+5: During kernel initialization, what registry location is read containing all SYSTEM_START drivers? - ``` HKLM\SYSTEM\CurrentControlSet\Services ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: SERVICE_AUTO_START drivers and services are loaded after kernel initialization. What start value do they have in the registry? - ``` 0x02 ```
+6: SERVICE_AUTO_START drivers and services are loaded after kernel initialization. What start value do they have in the registry? - ``` 0x02 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: What start value do SERVICE_DEMAND_START drivers and services have in the registry? - ``` 0x3 ```
+7: What start value do SERVICE_DEMAND_START drivers and services have in the registry? - ``` 0x3 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: When accessing a remote registry which are the only 2 accessible HKEYs? - ``` HKLM, HKU ```
+8: When accessing a remote registry which are the only 2 accessible HKEYs? - ``` HKLM, HKU ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: What PowerShell cmdlet will list currently mapped drives? - ``` Get-PSDrive ```
+9: What PowerShell cmdlet will list currently mapped drives? - ``` Get-PSDrive ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What is the native Windows GUI tool for managing the registry? - ``` Registry Editor ```
+10: What is the native Windows GUI tool for managing the registry? - ``` Registry Editor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What registry hive contains all machine settings? - ``` HKLM ```
+11: What registry hive contains all machine settings? - ``` HKLM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: What registry hive contains all user settings? - ``` HKU ```
+12: What registry hive contains all user settings? - ``` HKU ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: What registry hive contains only the currently logged-in user's settings? - ``` HKCU ```
+13: What registry hive contains only the currently logged-in user's settings? - ``` HKCU ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: The HKEY_CURRENT_USER registry hive is a symbolic link to another registry subkey. What is the subkey that it is linked to? - ``` HKU\S-1-5-21-2881336348-3190591231-4063445930-1004 ```
+14: The HKEY_CURRENT_USER registry hive is a symbolic link to another registry subkey. What is the subkey that it is linked to? - ``` HKU\S-1-5-21-2881336348-3190591231-4063445930-1004 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: What PowerShell command will list all the subkeys and contents in the current directory and/or will list all the subkeys and the contents of a directory you specify? - ``` Get-Childitem ```
+15: What PowerShell command will list all the subkeys and contents in the current directory and/or will list all the subkeys and the contents of a directory you specify? - ``` Get-Childitem ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: What PowerShell command will list only the contents of a registry key or subkey? - ``` Get-Item ```
+16: What PowerShell command will list only the contents of a registry key or subkey? - ``` Get-Item ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What registry subkey runs every time the machine reboots? - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
+17: What registry subkey runs every time the machine reboots? - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: What registry subkey runs every time a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
+18: What registry subkey runs every time a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: What registry subkey runs a single time, then deletes its value once the machine reboots? - ``` HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
+19: What registry subkey runs a single time, then deletes its value once the machine reboots? - ``` HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: What registry subkey runs a single time, then deletes its value when a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
+20: What registry subkey runs a single time, then deletes its value when a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
+21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
 
         reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
+22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
 
         reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
+23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
 
         reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
+24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
 
         reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
+25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
 
         reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
+26: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
 
         Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*' | Select-Object -Property PSChildName, ProfileImagePath
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
+27: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
 
         reg query "HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\NETWORKLIST\PROFILES\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
 ______________________________________________________________________________________________________________________________________________________________________________________
