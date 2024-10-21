@@ -371,8 +371,8 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 05_windows_registry
-______________________________________________________________________________________________________________________________________________________________________________________
+# 05_Windows_Registry
+## Primer_Registry_1-10 *
 1: What Windows registry path is the Volatile Hive? - ``` HKLM\HARDWARE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What registry key creates the Wow6432Node to represent 32-bit applications that run on a 64-bit version of Windows? - ``` HKEY_LOCAL_MACHINE\SOFTWARE ```
@@ -393,51 +393,53 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 10: What is the native Windows GUI tool for managing the registry? - ``` Registry Editor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-11: What registry hive contains all machine settings? - ``` HKLM ```
+## Windows_Registry_Basics_1-17 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-12: What registry hive contains all user settings? - ``` HKU ```
+1: What registry hive contains all machine settings? - ``` HKLM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-13: What registry hive contains only the currently logged-in user's settings? - ``` HKCU ```
+2: What registry hive contains all user settings? - ``` HKU ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-14: The HKEY_CURRENT_USER registry hive is a symbolic link to another registry subkey. What is the subkey that it is linked to? - ``` HKU\S-1-5-21-2881336348-3190591231-4063445930-1004 ```
+3: What registry hive contains only the currently logged-in user's settings? - ``` HKCU ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-15: What PowerShell command will list all the subkeys and contents in the current directory and/or will list all the subkeys and the contents of a directory you specify? - ``` Get-Childitem ```
+4: The HKEY_CURRENT_USER registry hive is a symbolic link to another registry subkey. What is the subkey that it is linked to? - ``` HKU\S-1-5-21-2881336348-3190591231-4063445930-1004 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-16: What PowerShell command will list only the contents of a registry key or subkey? - ``` Get-Item ```
+5: What PowerShell command will list all the subkeys and contents in the current directory and/or will list all the subkeys and the contents of a directory you specify? - ``` Get-Childitem ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-17: What registry subkey runs every time the machine reboots? - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
+6: What PowerShell command will list only the contents of a registry key or subkey? - ``` Get-Item ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-18: What registry subkey runs every time a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
+7: What registry subkey runs every time the machine reboots? - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-19: What registry subkey runs a single time, then deletes its value once the machine reboots? - ``` HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
+8: What registry subkey runs every time a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-20: What registry subkey runs a single time, then deletes its value when a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
+9: What registry subkey runs a single time, then deletes its value once the machine reboots? - ``` HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-21: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
+10: What registry subkey runs a single time, then deletes its value when a user logs on? - ``` HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE ```
+______________________________________________________________________________________________________________________________________________________________________________________
+11: What is the suspicious value inside of the registry subkey from your previous challenge named registry_basics_7?(#17:) - ``` C:\malware.exe ```
 
         reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
-22: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
+12: What is the suspicious value inside of the registry subkey that loads every time the "Student" user logs on? - ``` C:\botnet.exe ```
 
         reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN
 ______________________________________________________________________________________________________________________________________________________________________________________
-23: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
+13: What is the value inside of the registry subkey from registry_basics_9?(#19:) - ``` C:\virus.exe ```
 
         reg query HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
-24: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
+14: What is the value inside of the registry subkey that loads a single time when the "student" user logs on? - ``` C:\worm.exe ```
 
         reg query HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE
 ______________________________________________________________________________________________________________________________________________________________________________________
-25: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
+15: Figure out the manufacturer's name of the only USB drive that was plugged into this machine. - ``` SanDisk9834 ```
 
         reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
 ______________________________________________________________________________________________________________________________________________________________________________________
-26: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
+16: What suspicious user profile, found in the registry, has connected to this machine? - ``` Hacker_McHackerson ```
 
         Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*' | Select-Object -Property PSChildName, ProfileImagePath
 ______________________________________________________________________________________________________________________________________________________________________________________
-27: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
+17: What suspicious wireless network, found in the registry, has this system connected to? - ``` Terror_cafe_network ```
 
         reg query "HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\NETWORKLIST\PROFILES\{20A9DB9D-5643-46F7-9FC7-0C382A286301}"
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -446,98 +448,100 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 06_windows_alternate_data_stream
+# 06_Windows_Alternate_Data_Stream
+## Primer_NTFS_1-17 *
+1: The ____ determines how the data is stored on disk. - ``` File System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: The ____ determines how the data is stored on disk. - ``` File System ```
+2: What are NTFS partition sectors grouped into? - ``` Clusters ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What are NTFS partition sectors grouped into? - ``` Clusters ```
+3: What contains the metadata about all of the files and directories on a NTFS partition? - ``` Master File Table ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What contains the metadata about all of the files and directories on a NTFS partition? - ``` Master File Table ```
+4: NTFS files are collections of what? - ``` Attributes ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: NTFS files are collections of what? - ``` Attributes ```
+5: Which NTFS attribute would store an alternate data stream? - ``` $DATA ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Which NTFS attribute would store an alternate data stream? - ``` $DATA ```
+6: Which NTFS attribute holds information about a file's encrypted attributes? - ``` $LOGGED_UTILITY_STREAM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Which NTFS attribute holds information about a file's encrypted attributes? - ``` $LOGGED_UTILITY_STREAM ```
+7: Which NTFS attribute that is composed of the file security and access control properties? - ``` $SECURITY_DESCRIPTOR ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Which NTFS attribute that is composed of the file security and access control properties? - ``` $SECURITY_DESCRIPTOR ```
+8: In NTFS, what is the type id, in hex, of the attribute that actually stores a NTFS files contents? - ``` 0x80 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: In NTFS, what is the type id, in hex, of the attribute that actually stores a NTFS files contents? - ``` 0x80 ```
+9: In NTFS what is the maximum number of bytes a MFT entry (containing the entirety of a file) can contain to be considered "Resident Data"? - ``` 1024 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: In NTFS what is the maximum number of bytes a MFT entry (containing the entirety of a file) can contain to be considered "Resident Data"? - ``` 1024 ```
+10: NTFS permissions can be a assigned to a filesystem object in two ways. Which way is intentionally assigned on the file or folder? - ``` Explicit ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: NTFS permissions can be a assigned to a filesystem object in two ways. Which way is intentionally assigned on the file or folder? - ``` Explicit ```
+11: NTFS permissions can be a assigned to a filesystem object in two ways. Which way is the results of an object being assigned permissions as the result of being the child of another object? - ``` Inherited ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: NTFS permissions can be a assigned to a filesystem object in two ways. Which way is the results of an object being assigned permissions as the result of being the child of another object? - ``` Inherited ```
+12: Which NTFS file level permission is missing from the following list? Write, Read & Execute, Modify, Full Control - ``` Read ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: Which NTFS file level permission is missing from the following list? Write, Read & Execute, Modify, Full Control - ``` Read ```
+13: Which NTFS folder level permission is missing from the following list?: Read, Write, Read & Execute, Modify, Full control - ``` List Folder Contents ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: Which NTFS folder level permission is missing from the following list?: Read, Write, Read & Execute, Modify, Full control - ``` List Folder Contents ```
+14: Which NTFS file level permission permits changing the contents of a file, deleting the file but does not allow the ability to change the permissions on the file? - ``` Modify ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: Which NTFS file level permission permits changing the contents of a file, deleting the file but does not allow the ability to change the permissions on the file? - ``` Modify ```
+15: Which NTFS folder level permission allows changing permissions? - ``` Full Control ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: Which NTFS folder level permission allows changing permissions? - ``` Full Control ```
+16: Which NTFS attribute stores the file times of an object? - ``` $STANDARD_INFORMATION ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: Which NTFS attribute stores the file times of an object? - ``` $STANDARD_INFORMATION ```
+17: What CLI command will only show the letters of attached drives? - ``` fsutil fsinfo drives ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What CLI command will only show the letters of attached drives? - ``` fsutil fsinfo drives ```
+## Windows_File_System_Basics_1-14 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Every file on a Windows system has attributes. What does the d attribute mean? - ``` Directory ```
+1: Every file on a Windows system has attributes. What does the d attribute mean? - ``` Directory ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: Every file on a Windows system has attributes. What does the h attribute mean? - ``` Hidden ```
+2: Every file on a Windows system has attributes. What does the h attribute mean? - ``` Hidden ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: What PowerShell command will list all files in the current directory, regardless of their attributes? - ``` Get-Childitem -Force ```
+3: What PowerShell command will list all files in the current directory, regardless of their attributes? - ``` Get-Childitem -Force ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What PowerShell command will give you the sha512 hash of a file? - ``` Get-FileHash -Algorithm sha512 ```
+4: What PowerShell command will give you the sha512 hash of a file? - ``` Get-FileHash -Algorithm sha512 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: What PowerShell command will list permissions of a file? - ``` Get-Acl ```
+5: What PowerShell command will list permissions of a file? - ``` Get-Acl ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What Windows file maps hostnames to IP addresses? - ``` Hosts ```
+6: What Windows file maps hostnames to IP addresses? - ``` Hosts ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: Which group has Read and Execute (RX) permissions to the file listed in the previous challenge?(#23) - ``` BUILTIN\Users ```
+7: Which group has Read and Execute (RX) permissions to the file listed in the previous challenge?(#23) - ``` BUILTIN\Users ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: Find the last five characters of the MD5 hash of the hosts file. - ``` 7566D ```
+8: Find the last five characters of the MD5 hash of the hosts file. - ``` 7566D ```
 
         $hostsFilePath = "C:\Windows\System32\drivers\etc\hosts"
         $md5Hash = Get-FileHash -Path $hostsFilePath -Algorithm MD5
         $lastFiveChars = if ($md5Hash.Hash.Length -ge 5) { $md5Hash.Hash.Substring($md5Hash.Hash.Length - 5) } else { "Hash too short" }
         $lastFiveChars
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: Examine the readme file somewhere in the CTF user’s home directory. - ``` 123456 ```
+9: Examine the readme file somewhere in the CTF user’s home directory. - ``` 123456 ```
 
         cd c:\Users\CTF
         Get-ChildItem -path readme* -Recurse -Force
         cd .\Favorites\
         Get-Content .\README
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: There is a hidden directory in the CTF user's home directory. The directory contains a file. Read the file. - ``` ketchup ```
+10: There is a hidden directory in the CTF user's home directory. The directory contains a file. Read the file. - ``` ketchup ```
 
         Get-ChildItem -path c:\users\ctf -hidden -Recurse -Force -directory
         cd secretsauce
         Get-Content saucey  
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: Find a file in a directory on the desktop with spaces in it. FLAG is the contents of the file - ``` 987654321 ```
+11: Find a file in a directory on the desktop with spaces in it. FLAG is the contents of the file - ``` 987654321 ```
 
         Get-ChildItem -Path . -Recurse | Where-Object { $_.Name -like '* *' }
         cd C:\Users\CTF\Desktop
         cd '.\z                          -                                                                          a\'
         Get-Content .\spaces.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
+12: Find the Alternate Data Stream in the CTF user's home, and read it. - ``` P455W0RD ```
 
         Get-ChildItem -Path "C:\Users\CTF\" -Recurse -File
         cmd /c dir /R | findstr /C:":"
         Get-Content .\nothing_here -Stream hidden
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: "Fortune cookies" have been left around the system so that you won't find the hidden password... - ``` fortune_cookie ```
+13: "Fortune cookies" have been left around the system so that you won't find the hidden password... - ``` fortune_cookie ```
 
         Get-ChildItem -Path "C:\*fortune*" -Recurse
         cmd /c dir /R | findstr /C:":"
         Get-Content '.\The Fortune Cookie' -Stream none
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: There are plenty of phish in the C:\Users\CTF, but sometimes they're hidden in plain site. - ``` phi5hy ```
+14: There are plenty of phish in the C:\Users\CTF, but sometimes they're hidden in plain site. - ``` phi5hy ```
 
-#### Goto C:\Users\CTF look for anything phishy related to site(WWW).
+Goto C:\Users\CTF look for anything phishy related to site(WWW).
 
         Get-ChildItem -Force
         Get-Content -Force .\200
