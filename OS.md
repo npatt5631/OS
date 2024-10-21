@@ -15,7 +15,7 @@ ________________________________________________________________________________
 # 01_windows_powershell
 ## Primer_CLI_1-9 *
 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? - ``` ConHost.exe ```
-
+______________________________________________________________________________________________________________________________________________________________________________________
 2: What Windows 10 feature supports installing Linux subsystem? - ``` WSL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - ``` Windows Terminal ```
