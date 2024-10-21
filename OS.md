@@ -21,96 +21,96 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? - ``` ConHost.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What Windows 10 feature supports installing Linux subsystem? - ``` WSL ```
+2: What Windows 10 feature supports installing Linux subsystem? - ``` WSL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - ``` Windows Terminal ```
+3: Which Windows feature can be used to interact with any CLI on the Windows system concurrently using multiple tabs? - ``` Windows Terminal ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? - ``` CMD ```
+4: What was the default shell (command line) of Windows versions Windows 2000 through Windows 8.1? - ``` CMD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: What data type do all cmd.exe commands return? - ``` String ```
+5: What data type do all cmd.exe commands return? - ``` String ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What framework is PowerShell built on? - ``` .net ```
+6: What framework is PowerShell built on? - ``` .net ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: "What will all of the below give you? - ``` powershell version ```
-#### (get-host).version
+7: "What will all of the below give you? - ``` powershell version ```
+(get-host).version
 
-#### $host.version
+$host.version
 
-#### $psversiontable.psversion"
+$psversiontable.psversion"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: After PowerShell Core is installed what CLI command launches it? - ``` pwsh.exe ```
+8: After PowerShell Core is installed what CLI command launches it? - ``` pwsh.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - ``` PowerShell.exe ```
+9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - ``` PowerShell.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Basics_1-6 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What syntax do PowerShell cmdlets follow? - ``` Verb-Noun ```
+1: What syntax do PowerShell cmdlets follow? - ``` Verb-Noun ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What PS command will list all PowerShell cmdlets? - ``` Get-Command ```
+2: What PS command will list all PowerShell cmdlets? - ``` Get-Command ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What PowerShell command will list all verbs? - ``` Get-Verb ```
+3: What PowerShell command will list all verbs? - ``` Get-Verb ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: BASH commands output strings. PowerShell commands output what data type? - ``` Objects ```
+4: BASH commands output strings. PowerShell commands output what data type? - ``` Objects ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: All PowerShell objects are comprised of what two things? - ``` properties, methods ```
+5: All PowerShell objects are comprised of what two things? - ``` properties, methods ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What command will list all things that make up a PowerShell object? - ``` Get-Member ```
+6: What command will list all things that make up a PowerShell object? - ``` Get-Member ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Powershell_Alias_1-2 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What PowerShell command will list PowerShell aliases? - ``` Get-Alias ```
+1: What PowerShell command will list PowerShell aliases? - ``` Get-Alias ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What PowerShell command lists all of the contents of a directory? - ``` Get-Childitem ```
+2: What PowerShell command lists all of the contents of a directory? - ``` Get-Childitem ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Help_1-4 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? - ``` Get-Help ```
+1: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? - ``` Get-Help ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? - ``` -Full ```
+2: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? - ``` -Full ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What PowerShell command will update the PowerShell "help files" to the latest version? - ``` Update-Help ```
+3: What PowerShell command will update the PowerShell "help files" to the latest version? - ``` Update-Help ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What help switch will show you the "help files" on Microsoft's website, in your default browser? - ``` -Online ```
+4: What help switch will show you the "help files" on Microsoft's website, in your default browser? - ``` -Online ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Interaction_1-3 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What command will start the Chrome browser on your machine? - ``` Start-Process "Chrome.exe" ```
+1: What command will start the Chrome browser on your machine? - ``` Start-Process "Chrome.exe" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What command using a PS Method will stop chrome? - ``` (Get-Process chrome*).kill() ```
+2: What command using a PS Method will stop chrome? - ``` (Get-Process chrome*).kill() ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What PowerShell command (without using a method) will stop the Chrome process? - ``` Stop-Process -Name "chrome" ```
+3: What PowerShell command (without using a method) will stop the Chrome process? - ``` Stop-Process -Name "chrome" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_CIMClasses_1 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: PowerShell doesn't have a native cmdlet that will give you processor information (such as get-processor or get-cpu). Knowing this information might be necessary. What command would give you information about the system's processor? - ``` Get-CimInstance -ClassName Win32_Processor ```
+1: PowerShell doesn't have a native cmdlet that will give you processor information (such as get-processor or get-cpu). Knowing this information might be necessary. What command would give you information about the system's processor? - ``` Get-CimInstance -ClassName Win32_Processor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-## Windows_PowerShell_Logic_1-2 *
+Windows_PowerShell_Logic_1-2 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What PowerShell command will read a text file? - ``` Get-Content ```
+1: What PowerShell command will read a text file? - ``` Get-Content ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What PowerShell command will allow for counting lines in a file, averaging numbers, and summing numbers? - ``` Measure-Object ```
+2: What PowerShell command will allow for counting lines in a file, averaging numbers, and summing numbers? - ``` Measure-Object ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-## Windows_PowerShell_Regex_1 *
+Windows_PowerShell_Regex_1 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What PowerShell command searches for text patterns in a string? - ``` Select-String ```
+1: What PowerShell command searches for text patterns in a string? - ``` Select-String ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Powershell_Basics_7-8 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Users' files are stored in their corresponding home directory. What is the literal path to all home directories on a Windows 10 system? - ``` C:\Users ```
+7: Users' files are stored in their corresponding home directory. What is the literal path to all home directories on a Windows 10 system? - ``` C:\Users ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: How many properties are available for the get-process cmdlet? - ``` 52 ```
+8: How many properties are available for the get-process cmdlet? - ``` 52 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Alias_3 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: How many aliases does PowerShell have for listing the contents of a directory? - ``` 3 ```
+3: How many aliases does PowerShell have for listing the contents of a directory? - ``` 3 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Help_5 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: When requesting the help file for the get-process cmdlet, what full command is the 9th example given? - ``` Get-Process Powershell ```
+5: When requesting the help file for the get-process cmdlet, what full command is the 9th example given? - ``` Get-Process Powershell ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_CIMClasses_2 *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: To complete this challenge, find the description of the Lego Land service. - ``` i_love_legos ```
+2: To complete this challenge, find the description of the Lego Land service. - ``` i_love_legos ```
 
         Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
 ______________________________________________________________________________________________________________________________________________________________________________________
