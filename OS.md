@@ -12,7 +12,7 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 01_windows_powershell
+# 01_Windows_PowerShell
 ## Primer_CLI_1-9 *
 1: Which program starts with every CMD and PowerShell instance in Windows 7 and later? - ``` ConHost.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -190,7 +190,7 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 02_windows_PowerShell_Profiles
+# 02_Windows_PowerShell_Profiles
 ## Windows_PowerShell_Profiles_1-8 *
 1: Which PowerShell profile has the lowest precedence? - ``` Current User, Current Host ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -213,7 +213,7 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 04_linux_basics2
+# 04_Linux_Basics2
 ## Linux_Basics_Reformat_0 *
 0: This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
 
