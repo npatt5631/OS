@@ -39,7 +39,6 @@ ________________________________________________________________________________
 9: "After PowerShell Core is installed you can still run the built in version of PowerShell side-by-side. What CLI command will launch the built in version?" - ``` PowerShell.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Basics_1-6 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What syntax do PowerShell cmdlets follow? - ``` Verb-Noun ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What PS command will list all PowerShell cmdlets? - ``` Get-Command ```
@@ -53,13 +52,11 @@ ________________________________________________________________________________
 6: What command will list all things that make up a PowerShell object? - ``` Get-Member ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Powershell_Alias_1-2 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What PowerShell command will list PowerShell aliases? - ``` Get-Alias ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What PowerShell command lists all of the contents of a directory? - ``` Get-Childitem ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Help_1-4 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What is the basic cmdlet that displays help about Windows Powershell cmdlets and concepts? - ``` Get-Help ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: PowerShell "help files" don't show the entire help file with a basic command. What switch option shows the entire help file? - ``` -Full ```
@@ -69,7 +66,6 @@ ________________________________________________________________________________
 4: What help switch will show you the "help files" on Microsoft's website, in your default browser? - ``` -Online ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Interaction_1-3 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What command will start the Chrome browser on your machine? - ``` Start-Process "Chrome.exe" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What command using a PS Method will stop chrome? - ``` (Get-Process chrome*).kill() ```
@@ -77,41 +73,33 @@ ________________________________________________________________________________
 3: What PowerShell command (without using a method) will stop the Chrome process? - ``` Stop-Process -Name "chrome" ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_CIMClasses_1 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: PowerShell doesn't have a native cmdlet that will give you processor information (such as get-processor or get-cpu). Knowing this information might be necessary. What command would give you information about the system's processor? - ``` Get-CimInstance -ClassName Win32_Processor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_1-2 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What PowerShell command will read a text file? - ``` Get-Content ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What PowerShell command will allow for counting lines in a file, averaging numbers, and summing numbers? - ``` Measure-Object ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Regex_1 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What PowerShell command searches for text patterns in a string? - ``` Select-String ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Powershell_Basics_7-8 *
-______________________________________________________________________________________________________________________________________________________________________________________
 7: Users' files are stored in their corresponding home directory. What is the literal path to all home directories on a Windows 10 system? - ``` C:\Users ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 8: How many properties are available for the get-process cmdlet? - ``` 52 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Alias_3 *
-______________________________________________________________________________________________________________________________________________________________________________________
 3: How many aliases does PowerShell have for listing the contents of a directory? - ``` 3 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Help_5 *
-______________________________________________________________________________________________________________________________________________________________________________________
 5: When requesting the help file for the get-process cmdlet, what full command is the 9th example given? - ``` Get-Process Powershell ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_CIMClasses_2 *
-______________________________________________________________________________________________________________________________________________________________________________________
 2: To complete this challenge, find the description of the Lego Land service. - ``` i_love_legos ```
 
         Get-WMIObject WIN32_service | ?{$_.Name -like "legoland"} | select Description
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_3-7 *
-______________________________________________________________________________________________________________________________________________________________________________________
 3: In the CTF folder on the CTF User's Desktop, count the number of words in words2.txt. - ``` 5254 ```
 
         Get-Content words2.txt | Measure-Object -Word
@@ -133,19 +121,16 @@ ________________________________________________________________________________
         (Get-Content words.txt | Sort-Object | Get-Unique).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Basics_9 *
-______________________________________________________________________________________________________________________________________________________________________________________
 9: How many methods are available for the get-process cmdlet? - ``` 19 ```
 
         (Get-Process | Get-Member -membertype method).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_8 *
-______________________________________________________________________________________________________________________________________________________________________________________
 8: Count the number of folders in the Music folder in the CTF user’s profile. - ``` 411 ```
 
         (Get-ChildItem -recurse | Where-Object {$_.PSIsContainer}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Regex_2-4 *
-______________________________________________________________________________________________________________________________________________________________________________________
 2: Count the number of times, case-insensitive, gaab is listed in words.txt - ``` 1 ```
 
         (Get-Content words.txt | select-string -allmatches "gaab").count
@@ -159,7 +144,6 @@ ________________________________________________________________________________
         (Get-Content words.txt | Where-Object {$_ -match '(az)'}).count
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Logic_9 *
-______________________________________________________________________________________________________________________________________________________________________________________
 9: Use a PowerShell loop to unzip the Omega file 1,000 times and read what is inside. - ``` kung-fu ```
 
         mkdir Extracted
@@ -172,7 +156,6 @@ ________________________________________________________________________________
         type Omega1.txt
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_PowerShell_Regex_5 *
-______________________________________________________________________________________________________________________________________________________________________________________
 5: Count the number of words in words.txt that meet the following criteria: - ``` 357 ```
 
 a appears at least twice consecutively
@@ -230,7 +213,6 @@ Awk - A Tutorial and Introduction - by Bruce Barnett
 The GNU Awk User’s Guide
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_1-4 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What command lists the contents of directories in Linux/Unix systems? - ``` ls ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: For the ls command, what arguments, or switch options, will allow you to print human-readable file sizes in a long-list format? - ``` ls -hl ```
@@ -240,7 +222,6 @@ ________________________________________________________________________________
 4: What argument/switch option, when used with man, will search the short descriptions and man-page-names for a keyword that you provide? - ``` man -k ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_1-6 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What is the absolute path to the root directory? - ``` / ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What is the absolute path to the default location for configuration files? - ``` /etc ```
@@ -256,7 +237,6 @@ ________________________________________________________________________________
         man --path cat
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_5-6 *
-______________________________________________________________________________________________________________________________________________________________________________________
 5: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
 
         man -k digest
@@ -275,11 +255,9 @@ ________________________________________________________________________________
             #use the key that was enumerated from the symmetric file
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_7 *
-______________________________________________________________________________________________________________________________________________________________________________________
 7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Users_And_Groups_1-4 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
 
         $ cat /etc/passwd | cut -d: -f5-6 | sort
@@ -296,7 +274,6 @@ ________________________________________________________________________________
 4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Permissions_1-10 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
 
         $ find / -type d -name "Bibliotheca" 2>/dev/null
@@ -328,7 +305,6 @@ ________________________________________________________________________________
 10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_1-4 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
 
         $ ls -l /etc | grep '^d.*\.d$'
@@ -345,13 +321,11 @@ ________________________________________________________________________________
 4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_1-2 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
 
         $ awk 'NR>=420&&NR<=1337' /home/garviel/numbers | sha512sum
@@ -359,11 +333,9 @@ ________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_5 *
-______________________________________________________________________________________________________________________________________________________________________________________
 5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_3 *
-______________________________________________________________________________________________________________________________________________________________________________________
 3: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
@@ -394,7 +366,6 @@ ________________________________________________________________________________
 10: What is the native Windows GUI tool for managing the registry? - ``` Registry Editor ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Registry_Basics_1-17 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: What registry hive contains all machine settings? - ``` HKLM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What registry hive contains all user settings? - ``` HKU ```
@@ -485,7 +456,6 @@ ________________________________________________________________________________
 17: What CLI command will only show the letters of attached drives? - ``` fsutil fsinfo drives ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_File_System_Basics_1-14 *
-______________________________________________________________________________________________________________________________________________________________________________________
 1: Every file on a Windows system has attributes. What does the d attribute mean? - ``` Directory ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: Every file on a Windows system has attributes. What does the h attribute mean? - ``` Hidden ```
@@ -551,75 +521,77 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 07_windows_boot_process
+# 07_Windows_Boot_Process
+
+## Primer_Boot_Process_1-29 *
+1: What is the smallest addressable unit on a hard disk? - ``` Sector ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the smallest addressable unit on a hard disk? - ``` Sector ```
+2: What term describes a logical division of a single storage device? - ``` Partition ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What term describes a logical division of a single storage device? - ``` Partition ```
+3: What term describes a formatted storage device that can span 1 or more partitions, has a single file system and is assigned a drive letter? - ``` Volume ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What term describes a formatted storage device that can span 1 or more partitions, has a single file system and is assigned a drive letter? - ``` Volume ```
+4: What CLI disk partitioning tool is available in Windows to view and manipulate both partitions and volumes? - ``` Diskpart ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What CLI disk partitioning tool is available in Windows to view and manipulate both partitions and volumes? - ``` Diskpart ```
+5: Windows includes 4 critical Kernel-mode components. Which component is a matched pair with the kernel and obfuscates the hardware dependencies from the kernel? - ``` HAL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Windows includes 4 critical Kernel-mode components. Which component is a matched pair with the kernel and obfuscates the hardware dependencies from the kernel? - ``` HAL ```
+6: Windows includes 4 critical Kernel-mode components. Which component directs calls from a user-mode process to the kernel services? - ``` Executive ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Windows includes 4 critical Kernel-mode components. Which component directs calls from a user-mode process to the kernel services? - ``` Executive ```
+7: This provides an operating system with a software interface to a hardware device. - ``` Driver ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: This provides an operating system with a software interface to a hardware device. - ``` Driver ```
+8: What are the two firmware interfaces supported by modern computers and read in the Pre-boot phase of the Windows boot process? - ``` UEFI and BIOS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: What are the two firmware interfaces supported by modern computers and read in the Pre-boot phase of the Windows boot process? - ``` UEFI and BIOS ```
+9: What is the name of the process that spawns SYSTEM? - ``` ntoskrnl.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: What is the name of the process that spawns SYSTEM? - ``` ntoskrnl.exe ```
+10: In Windows what does the boot sector code load into memory? - ``` bootmgr and winload.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: In Windows what does the boot sector code load into memory? - ``` bootmgr and winload.exe ```
+11: In Windows 10 what is the name of the boot manager? - ``` bootmgr ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: In Windows 10 what is the name of the boot manager? - ``` bootmgr ```
+12: In Microsoft Vista and later the boot.ini file was replaced by what? - ``` BCD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: In Microsoft Vista and later the boot.ini file was replaced by what? - ``` BCD ```
+13: What is the tamper-resistant processor mounted on the motherboard used to improve the security of your PC. It's used by services like BitLocker drive encryption and Windows Hello to securely create and store cryptographic keys, and to confirm that the operating system and firmware on your device are what they're supposed to be, and haven't been tampered with. - ``` TPM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: What is the tamper-resistant processor mounted on the motherboard used to improve the security of your PC. It's used by services like BitLocker drive encryption and Windows Hello to securely create and store cryptographic keys, and to confirm that the operating system and firmware on your device are what they're supposed to be, and haven't been tampered with. - ``` TPM ```
+14: During the Windows boot process, what starts BOOT_START device drivers and services with value of 0x0 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Winload.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: During the Windows boot process, what starts BOOT_START device drivers and services with value of 0x0 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Winload.exe ```
+15: During the Windows boot process, what starts SYSTEM_START device drivers and services with hex value of 0x1 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Ntoskrnl.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: During the Windows boot process, what starts SYSTEM_START device drivers and services with hex value of 0x1 in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` Ntoskrnl.exe ```
+16: During the Windows boot process, services.exe starts device drivers and services on demand with what hex value in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` 0x2 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: During the Windows boot process, services.exe starts device drivers and services on demand with what hex value in the registry key HKLM\SYSTEM\CurrentControlSet\Services? - ``` 0x2 ```
+17: Starting in Windows Vista, what process spawns two additional instances (with identical names), used to initiate session 0 and session 1? - ``` smss.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: Starting in Windows Vista, what process spawns two additional instances (with identical names), used to initiate session 0 and session 1? - ``` smss.exe ```
+18: Which Windows Vista user session is non-interactive, contains system services and processes and is isolated from the GDI (Graphical Device Interface). - ``` Session 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Which Windows Vista user session is non-interactive, contains system services and processes and is isolated from the GDI (Graphical Device Interface). - ``` Session 0 ```
+19: What is the boot process security feature available in UEFI systems, that only allows verified drivers to load? - ``` Secure Boot ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: What is the boot process security feature available in UEFI systems, that only allows verified drivers to load? - ``` Secure Boot ```
+20: To make booting faster, starting with Windows 8, the OS does a partial ________ of the kernel session at shutdown? - ``` Hibernation ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: To make booting faster, starting with Windows 8, the OS does a partial ________ of the kernel session at shutdown? - ``` Hibernation ```
+21: What registry key is responsible for starting services on your machine during the boot process? Flag is the full registry path. - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNSERVICES ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What registry key is responsible for starting services on your machine during the boot process? Flag is the full registry path. - ``` HKLM\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNSERVICES ```
+22: When a user logs on to a Windows host, authentication will either grant the user access to the local computer only (Local Logon) or the user will also be granted access to a Windows domain (Domain Logon). Which logon will the user be authenticated to via the Security Accounts Manager (SAM) database? - ``` Local Logon ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: When a user logs on to a Windows host, authentication will either grant the user access to the local computer only (Local Logon) or the user will also be granted access to a Windows domain (Domain Logon). Which logon will the user be authenticated to via the Security Accounts Manager (SAM) database? - ``` Local Logon ```
+23: What is the parent process of explorer.exe? - ``` userinit.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What is the parent process of explorer.exe? - ``` userinit.exe ```
+24: What is responsible for handling Windows SAS (secure attention sequence), user profile loading, assignment of security to user shell, and Windows station and desktop protection? - ``` winlogon.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: What is responsible for handling Windows SAS (secure attention sequence), user profile loading, assignment of security to user shell, and Windows station and desktop protection? - ``` winlogon.exe ```
+25: What critical Windows process is initialized by wininit.exe, is responsible for creating the user's security access token and verifying user logon credentials? - ``` lsass.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: What critical Windows process is initialized by wininit.exe, is responsible for creating the user's security access token and verifying user logon credentials? - ``` lsass.exe ```
+26: What Microsoft recovery option overwrites the registry key HKLM\System\Select after every successful logon? - ``` Last known good configuration ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: What Microsoft recovery option overwrites the registry key HKLM\System\Select after every successful logon? - ``` Last known good configuration ```
+27: What authentication protocol is the default for logging onto an Active Directory domain and features SSO (Single-Sign On), mutual authentication and primarily uses symmetric cryptography? - ``` Kerberos ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: What authentication protocol is the default for logging onto an Active Directory domain and features SSO (Single-Sign On), mutual authentication and primarily uses symmetric cryptography? - ``` Kerberos ```
+28: In Kerberos the Active Directory controller serves as which major Kerberos component consisting of the Authentication Service (AS) and the Ticket Granting Service (TGS). - ``` Key Distribution Center ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: In Kerberos the Active Directory controller serves as which major Kerberos component consisting of the Authentication Service (AS) and the Ticket Granting Service (TGS). - ``` Key Distribution Center ```
+29: When would the following Windows registry keys, actions occur? HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify - ``` Logon ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: When would the following Windows registry keys, actions occur? HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify - ``` Logon ```
+## Primer_Kernel_1-5 *
+1: The Windows NT Operating System attempts to combine features and benefits of microkernel and monolithic kernel architectures, making it which type of kernel architecture? - ``` Hybrid ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: The Windows NT Operating System attempts to combine features and benefits of microkernel and monolithic kernel architectures, making it which type of kernel architecture? - ``` Hybrid ```
+2: The Linux kernel is an example of what type of kernel architecture? - ``` Monolithic ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: The Linux kernel is an example of what type of kernel architecture? - ``` Monolithic ```
+3: Windows operating system name typically differs from its version number. Which Windows version includes Windows 7 and Windows Server 2008R2 and was the 1st version to ship with PowerShell? - ``` 6.1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32: Windows operating system name typically differs from its version number. Which Windows version includes Windows 7 and Windows Server 2008R2 and was the 1st version to ship with PowerShell? - ``` 6.1 ```
+4: Which Windows version includes Windows Server 2016, 2019, 2022, Windows 10 & 11 and includes SMB 3.1.1 support? - ``` 10 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33: Which Windows version includes Windows Server 2016, 2019, 2022, Windows 10 & 11 and includes SMB 3.1.1 support? - ``` 10 ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 34: The CMD.EXE tool systeminfo included in Windows is very similar to msinfo32 and displays operating system configuration version information for a local or remote machine, including service pack levels. - ``` systeminfo | findstr /C:"OS Version" /C:"BIOS Version" ```
+5: The CMD.EXE tool systeminfo included in Windows is very similar to msinfo32 and displays operating system configuration version information for a local or remote machine, including service pack levels. - ``` systeminfo | findstr /C:"OS Version" /C:"BIOS Version" ```
 
 Craft a systeminfo command that only returns the below info:
 
@@ -627,7 +599,8 @@ OS Version: "System OS and Build #"
 
 BIOS Version: "Your BIOS Ver"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: What is the first process to spawn on Windows systems after the kernel loads? - ``` System ```
+## Windows_Boot_INIT_1-12 *
+1: What is the first process to spawn on Windows systems after the kernel loads? - ``` System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 36: What is the Process ID (PID) of the first Windows process? - ``` 4 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
