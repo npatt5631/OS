@@ -522,7 +522,6 @@ ________________________________________________________________________________
 # |
 # |
 # 07_Windows_Boot_Process
-
 ## Primer_Boot_Process_1-29 *
 1: What is the smallest addressable unit on a hard disk? - ``` Sector ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -602,43 +601,44 @@ ________________________________________________________________________________
 ## Windows_Boot_INIT_1-12 *
 1: What is the first process to spawn on Windows systems after the kernel loads? - ``` System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: What is the Process ID (PID) of the first Windows process? - ``` 4 ```
+2: What is the Process ID (PID) of the first Windows process? - ``` 4 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 37: What is the second boot process to spawn, that then spawns csrss in both session 0 and session 1? - ``` smss ```
+3: What is the second boot process to spawn, that then spawns csrss in both session 0 and session 1? - ``` smss ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 38: What session ID do Windows services operate in? - ``` 0 ```
+4: What session ID do Windows services operate in? - ``` 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 39: What process creates access tokens? - ``` lsass ```
+5: What process creates access tokens? - ``` lsass ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 40: What is the parent process to all svchosts? - ``` services ```
+6: What is the parent process to all svchosts? - ``` services ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 41: What process is waiting with high priority for the Secure Attention Sequence (SAS)? - ``` winlogon ```
+7: What process is waiting with high priority for the Secure Attention Sequence (SAS)? - ``` winlogon ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 42: What user space process spawns explorer, then dies? - ``` userinit ```
+8: What user space process spawns explorer, then dies? - ``` userinit ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 43: What is the name of the bootloader, with extension, we are using on all of the Windows machines in this environment? - ``` winload.exe ```
+9: What is the name of the bootloader, with extension, we are using on all of the Windows machines in this environment? - ``` winload.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44: Based on the boot loader from Init_9, which firmware are we using (BIOS or UEFI) in our environment? - ``` BIOS ```
+10: Based on the boot loader from Init_9, which firmware are we using (BIOS or UEFI) in our environment? - ``` BIOS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 45: What file saves the memory state to the hard drive when going into hibernation? - ``` hiberfil.sys ```
+11: What file saves the memory state to the hard drive when going into hibernation? - ``` hiberfil.sys ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 46: What bootloader is responsible for restoring the system to its original state after hibernation? - ``` winresume.exe ```
+12: What bootloader is responsible for restoring the system to its original state after hibernation? - ``` winresume.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 47: The system is booting into safe mode. Identify the flag from the command-line output of the command used to diagnose boot issues. - ``` 1RF5Zgf9P ```
+## Windows_Boot_Remediate_1-5 *
+1: The system is booting into safe mode. Identify the flag from the command-line output of the command used to diagnose boot issues. - ``` 1RF5Zgf9P ```
 
         bcdedit
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 48: The system is booting into safe mode. Correct that, and reboot into the desktop. The flag is on the desktop. - ``` 76Drp6hB ```
+2: The system is booting into safe mode. Correct that, and reboot into the desktop. The flag is on the desktop. - ``` 76Drp6hB ```
 
         bcdedit /deletevalue {default} safeboot
         shutdown /r
         shutdown -a    #run until it aborts the shutdown
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 49: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ``` ??? ```
+3: Prevent the system restart using the command line, and then identify persistence mechanisms that are reverting the OS and boot loader configurations. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 50: Run PowerShell... if you can. Resolve PowerShell dependencies. - ``` ??? ```
+4: Run PowerShell... if you can. Resolve PowerShell dependencies. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 51: Once you fix and launch PowerShell, the console is changed to a custom layout. Figure out what file is causing this, read the file, and inspect the file that it is referencing. - ``` ??? ```
+5: Once you fix and launch PowerShell, the console is changed to a custom layout. Figure out what file is causing this, read the file, and inspect the file that it is referencing. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
