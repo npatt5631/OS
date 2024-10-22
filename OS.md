@@ -1261,25 +1261,27 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What switch/argument will list all plugins for Volatility? - ``` -h ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-## Windows_Memory_Analysis_
-### 42: In terms of Volatile Data, what locations are the MOST volatile? - ``` Registers,Cache ```
+## Windows_Volatility_Data *
+In terms of Volatile Data, what locations are the MOST volatile? - ``` Registers,Cache ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 43: What is the 12th plugin listed in the Volatility help menu? - ``` cmdscan ```
+## Windows_Memory_Analysis_Basics_3-4 *
+3: What is the 12th plugin listed in the Volatility help menu? - ``` cmdscan ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 44: What profile do you use in conjunction with this memory image? - ``` WinXPSP2x86 ```
+4: What profile do you use in conjunction with this memory image? - ``` WinXPSP2x86 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 45: What command did the attacker type to check the status of the malware? - ``` sc query malware ```
+## Windows_Malware_1-4 *
+1: What command did the attacker type to check the status of the malware? - ``` sc query malware ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 46: What are the last 7 digits of the memory offset for the driver used by the malware? - ``` 1a498b8 ```
+2: What are the last 7 digits of the memory offset for the driver used by the malware? - ``` 1a498b8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 47: The process running under PID 544 seems malicious. What is the md5hash of the executable? - ``` 6CEE14703054E226E87A963372F767AA ```
+3: The process running under PID 544 seems malicious. What is the md5hash of the executable? - ``` 6CEE14703054E226E87A963372F767AA ```
 
     > Set-MpPreference -ExclusionPath 'C:\Users\andy.dwyer\Desktop\Memory_Analysis\'
     > cd C:\Users\andy.dwyer\Desktop\Memory_Analysis
     > .\volatility_2.6_win64_standalone.exe -f ".\0zapftis.vmem" --profile=WinXPSP2x86 procdump -p 544 -D .
     > Get-FileHash -Algorithm md5 .\executable.544.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 48: What remote IP and port did the system connect to? - ``` 172.16.98.1:6666 ```
+4: What remote IP and port did the system connect to? - ``` 172.16.98.1:6666 ```
 
     > .\volatility_2.6_win64_standalone.exe -f ".\0zapftis.vmem" --profile=WinXPSP2x86 connscan
 ______________________________________________________________________________________________________________________________________________________________________________________
