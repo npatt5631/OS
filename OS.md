@@ -1081,7 +1081,9 @@ Find the file in the jump list location that might allow privilege escalation. -
         Get-ItemProperty -Path "C:\Users\<Username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*" | Select-Object Name, LastWriteTime
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Windows_Logs_4 *
-4: Check event logs for a "flag" string. - ``` ??? ```
+4: Check event logs for a "flag" string. - ``` 3v3nt_L0g ```
+
+        Get-EventLog -LogName System | Select-String -InputObject {$_.message} -Pattern 'Flag'
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
