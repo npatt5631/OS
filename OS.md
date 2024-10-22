@@ -345,6 +345,13 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
 1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` AAAAA3AAA3AAAABAABAAAA ```
+
+        cd /home/garviel/Battlefield
+        cat titan_commands
+        B = Left
+        A = Forward
+        3 = Right
+        cat minefield_map
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
