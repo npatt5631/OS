@@ -1290,59 +1290,66 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 16_windows_active_directory_enumeration
+# 16_Windows_Active_Directory_Enumeration
+## Primer_Active_Directory_1-8 *
+1: What is the database that is used to connect users with network resources? - ``` Active Directory ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the database that is used to connect users with network resources? - ``` Active Directory ```
+2: What are all things that are in active directory stored as? - ``` Objects ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What are all things that are in active directory stored as? - ``` Objects ```
+3: What is the Active Directory component which contains formal definitions of every object class that can be created in an Active Directory forest? - ``` schema ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What is the Active Directory component which contains formal definitions of every object class that can be created in an Active Directory forest? - ``` schema ```
+4: What protocol is used when accessing and updating the Active Directory? - ``` LDAP ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What protocol is used when accessing and updating the Active Directory? - ``` LDAP ```
+5: From an Offensive perspective, what type of account is usually the main target? - ``` Administrator ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: From an Offensive perspective, what type of account is usually the main target? - ``` Administrator ```
+6: Task : If an account has been inactive for a substantial amount of time what should the adminstrators do to the account? - ``` Disable ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Task : If an account has been inactive for a substantial amount of time what should the adminstrators do to the account? - ``` Disable ```
+7: What is the basic PowerShell cmdlet used to enumerate users? - ``` Get-ADUser ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: What is the basic PowerShell cmdlet used to enumerate users? - ``` Get-ADUser ```
+8: What is the suite of tools used in CLI to enumerate users across the network? - ``` DS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: What is the suite of tools used in CLI to enumerate users across the network? - ``` DS ```
+## Windows_Active_Directory_Basics_1-4 *
+1: What is the domain portion of the following SID:S-1-5-21-1004336348-1177238915-682003330-1000 - ``` 21-1004336348-1177238915-682003330 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: What is the domain portion of the following SID:S-1-5-21-1004336348-1177238915-682003330-1000 - ``` 21-1004336348-1177238915-682003330 ```
+2: What PowerShell command will list domain groups? - ``` Get-ADGroup ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What PowerShell command will list domain groups? - ``` Get-ADGroup ```
+3: What PowerShell command will list all users and their default properties? - ``` Get-ADUser -filter * ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What PowerShell command will list all users and their default properties? - ``` Get-ADUser -filter * ```
+4: What PowerShell command will allow you to search Active Directory accounts for expired accounts without having to create a filter? - ``` Search-ADAccount ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: What PowerShell command will allow you to search Active Directory accounts for expired accounts without having to create a filter? - ``` Search-ADAccount ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 13: Find the expired accounts that aren't disabled. List the last names in Alphabetical Order, separated with a comma, and no space between. - ``` Krause,Page ```
+## Windows_AD_Search_Accounts *
+Find the expired accounts that aren't disabled. List the last names in Alphabetical Order, separated with a comma, and no space between. - ``` Krause,Page ```
 
         Get-ADUser -Filter {Enabled -eq $true} -Properties AccountExpirationDate | Where-Object {$_.AccountExpirationDate -lt (get-date) -and $_.Enabled -ne $null} | select-object GivenName
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: Find the unprofessional email addresses. List the email's domain. - ``` ashleymadison.com ```
+## Windows_AD_Search_Emails *
+Find the unprofessional email addresses. List the email's domain. - ``` ashleymadison.com ```
 
         get-aduser -filter * -properties EmailAddress | where-object {$_.emailaddress -notlike "*mail.mil"} | select-object EmailAddress
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: The flag is the unprofessionally-named file located somewhere on the Warrior Share. - ``` lulz.pdf ```
+## Windows_AD_Search_Files *
+The flag is the unprofessionally-named file located somewhere on the Warrior Share. - ``` lulz.pdf ```
 
         get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: The flag is the name of the file, where in the file contents, someone is requesting modified access rights. - ``` 14287.pdf ```
+## Windows_AD_Search_Insider_1-2 *
+1: The flag is the name of the file, where in the file contents, someone is requesting modified access rights. - ``` 14287.pdf ```
 
         net use * "\\file-server\warrior share"
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: The flag is the name of the user who is requesting modified access rights. - ``` Karen.Nance ```
+2: The flag is the name of the user who is requesting modified access rights. - ``` Karen.Nance ```
 
         Get-ADUser -Filter * -Properties telephoneNumber | where-object {$_.telephoneNumber -like "*336-6754"}
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Find the accounts that contain unprofessional information in the description. - ``` Ibarra,Lee ```
+## Windows_AD_Search_Naming *
+Find the accounts that contain unprofessional information in the description. - ``` Ibarra,Lee ```
 
         Get-ADUser -Filter * -Properties Description | select Description
         Get-ADUser -Filter * -Properties Description | where-object {$_.Description -notlike "*PLT Soldier"} | select-object Description
         Get-ADUser -Filter * -Properties Description | where-object {$_.Description -like "*description"}
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: Find the following three accounts: - ``` ??? ```
+## Windows_AD_Search_Passwords *
+Find the following three accounts: - ``` ??? ```
 
 two accounts with passwords that never expire NOT andy.dwyer
 
@@ -1350,27 +1357,30 @@ one account that has its password stored using reversible encryption
 
 List the last names in Alphabetical Order, comma-separated, no spaces. Do not list built-in accounts.
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: The flag is the name of the file containing PII on the Warrior Share. - ``` phone_matrix.xlsx ```
+## Windows_AD_Search_PII *
+The flag is the name of the file containing PII on the Warrior Share. - ``` phone_matrix.xlsx ```
 
         get-childitem -force -recurse -erroraction SilentlyContinue | select Mode, LastWriteTime, Fullname
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: Find the short name of the domain in which this server is a part of. - ``` army ```
+## Windows_Active_Directory_Basics_5-8 *
+5: Find the short name of the domain in which this server is a part of. - ``` army ```
 
         get-addomaincontroller -filter *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: What is the RID of the krbtgt account. - ``` 502 ```
+6: What is the RID of the krbtgt account. - ``` 502 ```
 
         Get-ADUser -Filter * -Properties * | where-object {$_.name -like "*krbtgt"}
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: How many users are members of the Domain Admins group? - ``` ??? ```
+7: How many users are members of the Domain Admins group? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: How many total users are members of the Domain Admins group? - ``` ??? ```
+8: How many total users are members of the Domain Admins group? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
+## Windows_AD_Follow_Insider_Trail_1-4 *
+1: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
+2: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
+3: Continue to follow the insider trail to find additional insider threats and their compromised mission. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: Continue to follow the insider trail to find additional insider threats and their compromised mission. This flag is a video link. - ``` ??? ```
+4: Continue to follow the insider trail to find additional insider threats and their compromised mission. This flag is a video link. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
