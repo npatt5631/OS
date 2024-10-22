@@ -645,164 +645,182 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 08_linux_boot_process
+# 08_Linux_Boot_Process
+## Linux_Boot_Hex_1 *
+1: Solve the following equation: 0x31A - 0x21B. Enter the flag in Hexadecimal form. - ``` 0xFF ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Solve the following equation: 0x31A - 0x21B. Enter the flag in Hexadecimal form. - ``` 0xFF ```
+## Linux_Boot_Bits_And_Bytes_1-3 *
+1: How many bits are in a nibble, and a byte? - ``` 4,8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: How many bits are in a nibble, and a byte? - ``` 4,8 ```
+2: How many bits does a single Hexadecimal character represent? - ``` 4 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: How many bits does a single Hexadecimal character represent? - ``` 4 ```
+3: Each hex pair contains a value of 8 bits when used to represent memory. The range from 0x00000000 to 0x00000010 in hexadecimal represents addresses in memory or positions in data. This range includes the starting address (0x00000000) and ends at the address (0x00000010). How many bytes could the range 0x00000000 - 0x00000010 contain? - ``` 17 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Each hex pair contains a value of 8 bits when used to represent memory. The range from 0x00000000 to 0x00000010 in hexadecimal represents addresses in memory or positions in data. This range includes the starting address (0x00000000) and ends at the address (0x00000010). How many bytes could the range 0x00000000 - 0x00000010 contain? - ``` 17 ```
+## Linux_Boot_MBR_1 *
+1: How large is the Master Boot Record and what directory is it located in? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: How large is the Master Boot Record and what directory is it located in? - ``` ??? ```
+## Linux_Boot_SysV_1 *
+1: Identify which of your Linux machines is using SysV Initialization. - ``` Minas_Tirith ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Identify which of your Linux machines is using SysV Initialization. - ``` Minas_Tirith ```
+## Linux_Boot_Hex_2-4 *
+2: What are the maximum and minimum value a single Hexadecimal digit can contain? - ``` 0x0-0xF ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: What are the maximum and minimum value a single Hexadecimal digit can contain? - ``` 0x0-0xF ```
+3: What are the maximum and minimum values, in decimal notation, that a single Hexadecimal digit can represent? - ``` 0-15 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: What are the maximum and minimum values, in decimal notation, that a single Hexadecimal digit can represent? - ``` 0-15 ```
+4: Solve the following equation: 0x31A + 0x43. Enter the flag in Hexadecimal form. - ``` 0x35D ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: Solve the following equation: 0x31A + 0x43. Enter the flag in Hexadecimal form. - ``` 0x35D ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What are the values contained in hex positions 0x00000001 through 0x00000008? - ``` 63,90,8e,d0,31,e4,8e,d8 ```
+## Linux_Boot_Bits_And_Bytes_4 *
+4: What are the values contained in hex positions 0x00000001 through 0x00000008? - ``` 63,90,8e,d0,31,e4,8e,d8 ```
 
          sudo cat /dev/vda | xxd -l 32 -c 0x10 -g 1
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: Locate the master boot record for one of the Linux machines and read it with xxd. What programming language is the MBR written in? - ``` Assembly Language ```
+## Linux_Boot_MBR_2-5 *
+2: Locate the master boot record for one of the Linux machines and read it with xxd. What programming language is the MBR written in? - ``` Assembly Language ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash the first partition of the file using md5sum. The flag is the hash. - ``` 2a5948fad4ec68170b23faaa2a16cef8 ```
+3: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash the first partition of the file using md5sum. The flag is the hash. - ``` 2a5948fad4ec68170b23faaa2a16cef8 ```
 
     $ xxd -l 120 -ps -c 20 xxd.1
     $ dd -ibs 16 
     $ dd bs=1 skip==446 count=16 if=mbroken of=linuxsucks
     $ md5sum linuxsucks
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: The file /home/bombadil/mbroken is a copy of an MBR from another machine. You will find the "word" GRUB in the output, hash using md5sum. The flag is the entire hash. - ``` 5fa690cb0f0789cbc57decfd096a503e ```
+4: The file /home/bombadil/mbroken is a copy of an MBR from another machine. You will find the "word" GRUB in the output, hash using md5sum. The flag is the entire hash. - ``` 5fa690cb0f0789cbc57decfd096a503e ```
 
     $ dd bs=1 skip=392 count=4 if=mmbroken of=linuxsucks
     $ md5sum linuxsucks
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash only the Bootstrap section of the MBR using md5sum. The flag is the entire hash. - ``` ??? ```
+5: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash only the Bootstrap section of the MBR using md5sum. The flag is the entire hash. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: Identify the default run level on the SysV Init Linux machine. - ``` 2 ```
+## Linux_Boot_SysV_2-4 *
+2: Identify the default run level on the SysV Init Linux machine. - ``` 2 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: What is the last script to run when the command init 6 is executed? - ``` /etc/init.d/reboot ```
+3: What is the last script to run when the command init 6 is executed? - ``` /etc/init.d/reboot ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What run levels start the daemon that allows remote connections over port 22? - ``` 2,3,4,5 ```
+4: What run levels start the daemon that allows remote connections over port 22? - ``` 2,3,4,5 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Identify the file that init is symbolically-linked to, on the SystemD init machine. - ``` ??? ```
+## Linux_Boot_SystemD_1-6 *
+1: Identify the file that init is symbolically-linked to, on the SystemD init machine. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: What is the default target on the SystemD machine and where is it actually located? - ``` ??? ```
+2: What is the default target on the SystemD machine and where is it actually located? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: What unit does the graphical.target want to start, based solely on its configuration file? - ``` ??? ```
+3: What unit does the graphical.target want to start, based solely on its configuration file? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What dependency to graphical.target will stop it from executing if it fails to start, based solely on its static configuration file? - ``` ??? ```
+4: What dependency to graphical.target will stop it from executing if it fails to start, based solely on its static configuration file? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: How many wants dependencies does SystemD actually recognize for the default.target - ``` ??? ```
+5: How many wants dependencies does SystemD actually recognize for the default.target - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What is the full path to the binary used for standard message logging? - ``` ??? ```
+6: What is the full path to the binary used for standard message logging? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: Identify the Linux Kernel being loaded by the Grub, by examining its configuration. Enter the command used by the Grub, and the full path to the Kernel, as the flag. - ``` ??? ```
+## Linux_Boot_GRUB *
+0: Identify the Linux Kernel being loaded by the Grub, by examining its configuration. Enter the command used by the Grub, and the full path to the Kernel, as the flag. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
 # |
 # |
 # |
-# 09_windows_process_validity
-______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the full path to folder used when Windows redirects 32 bit applications running on a 64bit system? - ``` C:\Windows\SysWOW64 ```
+# 09_Windows_Process_Validity
+## Primer_Processes_1-12 *
+1: What is the full path to folder used when Windows redirects 32 bit applications running on a 64bit system? - ``` C:\Windows\SysWOW64 ```
 
         reg query 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList'
         Primer_Process(1) 
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What Windows System Service starts the kernel and user mode subsystems? - ``` smss.exe ```
+2: What Windows System Service starts the kernel and user mode subsystems? - ``` smss.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What Windows system process: - ``` lsass.exe ```
+3: What Windows system process: - ``` lsass.exe ```
 
-#### Runs in session 0
-#### is responsible for enforcing the security policy on the system
-#### Performs all logon functions
-#### Handles password changes
-#### Creates access tokens
-#### Writes to the Windows Security Log
+Runs in session 0
+
+is responsible for enforcing the security policy on the system
+
+Performs all logon functions
+
+Handles password changes
+
+Creates access tokens
+
+Writes to the Windows Security Log
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Which is spoolsv.exe? - ``` Server-mode Service ```
+4: Which is spoolsv.exe? - ``` Server-mode Service ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Which service type is explorer.exe? - ``` User-mode Service ```
+5: Which service type is explorer.exe? - ``` User-mode Service ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: During a network survey you observed a host running inetinfo.exe service. What type of server might you have found? - ``` IIS ```
+6: During a network survey you observed a host running inetinfo.exe service. What type of server might you have found? - ``` IIS ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: During a reconnaissance mission you enumerated a host running the dns.exe service. Is this a user pc or a server? - ``` Server ```
+7: During a reconnaissance mission you enumerated a host running the dns.exe service. Is this a user pc or a server? - ``` Server ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: A host running firefox and office 365 is most likely what type of host? Server or Client - ``` Client ```
+8: A host running firefox and office 365 is most likely what type of host? Server or Client - ``` Client ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: How does a User-Mode Service request resources? - ``` System Call ```
+9: How does a User-Mode Service request resources? - ``` System Call ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: Passively copying currently running processes for comparison later is known as? - ``` Baselining ```
+10: Passively copying currently running processes for comparison later is known as? - ``` Baselining ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What can execute any part of a processes code, to include parts already being executed? - ``` Thread ```
+11: What can execute any part of a processes code, to include parts already being executed? - ``` Thread ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: Windows has how many process priority levels? - ``` 32 ```
+12: Windows has how many process priority levels? - ``` 32 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: What Sysinternals tool shows malware persistence locations in tabs within its GUI? - ``` Autoruns ```
+## Windows_Processes_Basics_1-10 *
+1: What Sysinternals tool shows malware persistence locations in tabs within its GUI? - ``` Autoruns ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: What Sysinternals tool is used to investigate processes? - ``` Process Explorer ```
+2: What Sysinternals tool is used to investigate processes? - ``` Process Explorer ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: What Sysinternals tool can be used to investigate network connection attempts? - ``` TCPView ```
+3: What Sysinternals tool can be used to investigate network connection attempts? - ``` TCPView ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: What Sysinternals tool can view permissions? - ``` AccessChk ```
+4: What Sysinternals tool can view permissions? - ``` AccessChk ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What Sysinternals tool allows us to view and modify handles? - ``` Handle ```
+5: What Sysinternals tool allows us to view and modify handles? - ``` Handle ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: What is the default Windows user directory for files downloaded from the internet? The flag is the folder name only. - ``` Downloads ```
+6: What is the default Windows user directory for files downloaded from the internet? The flag is the folder name only. - ``` Downloads ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: What is the default Windows download directory that everyone has access to? The flag is the absolute path to the directory. - ``` C:\users\public\downloads ```
+7: What is the default Windows download directory that everyone has access to? The flag is the absolute path to the directory. - ``` C:\users\public\downloads ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: What Sysinternals tool shows service load order? - ``` LoadOrder ```
+8: What Sysinternals tool shows service load order? - ``` LoadOrder ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: What is the service name of Windows Defender Firewall? - ``` MpsSvc ```
+9: What is the service name of Windows Defender Firewall? - ``` MpsSvc ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: What SysInternals tool reports .dlls loaded into processes? - ``` ListDLLs ```
+10: What SysInternals tool reports .dlls loaded into processes? - ``` ListDLLs ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: There is malware on the system that is named similarly to a legitimate Windows executable. There is a .dll in the folder that the malware runs from. The flag is the name of the .dll. - ``` libmingwex-0.dll ```
+## Windows_Hidden_Processes_1-6 *
+1: There is malware on the system that is named similarly to a legitimate Windows executable. There is a .dll in the folder that the malware runs from. The flag is the name of the .dll. - ``` libmingwex-0.dll ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: You notice that there is an annoying pop up happening regularly. Investigate the process causing it. The flag is the name of the executable. - ``` McAfeeFireTray.exe ```
+2: You notice that there is an annoying pop up happening regularly. Investigate the process causing it. The flag is the name of the executable. - ``` McAfeeFireTray.exe ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: Determine what is sending out a SYN_SENT message. The flag is the name of the executable. - ``` McAfeeFireTray.exe ```
+3: Determine what is sending out a SYN_SENT message. The flag is the name of the executable. - ``` McAfeeFireTray.exe ```
 
         Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-1584283910-3275287195-1754958050-1005'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ```  ```
+4: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: There is malware named TotallyLegit. Find its binary location and there will be a file in that directory. Read the file. - ``` GwlkK3sa ```
+5: There is malware named TotallyLegit. Find its binary location and there will be a file in that directory. Read the file. - ``` GwlkK3sa ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: Find the McAfeeFireTray.exe. There is a file in that directory. The flag is inside. - ``` StrongBad ```
+6: Find the McAfeeFireTray.exe. There is a file in that directory. The flag is inside. - ``` StrongBad ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 29: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ``` ??? ```
+## Win_Process_Situational_Awareness_1-5 *
+1: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 30: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ``` ??? ```
+2: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 31: In what Load Order Group is the Windows Firewall service? - ``` ??? ```
+3: In what Load Order Group is the Windows Firewall service? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 32: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ``` ??? ```
+4: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 33: While examining the Windows Defender Firewall, what is the LogAllowedConnections setting set to, for the Public profile? - ``` ??? ```
+5: While examining the Windows Defender Firewall, what is the LogAllowedConnections setting set to, for the Public profile? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 34: A nonstandard port has been opened by possible malware on the system. Identify the port. - ``` ??? ```
+## Windows_Hidden_Processes_7-9 *
+7: A nonstandard port has been opened by possible malware on the system. Identify the port. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 35: Determine what mechanism opened the port from hidden_processes_7. The flag is the name of the file. - ``` ??? ```
+8: Determine what mechanism opened the port from hidden_processes_7. The flag is the name of the file. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 36: Identify the flag from the file in hidden_processes_8. - ``` ??? ```
+8: Identify the flag from the file in hidden_processes_8. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
 # |
 # |
 # |
-# 10_windows_uac
-______________________________________________________________________________________________________________________________________________________________________________________
+# 10_Windows_UAC
+## Windows_UAC_Basics_1-8 *
 ### 1: What Sysinternals tool will allow you to view a file's manifest? - ``` sigcheck ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 2: What is the RequestedExecutionLevel for an application to run with the same permissions as the process that started it? - ``` asInvoker ```
