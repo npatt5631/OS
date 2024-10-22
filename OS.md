@@ -821,47 +821,47 @@ ________________________________________________________________________________
 # |
 # 10_Windows_UAC
 ## Windows_UAC_Basics_1-8 *
-### 1: What Sysinternals tool will allow you to view a file's manifest? - ``` sigcheck ```
+1: What Sysinternals tool will allow you to view a file's manifest? - ``` sigcheck ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What is the RequestedExecutionLevel for an application to run with the same permissions as the process that started it? - ``` asInvoker ```
+2: What is the RequestedExecutionLevel for an application to run with the same permissions as the process that started it? - ``` asInvoker ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What RequestedExecutionLevel will prompt the user for Administrator credentials if they're not a member of the Administrator's group? - ``` requireAdministrator ```
+3: What RequestedExecutionLevel will prompt the user for Administrator credentials if they're not a member of the Administrator's group? - ``` requireAdministrator ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What registry key holds UAC values? - ``` HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ```
+4: What registry key holds UAC values? - ``` HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: The flag is the RequestedExecutionLevel of the schtasks.exe file. - ``` asInvoker ```
+5: The flag is the RequestedExecutionLevel of the schtasks.exe file. - ``` asInvoker ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Determine which UAC subkey property shows whether UAC is enabled or not. The flag is the data value in that property. - ``` 0x1337 ```
+6: Determine which UAC subkey property shows whether UAC is enabled or not. The flag is the data value in that property. - ``` 0x1337 ```
 
         Reg Query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Provide the name of the UAC [Registry subkey] property that determines what level UAC is set to for admin privileges (Example UAC levels: Default, Always, Notify). - ``` ConsentPromptBehaviorAdmin ```
+7: Provide the name of the UAC [Registry subkey] property that determines what level UAC is set to for admin privileges (Example UAC levels: Default, Always, Notify). - ``` ConsentPromptBehaviorAdmin ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Query the registry subkey where UAC settings are stored, and provide the flag. - ``` NiceJob ```
+8: Query the registry subkey where UAC settings are stored, and provide the flag. - ``` NiceJob ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
 # |
 # |
 # |
-# 11_windows_services
+# 11_Windows_Services
+## Windows_Services_Basics_1-7 *
+1: What command-line (cmd) command will show service information? - ``` sc query ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What command-line (cmd) command will show service information? - ``` sc query ```
+2: What command-line (cmd) command will show all services, running or not running? - ``` sc query type=service state=all ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What command-line (cmd) command will show all services, running or not running? - ``` sc query type=service state=all ```
+3: What PowerShell command will list all services? - ``` Get-Service ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What PowerShell command will list all services? - ``` Get-Service ```
+4: What registry location holds all service data? - ``` HKLM\System\CurrentControlSet\Services ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What registry location holds all service data? - ``` HKLM\System\CurrentControlSet\Services ```
+5: What registry subkey holds a service's .dll location? - ``` parameters ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: What registry subkey holds a service's .dll location? - ``` parameters ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Services have a name and display name, which could be different. What is the service name of the only Totally-Legit service? - ``` Legit ```
+6: Services have a name and display name, which could be different. What is the service name of the only Totally-Legit service? - ``` Legit ```
 
         get-services
         get-service Totally-Legit | Format-list *
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Figure out the SID of the only Totally-Legit service. - ``` 1182961511 ```
+7: Figure out the SID of the only Totally-Legit service. - ``` 1182961511 ```
 
         sc showsid Legit
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -870,63 +870,67 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 12_linux_process_validity
+# 12_Linux_Process_Validity
+## Linux_Processes_1-9 *
+1: What is the process ID (PID) of the SysV Init daemon? - ``` 1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: What is the process ID (PID) of the SysV Init daemon? - ``` 1 ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 2: How many child processes did SysV Init daemon spawn? - ``` 24 ```
+2: How many child processes did SysV Init daemon spawn? - ``` 24 ```
 
     $ htop
         - sort by ppid
         - count
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: Identify all of the arguments given to the ntpd daemon (service) using ps. List all options with parameters (include numbers). - ``` -p /var/run/ntpd.pid -g -u 105:109 ```
+3: Identify all of the arguments given to the ntpd daemon (service) using ps. List all options with parameters (include numbers). - ``` -p /var/run/ntpd.pid -g -u 105:109 ```
 
     $ ps -elf | grep ntpd
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What is the parent process to Bombadil’s Bash process? (name of the binary, not the absolute path) - ``` sshd ```
+4: What is the parent process to Bombadil’s Bash process? (name of the binary, not the absolute path) - ``` sshd ```
 
     $ ps -elf | grep bash
         Grab the PID for the Parent Process(PPID) 
     $ ps -elf | grep <PPID>
         match IDs
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: Identify the file mapped to the fourth file descriptor (handle) of the cron process. - ``` /run/crond.pid ```
+5: Identify the file mapped to the fourth file descriptor (handle) of the cron process. - ``` /run/crond.pid ```
 
     $ sudo lsof | grep cron | sort
     $ ls -l /run/crond.pid
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: Identify the permissions that cron has on the file identified in Processes 5. - ``` r,w ```
+6: Identify the permissions that cron has on the file identified in Processes 5. - ``` r,w ```
 
     $ sudo lsof | grep cron | sort
     $ ls -l /run/crond.pid
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Identify the names of the orphan processes on the SysV system. - ``` Aragorn,BruceWayne,Eowyn,Tolkien ```
+7: Identify the names of the orphan processes on the SysV system. - ``` Aragorn,BruceWayne,Eowyn,Tolkien ```
 
     $ htop
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Locate zombie processes on the SysV system. Identify the zombie processes' parent process. - ``` /bin/funk ```
+8: Locate zombie processes on the SysV system. Identify the zombie processes' parent process. - ``` /bin/funk ```
 
     $ htop
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: Locate the strange open port on the SysV system. Identify the command line executable and its arguments. - ``` /bin/netcat -lp 9999 ```
+9: Locate the strange open port on the SysV system. Identify the command line executable and its arguments. - ``` /bin/netcat -lp 9999 ```
 
     $ htop
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: Examine the process list to find the ssh process. Then, identify the symbolic link to the absolute path for its executable in the /proc directory. - ``` /proc/1904/exe,/usr/sbin/sshd ```
+## Linux_Process_Proc_Dir_1-2 *
+1: Examine the process list to find the ssh process. Then, identify the symbolic link to the absolute path for its executable in the /proc directory. - ``` /proc/1904/exe,/usr/sbin/sshd ```
 
     $ ps -elf | grep sshd
     $ ls -l /proc/1904
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: Identify the file that contains udp connection information. Identify the process using port 123. - ``` ntp,17,u ```
+2: Identify the file that contains udp connection information. Identify the process using port 123. - ``` ntp,17,u ```
 
     $ sudo lsof | grep UDP
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: Locate the strange open port on the SysV system. Identify how the process persists between reboots. - ``` ??? ```
+## Linux_Processes_10 *
+10: Locate the strange open port on the SysV system. Identify how the process persists between reboots. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: Identify one of the human-readable file handles by the other program that creates a zombie process. - ``` and in the darkness bind them ```
+## Linux_Process_Proc_Dir_3 *
+3: Identify one of the human-readable file handles by the other program that creates a zombie process. - ``` and in the darkness bind them ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: Scenario: The Villains group has been chanting offerings to their new leader at regular intervals over a TCP connection. Task: Identify their method of communication and how it is occurring. Locate the following artifacts: ** The chant/text used by each villain (include spaces) ** The new Lord receiving the offering ** The IP address and port that the offering is received over. - ``` Mausan ukoul for avhe mubullat goth,witch_king,127.0.0.1:1234 ```
+## Linux_Process_Find_Evil_1-5 *
+1: Scenario: The Villains group has been chanting offerings to their new leader at regular intervals over a TCP connection. Task: Identify their method of communication and how it is occurring. Locate the following artifacts: ** The chant/text used by each villain (include spaces) ** The new Lord receiving the offering ** The IP address and port that the offering is received over. - ``` Mausan ukoul for avhe mubullat goth,witch_king,127.0.0.1:1234 ```
 
         find / -name *chant*
         sudo lsof | grep chant
@@ -956,9 +960,9 @@ ________________________________________________________________________________
                 echo "done beaconing"
         ) 9>/tmp/mylockfile
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: Scenario: Someone or something is stealing files with a .txt extension from user directories. Determine how these thefts are occurring. Task: Identify the command being ran and how it occurs. - ``` ??? ```
+2: Scenario: Someone or something is stealing files with a .txt extension from user directories. Determine how these thefts are occurring. Task: Identify the command being ran and how it occurs. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: Scenario: Text files are being exfiltrated from the machine using a network connection. The connections still occur post-reboot, according to network analysts. The junior analysts are having a hard time with attribution because no strange programs or ports are running, and the connection seems to only occur in 60-second intervals, every 15 minutes. - ``` netcat -lp 3389 < /tmp/NMAP_all_hosts.txt,whatischaos.timer ```
+3: Scenario: Text files are being exfiltrated from the machine using a network connection. The connections still occur post-reboot, according to network analysts. The junior analysts are having a hard time with attribution because no strange programs or ports are running, and the connection seems to only occur in 60-second intervals, every 15 minutes. - ``` netcat -lp 3389 < /tmp/NMAP_all_hosts.txt,whatischaos.timer ```
 
         systemctl
         whatischaos.service
@@ -966,14 +970,14 @@ ________________________________________________________________________________
         cat /lib/systemd/system/whatischaos.service
         cat /lib/systemd/system/whatischaos.timer
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: Scenario: The web server has been modified by an unknown hacktivist group. Users accessing the web server are reporting crashes and insane disk usage. Task: Identify the Cyber Attack Method used by the group, and the command running. - ``` DOS,/bin/apache3 -lp 443 < /dev/urandom ```
+4: Scenario: The web server has been modified by an unknown hacktivist group. Users accessing the web server are reporting crashes and insane disk usage. Task: Identify the Cyber Attack Method used by the group, and the command running. - ``` DOS,/bin/apache3 -lp 443 < /dev/urandom ```
 
         $ htop
         $ /bin/apache3 -lp 443
         $ find / -name *apache3* | grep apache3
         $ cat /lib/systemd/system/apache3.service
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: Scenario: Analysts have found a dump of commands on the Internet that refer to the Terra machine. The command history for one of the users with an interactive login is being stolen via unknown means. The network analysts can’t find any persistent connections, but notice a spike in traffic on logon and logoff. Task: Identify how the command history is stolen from the machine. - ``` /home/garviel/.bash_logout,12.54.37.8:12000 ```
+5: Scenario: Analysts have found a dump of commands on the Internet that refer to the Terra machine. The command history for one of the users with an interactive login is being stolen via unknown means. The network analysts can’t find any persistent connections, but notice a spike in traffic on logon and logoff. Task: Identify how the command history is stolen from the machine. - ``` /home/garviel/.bash_logout,12.54.37.8:12000 ```
 
         $ ls -la
         $ cat .bash_logout
