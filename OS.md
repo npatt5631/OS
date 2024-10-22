@@ -273,7 +273,9 @@ ________________________________________________________________________________
         $ cat /etc/passwd | cut -d: -f7 | sort | uniq
         $ cat /etc/passwd | grep "/bin/sh"
 ______________________________________________________________________________________________________________________________________________________________________________________
-4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` ??? ```
+4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` SHA512,8,86 ```
+
+        sudo cat /etc/shadow | grep -v ! $2
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Permissions_1-10 *
 1: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
