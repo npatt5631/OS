@@ -1100,65 +1100,72 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 4: What severity is assigned to system instability messages? - ``` 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Download the attached rsyslog configuration file for the Syslog # challenges. In the legacy rules section of the file, what facility is logged to 0.log? - ``` kern ```
+## Linux_Auditing_And_Logging_SysLog_1-8 *
+1: Download the attached rsyslog configuration file for the Syslog # challenges. In the legacy rules section of the file, what facility is logged to 0.log? - ``` kern ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: In the legacy rules section of the file, how many severities are logged to 0.log? - ``` 8 ```
+2: In the legacy rules section of the file, how many severities are logged to 0.log? - ``` 8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed) using their severity name. - ``` Emergency,Alert,Critical,Error,Warning ```
+3: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed) using their severity name. - ``` Emergency,Alert,Critical,Error,Warning ```
 
         (line 10) 4.4 -/var/log/4min.log
         -(0,1,2,3,4)
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed), using their severity name. - ``` Notice,Informational,Debug ```
+4: List the severities from highest severity (lowest numerical listed) to lowest severity (highest numerical listed), using their severity name. - ``` Notice,Informational,Debug ```
 
         (line 11)4.!4 -/var/log/4sig.log
         -(5,6,7) 
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: What is being logged in not.log? Provide the facilities from lowest facility to highest facility numerically, and the severity being logged. (List only the first word for each.) - ``` mail,clock,ntp,notice ```
+5: What is being logged in not.log? Provide the facilities from lowest facility to highest facility numerically, and the severity being logged. (List only the first word for each.) - ``` mail,clock,ntp,notice ```
 
         (line 12)2,9,12.=5 /var/log/not.log
         -(mail system{2},clock daemon{9},ntp subsystem{12},notice{.=15})
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 12: What facilities and what severities are being sent to a remote server over a reliable connection using port 514? Provide the facility names, number of severities, and the correct destination IP address. - ``` auth,authpriv,8,10.30.0.1 ```
+6: What facilities and what severities are being sent to a remote server over a reliable connection using port 514? Provide the facility names, number of severities, and the correct destination IP address. - ``` auth,authpriv,8,10.30.0.1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: Use the answer from Syslog 6 for this question. Do logs that match this filter ever get saved on the local machine? - ``` Yes ```
+7: Use the answer from Syslog 6 for this question. Do logs that match this filter ever get saved on the local machine? - ``` Yes ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: What messages are being sent to 10.84.0.1? Provide the facility number, the number (amount) of severity codes, and Layer 4 connection type as the answer. - ``` 0,7,UDP ```
+8: What messages are being sent to 10.84.0.1? Provide the facility number, the number (amount) of severity codes, and Layer 4 connection type as the answer. - ``` 0,7,UDP ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: Parse all of the IP addresses from the file using XPATH queries - ``` 0e850f14fc192c5105955ec094287bd2 ```
+## Linux_Auditing_And_Logging_XML_3-4 *
+3: Parse all of the IP addresses from the file using XPATH queries - ``` 0e850f14fc192c5105955ec094287bd2 ```
 
     $ xpath -q -e '//host/address/@addr' output.xml | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: Select all of the IP addresses and ports using a single XPATH Union Statement Pipe the result to md5sum for the flag - ``` ff7990139b6d09aa65afb6e069db0dec ```
+4: Select all of the IP addresses and ports using a single XPATH Union Statement Pipe the result to md5sum for the flag - ``` ff7990139b6d09aa65afb6e069db0dec ```
 
     $ xpath -q -e '//host/address/@addr | //host/ports/port/@portid' output.xml | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: Use jq to pretty print the JSON file conn.log. Hash the pretty-printed file with md5sum for the flag. - ``` 25ebedf7442e470eaaa48b5f7d5b96f4 ```
+## Linux_Auditing_And_Logging_JSON_1-3 *
+1: Use jq to pretty print the JSON file conn.log. Hash the pretty-printed file with md5sum for the flag. - ``` 25ebedf7442e470eaaa48b5f7d5b96f4 ```
 
     $ cat conn.log | jq .
     $ cat conn.log | jq . | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: This file is a conn.log made in Zeek (Bro) with data about TCP/IP connections. Use jq to locate and count the unique originating endpoint IP addresses in the file. Enter the number of unique originating IP addresses as the flag. - ``` ??? ```
+2: This file is a conn.log made in Zeek (Bro) with data about TCP/IP connections. Use jq to locate and count the unique originating endpoint IP addresses in the file. Enter the number of unique originating IP addresses as the flag. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: This file is a conn.log made in Zeek (Bro) with data about TCP/IP connections. Use jq to locate and count connections where the destination IP sent more than 40 bytes to the source IP. - ``` 177 ```
+3: This file is a conn.log made in Zeek (Bro) with data about TCP/IP connections. Use jq to locate and count connections where the destination IP sent more than 40 bytes to the source IP. - ``` 177 ```
 
         cat conn.log | jq 'select(.resp_bytes >= 40).ts' | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: Which cron log severity code is saved only to the local machine? - ``` 7 ```
+## Linux_Auditing_And_Logging_SysLog_9-10 *
+9: Which cron log severity code is saved only to the local machine? - ``` 7 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: The emergency messages (only) on the system are sent to what IP Address? - ``` 10.24.0.1 ```
+10: The emergency messages (only) on the system are sent to what IP Address? - ``` 10.24.0.1 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: How many unique users logged into this machine? - ``` ??? ```
+## Linux_Auditing_And_Logging_WHUT_1-3 *
+1: How many unique users logged into this machine? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: What is the total amount of time users were logged into the machine? - ``` ??? ```
+2: What is the total amount of time users were logged into the machine? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: Identify the Cyber Attack Technique that Balrog is trying on the machine. - ``` ??? ```
+3: Identify the Cyber Attack Technique that Balrog is trying on the machine. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: Select every IP address with open (in use) ports using XPATH queries and XPATH axes. Pipe the result to md5sum for the flag - ``` ??? ```
+## Linux_Auditing_And_Logging_XML_5 *
+5: Select every IP address with open (in use) ports using XPATH queries and XPATH axes. Pipe the result to md5sum for the flag - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: What user successfully executed commands? - ``` ??? ```
+## Linux_Auditing_And_Logging_WHUT_4-5 *
+4: What user successfully executed commands? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: Analyze the file to determine when a shell was spawned as a different user and how long it was maintained for. - ``` ??? ```
+5: Analyze the file to determine when a shell was spawned as a different user and how long it was maintained for. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
