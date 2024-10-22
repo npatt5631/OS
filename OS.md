@@ -302,7 +302,10 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 7: The user tyborc is unable to access the directory: /media/Bibliotheca/Bibliotheca_unus Why? Identify the permission missing in standard verb form. - ``` execute ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-8: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` ??? ```
+8: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` /media/Bibliotheca/Bibliotheca_duo/Codex_Hereticus ```
+
+        cd /media/Bibliotheca
+        find . -type f -user quixos -perm 600
 ______________________________________________________________________________________________________________________________________________________________________________________
 9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
 ______________________________________________________________________________________________________________________________________________________________________________________
