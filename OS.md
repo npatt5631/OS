@@ -344,9 +344,7 @@ ________________________________________________________________________________
 2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
-1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
-
-        $ awk 'NR>=420&&NR<=1337' /home/garviel/numbers | sha512sum
+1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` AAAAA3AAA3AAAABAABAAAA ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
