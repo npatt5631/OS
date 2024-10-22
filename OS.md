@@ -197,8 +197,8 @@ ________________________________________________________________________________
 # |
 # |
 # 04_Linux_Basics2
-## Linux_Basics_Reformat_0 *
-0: This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
+## Linux_Basics_Reformat *
+This challenge is worth 0 POINTS, and should only be attempted after all other challenges that are open to you, are completed! - ``` ??? ```
 
 File: /home/garviel/NMAP_all_hosts.txt
 
@@ -712,7 +712,7 @@ ________________________________________________________________________________
 6: What is the full path to the binary used for standard message logging? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_GRUB *
-0: Identify the Linux Kernel being loaded by the Grub, by examining its configuration. Enter the command used by the Grub, and the full path to the Kernel, as the flag. - ``` ??? ```
+Identify the Linux Kernel being loaded by the Grub, by examining its configuration. Enter the command used by the Grub, and the full path to the Kernel, as the flag. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
@@ -987,79 +987,94 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 13_windows_auditing_and_logging
+# 13_Windows_Auditing_And_Logging
+## Primer_Auditing_1-8 *
+1: Logging, Auditing and Monitoring are often confused with each other but are distinctly different. Which term refers to real-time analysis and is often accomplished with a Security Event Information Management system (SIEM)? - ``` Monitoring ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Logging, Auditing and Monitoring are often confused with each other but are distinctly different. Which term refers to real-time analysis and is often accomplished with a Security Event Information Management system (SIEM)? - ``` Monitoring ```
+2: What term is most appropriate when referring to the process of reviewing log files or other records for specified period? - ``` Auditing ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: What term is most appropriate when referring to the process of reviewing log files or other records for specified period? - ``` Auditing ```
+3: "Complete the following path to the Windows System Log which records system events e.g. startup and shutdown: %systemroot%\System32_______________ - ``` WinEvt\Logs\System.evtx ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: "Complete the following path to the Windows System Log which records system events e.g. startup and shutdown: %systemroot%\System32_______________ - ``` WinEvt\Logs\System.evtx ```
+4: Which Windows log contains either success or failures and can be configured to record failed logon attempts? - ``` Security ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: Which Windows log contains either success or failures and can be configured to record failed logon attempts? - ``` Security ```
+5: "Which Windows account is the only account to have WRITE-APPEND access to Windows event logs?" - ``` SYSTEM ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: "Which Windows account is the only account to have WRITE-APPEND access to Windows event logs?" - ``` SYSTEM ```
+6: What is parsed in an NTFS object's security descriptor, by the Security Reference Monitor (SRM), to determine if an audit entry will be created in the Windows Security Log? - ``` SACL ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What is parsed in an NTFS object's security descriptor, by the Security Reference Monitor (SRM), to determine if an audit entry will be created in the Windows Security Log? - ``` SACL ```
+7: Which registry key holds the audit policy configuration? - ``` HKLM\SECURITY\Policy\PolAdtEv ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 7: Which registry key holds the audit policy configuration? - ``` HKLM\SECURITY\Policy\PolAdtEv ```
+8: Which sysinternals tool is used to parse logs? - ``` PsLogList ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 8: Which sysinternals tool is used to parse logs? - ``` PsLogList ```
+## Windows_Browser_Artifacts_1 *
+1: What Sysinternals tool will allow you to read the SQLite3 database containing the web history of chrome? - ``` Strings ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 9: What Sysinternals tool will allow you to read the SQLite3 database containing the web history of chrome? - ``` Strings ```
+## Windows_Recent_Files_1 *
+1: What is the registry location of recent docs for the current user? - ``` HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 10: What is the registry location of recent docs for the current user? - ``` HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs ```
+## Windows_BAM_1 *
+1: BAM settings are stored in different registry locations based on the version of Windows 10. What version of Windows 10 is workstation2 running? The answer is the 4 digit Windows 10 release (version) number. - ``` 1803 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 11: BAM settings are stored in different registry locations based on the version of Windows 10. What version of Windows 10 is workstation2 running? The answer is the 4 digit Windows 10 release (version) number. - ``` 1803 ```
-______________________________________________________________________________________________________________________________________________________________________________________
-### 12: Figure out the last access time of the hosts file. - ``` 08/14/2024 ```
+## Windows_Last_Access *
+Figure out the last access time of the hosts file. - ``` 08/14/2024 ```
 
         (Get-Item "C:\Windows\System32\drivers\etc\hosts").LastAccessTime
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 13: What is the literal path of the prefetch directory? - ``` C:\Windows\Prefetch ```
+## Windows_Prefetch_1 *
+1: What is the literal path of the prefetch directory? - ``` C:\Windows\Prefetch ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 14: In the Recycle Bin, there is a file that contains the actual contents of the recycled file. What are the first two characters of this filename? - ``` $R ```
+## Windows_Recycle_Bin_1-2 *
+1: In the Recycle Bin, there is a file that contains the actual contents of the recycled file. What are the first two characters of this filename? - ``` $R ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 15: In the Recycle Bin, there is a file that contains the original filename, path, file size, and when the file was deleted. What are the first two characters of this filename? - ``` $I ```
+2: In the Recycle Bin, there is a file that contains the original filename, path, file size, and when the file was deleted. What are the first two characters of this filename? - ``` $I ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 16: What are the first 8 characters of the Globally Unique Identifier (GUID) used to list applications found in the UserAssist registry key (Windows 7 and later)? - ``` CEBFF5CD ```
+## Windows_UserAssist_1-2 *
+1: What are the first 8 characters of the Globally Unique Identifier (GUID) used to list applications found in the UserAssist registry key (Windows 7 and later)? - ``` CEBFF5CD ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 17: What cipher method are UserAssist files encoded in? - ``` ROT13 ```
+2: What cipher method are UserAssist files encoded in? - ``` ROT13 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 18: What main Windows log would show invalid login attempts? - ``` Security ```
+## Windows_Logs_1-3 *
+1: What main Windows log would show invalid login attempts? - ``` Security ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 19: What main Windows log will show whether Windows updates were applied recently? - ``` System ```
+2: What main Windows log will show whether Windows updates were applied recently? - ``` System ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 20: When reading logs, you may notice ... at the end of the line where the message is truncated. What format-table switch/argument will display the entire output? - ``` -wrap ```
+3: When reading logs, you may notice ... at the end of the line where the message is truncated. What format-table switch/argument will display the entire output? - ``` -wrap ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 21: Find the questionable website that a user browsed to (using Chrome), that appears to be malicious. *Note: There are more than one users on the box. - ``` https://www.exploit-db.com ```
+## Windows_Browser_Artifacts_2 *
+2: Find the questionable website that a user browsed to (using Chrome), that appears to be malicious. *Note: There are more than one users on the box. - ``` https://www.exploit-db.com ```
 
         get-content 'C:\users\student\AppData\Local\Google\Chrome\User Data\Default\History'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 22: There is a file that was recently opened that may contain PII. Get the flag from the contents of the file. - ``` Flag, Found A. ```
+## Windows_Recent_Files_2 *
+2: There is a file that was recently opened that may contain PII. Get the flag from the contents of the file. - ``` Flag, Found A. ```
 
         reg query hkcu\software\microsoft\windows\currentversion\explorer\recentdocs
         get-item 'Registry::\HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.*' - [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."6")
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 23: Enter the full path of the program that was run on this computer from an abnormal location. - ``` C:\Windows\Temp\bad_intentions.exe ```
+## Windows_BAM_2 *
+2: Enter the full path of the program that was run on this computer from an abnormal location. - ``` C:\Windows\Temp\bad_intentions.exe ```
 
         Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 24: Enter the name of the questionable file in the prefetch folder. - ``` DARK_FORCES-8F2869FC.pf ```
+## Windows_Prefetch_2-3 *
+2: Enter the name of the questionable file in the prefetch folder. - ``` DARK_FORCES-8F2869FC.pf ```
 
         get-childitem -Path 'C:\Windows\Prefetch' -ErrorAction Continue
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 25: What is the creation time of the questionable file in the prefetch folder? - ``` 02/23/2022 ```
+3: What is the creation time of the questionable file in the prefetch folder? - ``` 02/23/2022 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 26: Recover the flag from the Recycle Bin. Enter the name of the recycle bin file that contained the contents of the flag, and the contents of the deleted file. Include the file extension in your answer. - ``` $RZDAQ4U.txt,DontTrashMeyo ```
+## Windows_Recycle_Bin_3 *
+3: Recover the flag from the Recycle Bin. Enter the name of the recycle bin file that contained the contents of the flag, and the contents of the deleted file. Include the file extension in your answer. - ``` $RZDAQ4U.txt,DontTrashMeyo ```
 
         Get-Childitem 'C:\$RECYCLE.BIN' -Recurse -Verbose -Force | select FullName
         get-content 'C:\$RECYCLE.BIN\S-1-5-21-2881336348-3190591231-4063445930-1003\$RZDAQ4U.txt'
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 27: Find the file in the jump list location that might allow privilege escalation. - ``` ??? ```
+## Windows_Jump_Lists *
+Find the file in the jump list location that might allow privilege escalation. - ``` ??? ```
 
         Get-ItemProperty -Path "C:\Users\<Username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\*" | Select-Object Name, LastWriteTime
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 28: Check event logs for a "flag" string. - ``` ??? ```
+## Windows_Logs_4 *
+4: Check event logs for a "flag" string. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
