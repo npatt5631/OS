@@ -325,12 +325,22 @@ ________________________________________________________________________________
 
          $ cat numbers | grep -oP '\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b' | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
-4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` ??? ```
+4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` 4877 ```
+
+        grep -E '^([0-9a-zA-Z]{2}[-:]){5}([0-9a-zA-Z]{2})$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_1-2 *
-1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
+1: Use awk to print lines: >= 420 AND <=1337 - ``` e62ff70d772ef0977f4f8fe1751fda5689ce1daf1fabc6d0cc49da234d02719986c0acb97f582166170a5a1f418e854602a5eb98c773655906a3f85440c37d39 ```
+
+        awk 'NR >= 420 && NR <= 1337 {print}' numbers | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
-2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` ??? ```
+2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` 6cebf155e9c8f49d76ae1268214ff0b5 ```
+
+        awk '{print $1","$2","$3","$4","$5","$6}' connections > conn.csv
+
+After you do this you have to edit the first line to look like the example "#separator \x09,,,,,". After that you can get the md5sum
+
+        md5sum conn.csv
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
 1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
