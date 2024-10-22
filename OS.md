@@ -255,7 +255,9 @@ ________________________________________________________________________________
             #use the key that was enumerated from the symmetric file
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_7 *
-7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` ??? ```
+7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` 20000 ```
+
+        sudo find /home/* -type f ! -name "*.vdi" -exec wc -l {} +
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Users_And_Groups_1-4 *
 1: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
