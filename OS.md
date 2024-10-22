@@ -1081,23 +1081,24 @@ ________________________________________________________________________________
 # |
 # |
 # |
-# 14_linux_auditing_and_logging
-______________________________________________________________________________________________________________________________________________________________________________________
-### 1: Identify the XML element name in the output below. - ``` scaninfo ```
+# 14_Linux_Auditing_And_Logging
+## Linux_Auditing_And_Logging_XML_1-2 *
+1: Identify the XML element name in the output below. - ``` scaninfo ```
 
 scaninfo type="syn" protocol="tcp" numservices="200" services="1-200"/
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 2: Identify one of the XML attributes in the output below. - ``` protocol="tcp" ```
+2: Identify one of the XML attributes in the output below. - ``` protocol="tcp" ```
 
 scaninfo type="syn" protocol="tcp" numservices="200" services="1-200"/
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 3: What RFC is Syslog? - ``` 5424 ```
+## Linux_Auditing_And_Logging_Standards_1-4 *
+1: What RFC is Syslog? - ``` 5424 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 4: What is the numerical code assigned to the facility dealing with authorization? - ``` 4 ```
+2: What is the numerical code assigned to the facility dealing with authorization? - ``` 4 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 5: How many severity codes are defined in the standard that defines syslog? - ``` 8 ```
+3: How many severity codes are defined in the standard that defines syslog? - ``` 8 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-### 6: What severity is assigned to system instability messages? - ``` 0 ```
+4: What severity is assigned to system instability messages? - ``` 0 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ### 7: Download the attached rsyslog configuration file for the Syslog # challenges. In the legacy rules section of the file, what facility is logged to 0.log? - ``` kern ```
 ______________________________________________________________________________________________________________________________________________________________________________________
