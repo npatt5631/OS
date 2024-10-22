@@ -308,8 +308,15 @@ ________________________________________________________________________________
         find . -type f -user quixos -perm 600
 ______________________________________________________________________________________________________________________________________________________________________________________
 9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
+
+        cd /media/Bibliotheca/Bibliotheca_duo
+        ls -la
+        cat .Secrets_of_the_Immaterium
 ______________________________________________________________________________________________________________________________________________________________________________________
 10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
+
+        cd /media/Bibliotheca/Bibliotheca_duo/.warp2/.warp5/warp5/.warp3/warp2/
+        cat .secrets
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_1-4 *
 1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
