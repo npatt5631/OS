@@ -732,9 +732,12 @@ ________________________________________________________________________________
 4: What run levels start the daemon that allows remote connections over port 22? - ``` 2,3,4,5 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_SystemD_1-6 *
-1: Identify the file that init is symbolically-linked to, on the SystemD init machine. - ``` ??? ```
+1: Identify the file that init is symbolically-linked to, on the SystemD init machine. - ``` /lib/systemd/systemd ```
 ______________________________________________________________________________________________________________________________________________________________________________________
-2: What is the default target on the SystemD machine and where is it actually located? - ``` ??? ```
+2: What is the default target on the SystemD machine and where is it actually located? - ``` graphical.target,/lib/systemd/system/graphical.target ```
+
+        $ systemctl get-default
+        $ find / -name graphical.target
 ______________________________________________________________________________________________________________________________________________________________________________________
 3: What unit does the graphical.target want to start, based solely on its configuration file? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
