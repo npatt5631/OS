@@ -686,7 +686,9 @@ ________________________________________________________________________________
 3: Each hex pair contains a value of 8 bits when used to represent memory. The range from 0x00000000 to 0x00000010 in hexadecimal represents addresses in memory or positions in data. This range includes the starting address (0x00000000) and ends at the address (0x00000010). How many bytes could the range 0x00000000 - 0x00000010 contain? - ``` 17 ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_MBR_1 *
-1: How large is the Master Boot Record and what directory is it located in? - ``` ??? ```
+1: How large is the Master Boot Record and what directory is it located in? - ``` 512,/dev/ ```
+
+        $ lsblk
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_SysV_1 *
 1: Identify which of your Linux machines is using SysV Initialization. - ``` Minas_Tirith ```
@@ -701,24 +703,26 @@ ________________________________________________________________________________
 ## Linux_Boot_Bits_And_Bytes_4 *
 4: What are the values contained in hex positions 0x00000001 through 0x00000008? - ``` 63,90,8e,d0,31,e4,8e,d8 ```
 
-         sudo cat /dev/vda | xxd -l 32 -c 0x10 -g 1
+        $ sudo cat /dev/vda | xxd -l 32 -c 0x10 -g 1
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_MBR_2-5 *
 2: Locate the master boot record for one of the Linux machines and read it with xxd. What programming language is the MBR written in? - ``` Assembly Language ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 3: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash the first partition of the file using md5sum. The flag is the hash. - ``` 2a5948fad4ec68170b23faaa2a16cef8 ```
 
-    $ xxd -l 120 -ps -c 20 xxd.1
-    $ dd -ibs 16 
-    $ dd bs=1 skip==446 count=16 if=mbroken of=linuxsucks
-    $ md5sum linuxsucks
+        $ xxd -l 120 -ps -c 20 xxd.1
+        $ dd -ibs 16 
+        $ dd bs=1 skip==446 count=16 if=mbroken of=linuxsucks
+        $ md5sum linuxsucks
 ______________________________________________________________________________________________________________________________________________________________________________________
 4: The file /home/bombadil/mbroken is a copy of an MBR from another machine. You will find the "word" GRUB in the output, hash using md5sum. The flag is the entire hash. - ``` 5fa690cb0f0789cbc57decfd096a503e ```
 
-    $ dd bs=1 skip=392 count=4 if=mmbroken of=linuxsucks
-    $ md5sum linuxsucks
+        $ dd bs=1 skip=392 count=4 if=mmbroken of=linuxsucks
+        $ md5sum linuxsucks
 ______________________________________________________________________________________________________________________________________________________________________________________
-5: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash only the Bootstrap section of the MBR using md5sum. The flag is the entire hash. - ``` ??? ```
+5: The file /home/bombadil/mbroken is a copy of an MBR from another machine. Hash only the Bootstrap section of the MBR using md5sum. The flag is the entire hash. - ``` d59a68c7b6d62ecaa1376dfb73a3b7be ```
+
+        $ dd if=/home/bombadil/mbroken bs=1 count=446 | md5sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_SysV_2-4 *
 2: Identify the default run level on the SysV Init Linux machine. - ``` 2 ```
