@@ -741,11 +741,29 @@ ________________________________________________________________________________
         $ systemctl get-default
         $ find / -name graphical.target
 ______________________________________________________________________________________________________________________________________________________________________________________
-3: What unit does the graphical.target want to start, based solely on its configuration file? - ``` ??? ```
+3: What unit does the graphical.target want to start, based solely on its configuration file? - ``` display-manager.service ```
+
+        $ cat /lib/systemd/system/graphical.target
+        # Wants=display-manager.service
 ______________________________________________________________________________________________________________________________________________________________________________________
-4: What dependency to graphical.target will stop it from executing if it fails to start, based solely on its static configuration file? - ``` ??? ```
+4: What dependency to graphical.target will stop it from executing if it fails to start, based solely on its static configuration file? - ``` multi-user.target ```
+
+        $ cat /lib/systemd/system/graphical.target
+        # Requires=multi-user.target
 ______________________________________________________________________________________________________________________________________________________________________________________
-5: How many wants dependencies does SystemD actually recognize for the default.target - ``` ??? ```
+5: How many wants dependencies does SystemD actually recognize for the default.target - ``` 7 ```
+
+        $ cat /lib/systemd/system/graphical.target
+        # Wants the total lines/fields below
+        [Unit]
+        Description=Graphical Interface
+        Documentation=man:systemd.special(7)
+        Requires=multi-user.target
+        Wants=display-manager.service
+        Conflicts=rescue.service rescue.target
+        After=multi-user.target rescue.service rescue.target display-manager.service    
+        AllowIsolate=yes
+
 ______________________________________________________________________________________________________________________________________________________________________________________
 6: What is the full path to the binary used for standard message logging? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
