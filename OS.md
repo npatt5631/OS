@@ -234,13 +234,13 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 6: What is the absolute path for the binary cat man-page? - ``` /usr/share/man/man1/cat.1.gz ```
 
-        man --path cat
+        $ man --path cat
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_5-6 *
 5: Search the man pages for the keyword digest. Then, use one of the binaries listed to hash the string OneWayBestWay using the largest sha hash available. - ``` a81bc463469ee1717fc9e388e3799c653f63a3de5e9496b5707b56488b046cbf75665235d316c5c0053a597dc7d40c917a2d9006fe35e9cb47766c05ac71989b ```
 
-        man -k digest
-        echo "OneWayBestWay" | sha512sum
+        $ man -k digest
+        $ echo "OneWayBestWay" | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 6: Use File: /home/garviel/Encrypted this file contains encrypted contents. Identify its file type, then decode its contents. - ``` DeCrypt ```
 
@@ -257,7 +257,7 @@ ________________________________________________________________________________
 ## Linux_Basics_LFS_Hierarchy_7 *
 7: Search the user home directories to find the file with the second-most lines in it. The flag is the number of lines in the file. - ``` 20000 ```
 
-        sudo find /home/* -type f ! -name "*.vdi" -exec wc -l {} +
+        $ sudo find /home/* -type f ! -name "*.vdi" -exec wc -l {} +
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Users_And_Groups_1-4 *
 1: Read the file that contains the user database for the machine. Identify a strange comment. - ``` Traitor ```
@@ -275,7 +275,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 4: Identify the algorithm, the amount of salted characters added, and the length of the hashed password in the file that stores passwords. - ``` SHA512,8,86 ```
 
-        sudo cat /etc/shadow | grep -v ! $2
+        $ sudo cat /etc/shadow | grep -v ! $2
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Permissions_1-10 *
 1: Find the directory named Bibliotheca. Enter the absolute path to the directory. - ``` /media/Bibliotheca ```
@@ -294,7 +294,6 @@ ________________________________________________________________________________
 4: Locate the file within /media/Bibliotheca that is modifiable by the only user that is part of the chapter group, but not part of the lodge group. - ``` Codex_Astartes ```
 
         $ cat /etc/group | grep "chapter"
-        $ cat /etc/group | grep "chapter"
 ______________________________________________________________________________________________________________________________________________________________________________________
 5: Identify the file within /media/Bibliotheca where the owning group has more rights than the owning user. - ``` Codex_Imperium ```
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -304,19 +303,19 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 8: Locate the file in /media/Bibliotheca that Quixos has sole modification rights on. - ``` /media/Bibliotheca/Bibliotheca_duo/Codex_Hereticus ```
 
-        cd /media/Bibliotheca
-        find . -type f -user quixos -perm 600
+        $ cd /media/Bibliotheca
+        $ find . -type f -user quixos -perm 600
 ______________________________________________________________________________________________________________________________________________________________________________________
 9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
 
-        cd /media/Bibliotheca/Bibliotheca_duo
-        ls -la
-        cat .Secrets_of_the_Immaterium
+        $ cd /media/Bibliotheca/Bibliotheca_duo
+        $ ls -la
+        $ cat .Secrets_of_the_Immaterium
 ______________________________________________________________________________________________________________________________________________________________________________________
 10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
 
-        cd /media/Bibliotheca/Bibliotheca_duo/.warp2/.warp5/warp5/.warp3/warp2/
-        cat .secrets
+        $ cd /media/Bibliotheca/Bibliotheca_duo/.warp2/.warp5/warp5/.warp3/warp2/
+        $ cat .secrets
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_1-4 *
 1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
@@ -325,21 +324,22 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: Use regular expressions to match patterns similar to valid and invalid IP addresses. - ``` 78 ```
 
-        $ cat /home/garviel/numbers 
-        $ grep '^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$' numbers | wc -l
+        $ cd /home/garviel/numbers 
+        $ grep -E '^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
 3: Use regular expressions to match valid IP addresses. The flag is the number of addresses. - ``` 18 ```
 
-         $ cat numbers | grep -oP '\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b' | wc -l
+        $ cat numbers | grep -oP '\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b' | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
 4: Use regular expressions to match patterns that look similar to a MAC Address. Flag is a count of the number of matches. - ``` 4877 ```
 
-        grep -E '^([0-9a-zA-Z]{2}[-:]){5}([0-9a-zA-Z]{2})$' numbers | wc -l
+        $ cd /home/garviel/numbers
+        $ grep -E '^([0-9a-zA-Z]{2}[-:]){5}([0-9a-zA-Z]{2})$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_1-2 *
 1: Use awk to print lines: >= 420 AND <=1337 - ``` e62ff70d772ef0977f4f8fe1751fda5689ce1daf1fabc6d0cc49da234d02719986c0acb97f582166170a5a1f418e854602a5eb98c773655906a3f85440c37d39 ```
 
-        awk 'NR >= 420 && NR <= 1337 {print}' numbers | sha512sum
+        $ awk 'NR >= 420 && NR <= 1337 {print}' numbers | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Reformat_1-2 *
 1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
@@ -348,7 +348,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` 6cebf155e9c8f49d76ae1268214ff0b5 ```
 
-        awk '{print $1","$2","$3","$4","$5","$6}' connections > conn.csv
+        $ awk '{print $1","$2","$3","$4","$5","$6}' connections > conn.csv
 
 After you do this you have to edit the first line to look like the example "#separator \x09,,,,,". After that you can get the md5sum
 
