@@ -33,6 +33,12 @@ ________________________________________________________________________________
 - SCHTASKS
 ________________________________________________________________________________________________________________________________________
 - REGISTRY LOCATIONS
+
+      HKLM
+      HKCU
+      HKU
+      HKCR
+      HKCC
 ________________________________________________________________________________________________________________________________________
 - POWERSHELL PROFILE
 
@@ -67,11 +73,16 @@ ________________________________________________________________________________
       12321
       45654
       67876
-      
+________________________________________________________________________________________________________________________________________
+- Obfuscation
 
-
-
-
+      Taking name of something legit ex. GoogleUpdate
+      Abnormal for Gov. Device ex. Spotify, Steam, Netflix
+      Mispellings of words
+      C:\windows\system32
+      C:\users\public\downloads\svchost.exe
+      Start up folder
+      C:\Users\Username\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
 
 
