@@ -364,7 +364,9 @@ ________________________________________________________________________________
 After comparing you can find python3 in expressions. 
         echo $PATH | sed 's/:/\n/g' > paths.txt
         xargs ls -1 < paths.txt > binaries.txt
-        grep -f binaries.txt paths
+        cat paths | cut -d" " -f1 > words.txt
+        grep -w -f words.txt binaries.txt
+        
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_5 *
 5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` 178 ```
