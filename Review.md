@@ -88,7 +88,9 @@ ________________________________________________________________________________
       Start up folder
       C:\Users\Username\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ________________________________________________________________________________________________________________________________________
-net use * http://live.sysinternals.com
+- SysInternal tool
+      
+      net use * http://live.sysinternals.com
 
 
 
