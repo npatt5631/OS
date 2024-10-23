@@ -308,8 +308,15 @@ ________________________________________________________________________________
         find . -type f -user quixos -perm 600
 ______________________________________________________________________________________________________________________________________________________________________________________
 9: Read a concealed file within /media/Bibliotheca - ``` Expand your mind ```
+
+        cd /media/Bibliotheca/Bibliotheca_duo
+        ls -la
+        cat .Secrets_of_the_Immaterium
 ______________________________________________________________________________________________________________________________________________________________________________________
 10: Find the warp and read its secrets for the flag. - ``` Ph'nglui mglw'nafh Cthulhu ```
+
+        cd /media/Bibliotheca/Bibliotheca_duo/.warp2/.warp5/warp5/.warp3/warp2/
+        cat .secrets
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_1-4 *
 1: Using the commands ls and grep, identify the number of directories in /etc/ that end in .d - ``` 28 ```
@@ -334,6 +341,11 @@ ________________________________________________________________________________
 
         awk 'NR >= 420 && NR <= 1337 {print}' numbers | sha512sum
 ______________________________________________________________________________________________________________________________________________________________________________________
+## Linux_Basics_Reformat_1-2 *
+1: Use awk to print lines: >= 420 AND <=1337 - ``` ??? ```
+
+        $ awk '$0 >= 420 && $0 <= 1337' /home/garviel/numbers | sha512sum
+______________________________________________________________________________________________________________________________________________________________________________________
 2: Use awk to create a separate CSV (comma separated value) file that contains columns 1-6. - ``` 6cebf155e9c8f49d76ae1268214ff0b5 ```
 
         awk '{print $1","$2","$3","$4","$5","$6}' connections > conn.csv
@@ -343,9 +355,14 @@ After you do this you have to edit the first line to look like the example "#sep
         md5sum conn.csv
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_1-2 *
-1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` ??? ```
+1: The garviel user has a minefield map and controls to a Titan War Machine located in their home directory. Interpret the Titan Controls to navigate the minefield and annihilate the target. - ``` AAAAA3AAA3AAAABAABAAAA ```
 
-        $ awk 'NR>=420&&NR<=1337' /home/garviel/numbers | sha512sum
+        cd /home/garviel/Battlefield
+        cat titan_commands
+        B = Left
+        A = Forward
+        3 = Right
+        cat minefield_map
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
