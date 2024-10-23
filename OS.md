@@ -362,7 +362,9 @@ ________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 
 After comparing you can find python3 in expressions. 
-Use a similar technique to logic3, I don't want to do it again
+        echo $PATH | sed 's/:/\n/g' > paths.txt
+        xargs ls -1 < paths.txt > binaries.txt
+        grep -f binaries.txt paths
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_5 *
 5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` 178 ```
