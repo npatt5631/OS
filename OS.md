@@ -362,6 +362,7 @@ ________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
 
 After comparing you can find python3 in expressions. 
+
         echo $PATH | sed 's/:/\n/g' > paths.txt
         xargs ls -1 < paths.txt > binaries.txt
         cat paths | cut -d" " -f1 > words.txt
