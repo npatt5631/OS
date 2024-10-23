@@ -734,7 +734,9 @@ ________________________________________________________________________________
 ## Linux_Boot_SystemD_1-6 *
 1: Identify the file that init is symbolically-linked to, on the SystemD init machine. - ``` /lib/systemd/systemd ```
 
-        # either located in /lib/systemd/system/ or /etc/systemd/system/
+        # either located in /lib/systemd/systemd/ or /etc/systemd/systemd/
+        $ ls -l /etc/systemd/systemd
+        $ ls -l /lib/systemd/systemd
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: What is the default target on the SystemD machine and where is it actually located? - ``` graphical.target,/lib/systemd/system/graphical.target ```
 
@@ -765,7 +767,7 @@ ________________________________________________________________________________
         AllowIsolate=yes
 
 ______________________________________________________________________________________________________________________________________________________________________________________
-6: What is the full path to the binary used for standard message logging? - ``` ??? ```
+6: What is the full path to the binary used for standard message logging? - ``` /usr/sbin/rsyslogd ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Boot_GRUB *
 Identify the Linux Kernel being loaded by the Grub, by examining its configuration. Enter the command used by the Grub, and the full path to the Kernel, as the flag. - ``` ??? ```
