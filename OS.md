@@ -757,14 +757,14 @@ ________________________________________________________________________________
 
         $ cat /lib/systemd/system/graphical.target
         # Wants the total lines/fields below
-        [Unit]
-        Description=Graphical Interface
-        Documentation=man:systemd.special(7)
-        Requires=multi-user.target
-        Wants=display-manager.service
-        Conflicts=rescue.service rescue.target
-        After=multi-user.target rescue.service rescue.target display-manager.service    
-        AllowIsolate=yes
+                 [Unit]
+        1        Description=Graphical Interface
+        2        Documentation=man:systemd.special(7)
+        3        Requires=multi-user.target
+        4        Wants=display-manager.service
+        5        Conflicts=rescue.service rescue.target
+        6        After=multi-user.target rescue.service rescue.target display-manager.service    
+        7        AllowIsolate=yes
 
 ______________________________________________________________________________________________________________________________________________________________________________________
 6: What is the full path to the binary used for standard message logging? - ``` /usr/sbin/rsyslogd ```
