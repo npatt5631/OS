@@ -848,7 +848,10 @@ ________________________________________________________________________________
 
         Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-1584283910-3275287195-1754958050-1005'
 ______________________________________________________________________________________________________________________________________________________________________________________
-4: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ``` ??? ```
+4: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ``` 76aGreX5 ```
+
+        # RDP using Remmina into the admin workstation, then search RDP and rdp into workstation1
+        # Open Powershell and run > net use * http://live
 ______________________________________________________________________________________________________________________________________________________________________________________
 5: There is malware named TotallyLegit. Find its binary location and there will be a file in that directory. Read the file. - ``` GwlkK3sa ```
 ______________________________________________________________________________________________________________________________________________________________________________________
