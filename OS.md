@@ -360,12 +360,28 @@ ________________________________________________________________________________
         cat minefield_map
 ______________________________________________________________________________________________________________________________________________________________________________________
 2: The flag resides in $HOME/paths... you just need to determine which flag it is. The flag sits next to a string matching the name of a $PATH/binary on your system. - ``` ??? ```
+
+After comparing you can find python3 in expressions. 
+
+        echo $PATH | sed 's/:/\n/g' > paths.txt
+        xargs ls -1 < paths.txt > binaries.txt
+        cat paths | cut -d" " -f1 > words.txt
+        grep -w -f words.txt binaries.txt
+        
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Regular_Expressions_5 *
-5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` ??? ```
+5: Use regular expressions to find valid Locally Administered or Universally Administered Unicast MAC addresses. Give the count of Locally and Universally Administered MAC addresses as the answer. - ``` 178 ```
+
+What matters isn't the Locally or Universally Administered MAC, but the unicast part of it. For that, the second hex digit has to be even (0,2,4,6,8,A,C,E).
+
+        grep -E '^([0-9a-fA-F][02468aAcCeE][-:])([0-9a-fA-F]{2}[-:]){4}([0-9a-fA-F]{2})$' numbers | wc -l
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Linux_Basics_Bash_Logic_3 *
-3: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` ??? ```
+3: Identify heresy by comparing the Inquisition_Targets file to members of the Guardsmen group. - ``` 8 ```
+
+        cd /home/garviel
+        cat /etc/group | grep guardsmen | cut -d: -f4 | sed 's/,/\n/g' > guardsmen.txt
+        grep -f guardsmen.txt Inquisition_Targets
 ______________________________________________________________________________________________________________________________________________________________________________________
 # |
 # |
