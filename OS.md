@@ -851,7 +851,10 @@ ________________________________________________________________________________
 4: Malware uses names of legit processes to obfuscate itself. Give the flag located in Kerberos’ registry subkey. - ``` 76aGreX5 ```
 
         # RDP using Remmina into the admin workstation, then search RDP and rdp into workstation1
-        # Open Powershell and run > net use * http://live
+        # Open Powershell and run > net use * http://live.sysinternals.com
+        # After it should confirm they downloaded and see a zipped file on the desktop, extract into another file on the desktop
+        # Open and find autoruns, double click, use filter to search Kerberos, right click and jump to entry, open subkey in left panel
+        # Locate the sub entry that is named Flag and there is your flag
 ______________________________________________________________________________________________________________________________________________________________________________________
 5: There is malware named TotallyLegit. Find its binary location and there will be a file in that directory. Read the file. - ``` GwlkK3sa ```
 ______________________________________________________________________________________________________________________________________________________________________________________
