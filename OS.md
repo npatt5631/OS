@@ -1011,26 +1011,16 @@ ________________________________________________________________________________
 ## Linux_Process_Find_Evil_1-5 *
 1: Scenario: The Villains group has been chanting offerings to their new leader at regular intervals over a TCP connection. Task: Identify their method of communication and how it is occurring. Locate the following artifacts: ** The chant/text used by each villain (include spaces) ** The new Lord receiving the offering ** The IP address and port that the offering is received over. - ``` Mausan ukoul for avhe mubullat goth,witch_king,127.0.0.1:1234 ```
 
-        find / -name *chant*
-        sudo lsof | grep chant
+        $ find / -name *chant* 2>/dev/null
+        $ sudo cat /home/*/chant
+        # Output: Mausan ukoul for avhe mubullat goth
         
-        #output
-        offering  17496           Balrog    9w      REG              254,1        0     142174                 
-        /home/Balrog/chantlock
-        netcat    17538           Balrog    9w      REG              254,1        0     142174
-        sudo lsof | grep offering
-        sudo cat /home/The_Eye/chant
-        
-        #output
-        Mausan ukoul for avhe mubullat goth
-        
-        htop
-        
+        $ htop
         # to find /home/witch_king
-        ls -l /home/witch_king
-        cat /home/witch_king/camlindon
         
-        #output
+        $ ls -l /home/witch_king
+        $ cat /home/witch_king/camlindon
+        # Output: bash script below
         #!/bin/bash
         (
         flock -n 9 || exit 1
