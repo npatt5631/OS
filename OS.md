@@ -871,9 +871,15 @@ ________________________________________________________________________________
         # Remmina to admin workstation, RDP to workstation1, run as administrator on powershell, cd into the systeminternals folder then run the command below
         # .\handle.exe spoolsv.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-3: In what Load Order Group is the Windows Firewall service? - ``` ??? ```
+3: In what Load Order Group is the Windows Firewall service? - ``` NetworkProvider ```
+
+        # Remmina to admin workstation, RDP to workstation1, open systeminternals folder and find and run as administrator on procmon
+        # Stop the capture after a few seconds then ctrl+f and search for mpssvc, right click jump to..., scroll down and find mpssvc and select it then look for Group under the Name category.
 ______________________________________________________________________________________________________________________________________________________________________________________
-4: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ``` ??? ```
+4: What is the first .dll associated with winlogon.exe? Provide the name of the .dll only, not the /absolute/path - ``` ntdll.dll ```
+
+        # Remmina to admin workstation, RDP to workstation1, run as administrator on powershell, cd into the systeminternals folder then run the command below
+        # .\Listdlls.exe winlogon.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
 5: While examining the Windows Defender Firewall, what is the LogAllowedConnections setting set to, for the Public profile? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
