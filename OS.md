@@ -861,9 +861,15 @@ ________________________________________________________________________________
 6: Find the McAfeeFireTray.exe. There is a file in that directory. The flag is inside. - ``` StrongBad ```
 ______________________________________________________________________________________________________________________________________________________________________________________
 ## Win_Process_Situational_Awareness_1-5 *
-1: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ``` ??? ```
+1: What are the permissions for NT SERVICE\TrustedInstaller on spoolsv.exe? Copy the permissions from your shell. - ``` RW ```
+
+        # Remmina to admin workstation, RDP to workstation1, run as administrator on powershell, cd into the systeminternals folder then run the command below
+        # .\accesschk.exe C:\Windows\System32\spoolsv.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
-2: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ``` ??? ```
+2: What is the PATH listed in the output when we find the handle for spoolsv.exe? - ``` C:\Windows\System32\en-US\spoolsv.exe.mui ```
+
+        # Remmina to admin workstation, RDP to workstation1, run as administrator on powershell, cd into the systeminternals folder then run the command below
+        # .\handle.exe spoolsv.exe
 ______________________________________________________________________________________________________________________________________________________________________________________
 3: In what Load Order Group is the Windows Firewall service? - ``` ??? ```
 ______________________________________________________________________________________________________________________________________________________________________________________
